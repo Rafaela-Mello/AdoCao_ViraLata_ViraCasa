@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>ViraLata ViraCasa</title>
+        <link rel="stylesheet" href="../css/header-footer/index.css" />
+        <link rel="stylesheet" href="../css/body/index.css" />
+        <link rel="stylesheet" href="../css/body/quem-somos/index.css" />
+    </head>
+    
+    <!-- scroll para o topo -->
+    <button id="scrollTopBtn" title="Voltar ao Topo">⇧</button>
+
+    <!-- núcleo do Firebase (inicialização da app) -->
+    <script defer src="/__/firebase/9.8.1/firebase-app-compat.js"></script>
+    <!-- módulo de autenticação -->
+    <script defer src="/__/firebase/9.8.1/firebase-auth-compat.js"></script>
+    <!-- Inicialização do Firebase (auto gerada) -->
+    <script defer src="/__/firebase/init.js?useEmulator=true"></script>
+
+    <body>
+
+<!-- ---------------------------------------------------------------------------------------------------- -->
+        <header>
+            <div class="header">
+                <!-- Imagem Logo ViraLata-ViraCasa -->
+                <img src="../images/logo.png" alt="Logo ViraLata ViraCasa" class="logo-central" />
+
+                <!-- Auth: login + cadastrar ou menssagem + sair -->
+                <div class="right-group">
+                    <div id="auth-logged-out" class="sign-out">
+                        <a href="../html/sign-in/login/index.html">Entrar</a>
+                        <a href="../html/sign-in/cadastro/index.html">Cadastre-se</a>
+                    </div>
+                    
+                    <div id="auth-logged-in" style="display: none; gap: 10px; align-items: center;">
+                        <span id="welcomeMessage" class="message">Carregando...</span>
+                        <button id="logOutButton" class="sign-in-button">Sair</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Navegações -->
+            <nav class="nav">
+                <a href="../index.html">Home</a>
+                <a href="../html/quem-somos.html">Quem Somos</a>
+                <a href="../html/como-ajudar.html">Como Ajudar</a>
+                <a href="../html/dogs-adotar.html">Peludos para Adoção</a>
+                <a href="../html/responsavel.html">Guia do Responsável</a>
+                <a href="../html/criterios.html">Critérios de Adoção</a>
+                <a href="../html/denuncia.html">Denuncie</a>
+                <a href="../html/noticias.html">Notícias</a>
+            </nav>
+        </header>
+<!-- ---------------------------------------------------------------------------------------------------- -->
+
+        <main>
+            <h1>Projeto ViraLata ViraCasa</h1>
+
+            <!-- Citação -->
+            <div class="card-citacao">
+                <h3>
+                    “Primeiro foi necessário civilizar o homem em relação ao próprio homem, <br />
+                    agora é necessário civilizar o homem em relação à natureza e aos animais.”<br />
+                    <span>- Victor Hugo</span>
+                </h3>
+            </div>
+
+            <!-- Sobre o Projeto -->
+            <div class="card-sobre-projeto">
+                <p>
+                    O <strong>Projeto ViraLata ViraCasa</strong> tem como missão promover a Educação Social, Cultural e Ambiental
+                    como pilares essenciais para a construção de uma sociedade mais justa e sustentável. Nossas ações abrangem
+                    iniciativas públicas, comunitárias e culturais, incentivando o respeito à vida em todas as suas formas, através
+                    da solidariedade, empatia e compromisso coletivo.
+                </p>
+                <p>
+                    Acreditamos que uma educação crítica é capaz de transformar a sociedade. Por isso, buscamos desenvolver valores,
+                    habilidades e atitudes que levem a uma convivência consciente, responsável e harmoniosa entre os seres humanos,
+                    os animais e o meio ambiente.
+                </p>
+                <p>
+                    Estudos apontam que projetos como o nosso contribuem para a redução de doenças como Dengue, Leishmaniose e
+                    problemas respiratórios, além de inspirarem soluções sustentáveis, transformando ideias em oportunidades
+                    de geração de renda e consciência coletiva — literalmente, transformando o "lixo em luxo".
+                </p>
+                <p>
+                    Estamos em busca de um terreno cedido pela prefeitura para sediar nossas atividades e estreitar os laços com
+                    a comunidade. Desejamos oferecer oficinas, ações educativas, experiências ambientais e atividades inclusivas
+                    voltadas ao respeito, à diversidade e à convivência harmoniosa entre todos os seres.
+                </p>
+
+                <h5>FAÇA PARTE DO NOSSO PROJETO!</h5>
+                <p>
+                    Acompanhe e apoie nossas ações nas redes sociais:
+                    <strong>@viralataviracasa</strong> no Instagram e Facebook.
+                </p>
+            </div>
+
+            <!-- Origem do Projeto -->
+            <div class="card-origem-projeto">
+                <h2>Como tudo começou...</h2>
+                <h4>O nosso DNA é cachorreiro!</h4>
+                <p>
+                    Os idealizadores do ViraLata ViraCasa sempre foram apaixonados por animais — especialmente cachorros.
+                    Envolvidos na causa animal desde cedo, atuaram por anos de forma independente: apoiando ONGs, participando
+                    de resgates, encontrando lares temporários e arrecadando doações para cães em situação de abandono.
+                </p>
+
+                <p>
+                    Essa trajetória transformadora foi marcada por desafios: a falta de medicamentos, recursos, estrutura
+                    física e apoio social. Mas o que nunca faltou foi <strong>amor, compaixão e vontade de mudar essa realidade</strong>.
+                    Quando o amor está no DNA, pessoas do bem se encontram, somam forças e histórias em nome de um só propósito: a vida!
+                </p>
+
+                <div class="galeria-fotos-projeto">
+                    <img src="../images/quem-somos/equipe1.png" alt="Fotos da ONG" />
+                    <img src="../images/quem-somos/equipe2.png" alt="Fotos da ONG" />
+                    <img src="../images/quem-somos/equipe3.png" alt="Fotos da ONG" />
+                    <img src="../images/quem-somos/equipe4.png" alt="Fotos da ONG" />
+                </div>
+            </div>
+
+        </main>
+
+<!-- ---------------------------------------------------------------------------------------------------- -->
+        <footer class="footer">
+            <div class="footer-container">
+                <div class="footer-info">
+                    <a href="mailto:viralataviracasa@gmail.com" target="_blank" class="info-line">
+                        viralataviracasa@gmail.com
+                    </a>
+                    <a href="https://maps.app.goo.gl/mmdSUhPtorgsG2gB6" target="_blank" class="info-line">
+                        blablablablabla, Valinhos - SP, CEP 00000-000
+                    </a>
+                    <p class="info">Ajude com PIX: <strong>CNPJ 37.190.945/0001-23</strong></p>
+                </div>
+            </div>
+            <p class="footer-copy">&copy; 2025 ViraLata ViraCasa. Todos os direitos reservados.</p>
+        </footer>
+<!-- ---------------------------------------------------------------------------------------------------- -->
+
+        <script src="../js/index.js"></script>
+
+    </body>
+</html>

@@ -1,0 +1,195 @@
+body {
+  font-family: 'Segoe UI', sans-serif;
+  font-size: 14px;
+  margin: 0;
+  padding: 0;
+}
+
+header {
+  position: sticky;
+}
+
+.header {
+  display: flex;
+  align-items: center;
+  background-color: #edd278;
+  color: #8b0000;
+  background-image: url('../../images/fundo-capa.png'); /* seu PNG */
+  background-repeat: repeat;     /* repete como textura */
+  background-size: contain;      /* ou use cover, depende do visual */
+  padding: 60px 25px;
+  user-select: none; /* nao seleciona os textos*/
+}
+
+/* logo centralizada */
+.logo-central {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 130px;
+  height: 130px;
+}
+
+/* agrupamento acessibilidade + login/cadastro */
+.right-group {
+  margin-left: auto;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+/* login/cadastrar */
+.sign-out {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+}
+
+.sign-out a {
+  background-color: #fff;
+  color: #8b0000;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 12px;
+  padding: 8px 14px;
+  border-radius: 6px;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.sign-out a:hover {
+  background-color: #f0f0f0;
+  transform: scale(1.05);
+  outline: none;
+}
+
+
+
+
+
+
+.message {
+  color: #8b0000;
+  font-size: 1em;
+}
+
+.sign-in-button {
+  background-color: #fff;
+  color: #8b0000;
+  text-decoration: none;
+  font-size: 12px;
+  padding: 6px 10px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.sign-in-button:hover {
+  background-color: #f0f0f0;
+  transform: scale(1.05);
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* navegações */
+.nav {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  align-items: center;
+  background-color: #8b0000;
+  padding: 10px 15px;
+  box-shadow: 0 1px 5px rgba(0,0,0,0.1);
+}
+
+.nav a {
+  padding: 8px 8px;
+  color: #fff;
+  font-weight: bold;
+  text-decoration: none;
+  border-radius: 8px;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.nav a:hover,
+.nav a:focus {
+  background-color: #a52a2a;
+  transform: translateY(-1px); /* leve efeito de movimento */
+  outline: none;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.footer {
+  position: relative;
+  background-color: #edd278;
+  background-image: url('../../images/fundo-capa.png');
+  background-repeat: repeat;
+  background-size: contain;
+  color: #8b0000;
+  font-size: 14px;
+  padding: 16px;
+}
+
+.footer-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+}
+
+.footer-info {
+  display: flex;
+  flex-direction: row;
+  gap: 24px;
+  justify-content: center;
+  align-items: center;
+}
+
+.info-line {
+  color: #8b0000;
+  text-decoration: none;
+  font-weight: 500;
+  margin: 0;
+}
+
+.info {
+  margin: 0;
+}
+
+.info-line:hover {
+  color: #a52a2a;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.footer-copy {
+  text-align: center;
+  font-size: 12px;
+  color: #5c0000;
+  margin-top: 18px;
+}

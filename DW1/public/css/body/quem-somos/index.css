@@ -1,0 +1,137 @@
+
+/* Card Citação */
+.card-citacao {
+  max-width: 800px;
+  margin: 30px auto;
+  padding: 15px 15px;
+  border-radius: 20px;
+  border-left: 6px solid #c54848;
+  box-shadow: 0 8px 18px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  transition: transform 0.3s ease;
+}
+
+.card-citacao:hover {
+  transform: scale(1.02);
+}
+
+.card-citacao h3 {
+  font-weight: normal;
+  font-size: 1.1rem;
+  line-height: 1.6;
+  color: #000000;
+  margin: 0;
+}
+
+.card-citacao span {
+  display: block;
+  margin-top: 4px;
+  font-style: italic;
+  font-weight: bold;
+  color: #8b0000;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* Card Sobre o Projeto */
+.card-sobre-projeto {
+  max-width: 900px;
+  margin: 10px auto;
+  padding: 30px;
+  background-color: #fff8e6;
+  border-radius: 20px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+  color: #4a3f2a;
+  font-family: 'Segoe UI', sans-serif;
+  line-height: 1.7;
+  font-size: 1rem;
+  text-align: justify;
+}
+
+.card-sobre-projeto h5 {
+  text-align: center;
+  font-size: 1.2rem;
+  margin-top: 20px;
+  color: #c54848;
+  text-transform: uppercase;
+}
+
+.card-sobre-projeto strong {
+  color: #c54848;
+}
+
+
+
+
+/* Card Sobre a História do Projeto */
+.card-origem-projeto {
+  max-width: 900px;
+  margin: 10px auto;
+  margin-bottom: 60px;
+  padding: 30px;
+  background-color: #fff8e6;
+  border-radius: 20px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+  color: #4a3f2a;
+  font-family: 'Segoe UI', sans-serif;
+  line-height: 1.7;
+  font-size: 1rem;
+  text-align: justify;
+}
+
+.card-origem-projeto h2 {
+  text-align: center;
+  font-size: 1.6rem;
+}
+
+.card-origem-projeto h4 {
+  text-align: center;
+  color: #c54848;
+  font-size: 1rem;
+  font-weight: bold;
+  text-transform: uppercase;
+}
+
+.card-origem-projeto strong {
+  color: #c54848;
+}
+
+
+
+.galeria-fotos-projeto {
+  display: flex;
+  justify-content: center;
+  gap: 16px;
+  margin-top: 20px;
+  flex-wrap: wrap;
+}
+
+.galeria-fotos-projeto img {
+  width: 180px;
+  height: 120px;
+  object-fit: cover;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}

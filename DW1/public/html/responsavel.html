@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>ViraLata ViraCasa</title>
+        <link rel="stylesheet" href="../css/header-footer/index.css" />
+        <link rel="stylesheet" href="../css/body/index.css" />
+        <link rel="stylesheet" href="../css/body/responsavel/index.css" />
+    </head>
+    
+    <!-- scroll para o topo -->
+    <button id="scrollTopBtn" title="Voltar ao Topo">⇧</button>
+
+    <!-- núcleo do Firebase (inicialização da app) -->
+    <script defer src="/__/firebase/9.8.1/firebase-app-compat.js"></script>
+    <!-- módulo de autenticação -->
+    <script defer src="/__/firebase/9.8.1/firebase-auth-compat.js"></script>
+    <!-- Inicialização do Firebase (auto gerada) -->
+    <script defer src="/__/firebase/init.js?useEmulator=true"></script>
+
+    <body>
+
+<!-- ---------------------------------------------------------------------------------------------------- -->
+        <header>
+            <div class="header">
+                <!-- Imagem Logo ViraLata-ViraCasa -->
+                <img src="../images/logo.png" alt="Logo ViraLata ViraCasa" class="logo-central" />
+
+                <!-- Auth: login + cadastrar ou menssagem + sair -->
+                <div class="right-group">
+                    <div id="auth-logged-out" class="sign-out">
+                        <a href="../html/sign-in/login/index.html">Entrar</a>
+                        <a href="../html/sign-in/cadastro/index.html">Cadastre-se</a>
+                    </div>
+                    
+                    <div id="auth-logged-in" style="display: none; gap: 10px; align-items: center;">
+                        <span id="welcomeMessage" class="message">Carregando...</span>
+                        <button id="logOutButton" class="sign-in-button">Sair</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Navegações -->
+            <nav class="nav">
+                <a href="../index.html">Home</a>
+                <a href="../html/quem-somos.html">Quem Somos</a>
+                <a href="../html/como-ajudar.html">Como Ajudar</a>
+                <a href="../html/dogs-adotar.html">Peludos para Adoção</a>
+                <a href="../html/responsavel.html">Guia do Responsável</a>
+                <a href="../html/criterios.html">Critérios de Adoção</a>
+                <a href="../html/denuncia.html">Denuncie</a>
+                <a href="../html/noticias.html">Notícias</a>
+            </nav>
+        </header>
+<!-- ---------------------------------------------------------------------------------------------------- -->
+
+        <main>
+            <h1>Guarda Responsável</h1>
+            <h2>Assumindo uma Vida</h2>
+            
+            <div class="card-guarda-resp">
+                <h4>A decisão de assumir um animal:</h4>
+                <p>
+                    Adotar ou adquirir um animal de estimação é uma escolha séria e deve ser tomada com consciência.
+                    Quando se traz um animal para casa, estamos assumindo o compromisso de cuidar de uma vida. Essa decisão não pode ser feita por impulso ou apenas por empolgação com a aparência do bichinho.
+                </p>
+                <p>
+                    É essencial refletir sobre seu estilo de vida, tempo disponível, espaço físico e condições financeiras. Cada espécie e raça tem suas características e necessidades específicas. Um cão de grande porte, por exemplo, precisa de espaço para se movimentar; já um animal mais carente pode não ser indicado para quem passa muitas horas fora de casa.
+                </p>
+                <p>
+                    A escolha do animal deve considerar o perfil da família, presença de crianças, outros animais e até mesmo o ritmo da casa. Se possível, busque orientação profissional para garantir que você esteja fazendo a escolha certa — por você e pelo animal.
+                </p>
+            </div>
+
+            <div class="card-guarda-resp">
+                <h4>Cuidados básicos da guarda responsável:</h4>
+                <ul>
+                    <li>Alimente o animal com ração ou dieta apropriada para sua espécie e idade.</li>
+                    <li>Leve ao veterinário regularmente e mantenha vacinas e vermífugos em dia.</li>
+                    <li>Previna parasitas como pulgas e carrapatos.</li>
+                    <li>Proporcione abrigo limpo, seguro e confortável, protegido do clima.</li>
+                    <li>Troque a água todos os dias e mantenha os potes higienizados.</li>
+                    <li>Nunca deixe o animal preso por longos períodos ou em espaços apertados.</li>
+                    <li>Dê banhos regulares, sempre respeitando a necessidade do animal.</li>
+                    <li>Não permita que o animal circule sozinho na rua — isso é perigoso.</li>
+                    <li>Jamais agrida ou castigue fisicamente — a educação deve ser feita com paciência e carinho.</li>
+                    <li>Dedique um tempo diário ao seu animal, com brincadeiras, atenção e afeto.</li>
+                </ul>
+            </div>
+
+            <div class="card-citacao">
+                <h3>
+                    “Você não é dono de um animal. Vidas não são propriedades. Ser tutor é assumir a responsabilidade de cuidar, proteger e amar incondicionalmente.”
+                </h3>
+                <span>- Princípios da guarda responsável</span>
+            </div>
+
+            <div class="card-guarda-resp">
+                <h4>Compromisso para a vida toda</h4>
+                <p>
+                    Quando alguém decide adotar um animal, está assumindo um compromisso por toda a sua vida. Isso significa que mudanças como mudança de residência, nascimento de um filho ou dificuldades financeiras não justificam o abandono. O animal é parte da família.
+                </p>
+                <p>
+                    Caso o tutor não cumpra suas obrigações, ele pode perder a guarda do animal e ser responsabilizado legalmente por maus-tratos. O abandono é crime e pode resultar em multa ou detenção.
+                </p>
+                <p>
+                    Tenha em mente: ninguém é obrigado a ter um animal, mas quem opta por isso deve ter consciência de todas as responsabilidades envolvidas. A vida de um animal não pode ser tratada como descartável.
+                </p>
+            </div>
+        </main>
+
+<!-- ---------------------------------------------------------------------------------------------------- -->
+        <footer class="footer">
+            <div class="footer-container">
+                <div class="footer-info">
+                    <a href="mailto:viralataviracasa@gmail.com" target="_blank" class="info-line">
+                        viralataviracasa@gmail.com
+                    </a>
+                    <a href="https://maps.app.goo.gl/mmdSUhPtorgsG2gB6" target="_blank" class="info-line">
+                        blablablablabla, Valinhos - SP, CEP 00000-000
+                    </a>
+                    <p class="info">Ajude com PIX: <strong>CNPJ 37.190.945/0001-23</strong></p>
+                </div>
+            </div>
+            <p class="footer-copy">&copy; 2025 ViraLata ViraCasa. Todos os direitos reservados.</p>
+        </footer>
+<!-- ---------------------------------------------------------------------------------------------------- -->
+
+        <script src="../js/index.js"></script>
+
+    </body>
+</html>

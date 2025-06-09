@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>ViraLata ViraCasa</title>
+        <link rel="stylesheet" href="../css/header-footer/index.css" />
+        <link rel="stylesheet" href="../css/body/index.css" />
+        <link rel="stylesheet" href="../css/body/noticias/index.css" />
+    </head>
+
+    <!-- scroll para o topo -->
+    <button id="scrollTopBtn" title="Voltar ao Topo">⇧</button>
+
+    <!-- núcleo do Firebase (inicialização da app) -->
+    <script defer src="/__/firebase/9.8.1/firebase-app-compat.js"></script>
+    <!-- módulo de autenticação -->
+    <script defer src="/__/firebase/9.8.1/firebase-auth-compat.js"></script>
+    <!-- Inicialização do Firebase (auto gerada) -->
+    <script defer src="/__/firebase/init.js?useEmulator=true"></script>
+
+    <body>
+
+<!-- ---------------------------------------------------------------------------------------------------- -->
+        <header>
+            <div class="header">
+                <!-- Imagem Logo ViraLata-ViraCasa -->
+                <img src="../images/logo.png" alt="Logo ViraLata ViraCasa" class="logo-central" />
+
+                <!-- Auth: login + cadastrar ou menssagem + sair -->
+                <div class="right-group">
+                    <div id="auth-logged-out" class="sign-out">
+                        <a href="../html/sign-in/login/index.html">Entrar</a>
+                        <a href="../html/sign-in/cadastro/index.html">Cadastre-se</a>
+                    </div>
+                    
+                    <div id="auth-logged-in" style="display: none; gap: 10px; align-items: center;">
+                        <span id="welcomeMessage" class="message">Carregando...</span>
+                        <button id="logOutButton" class="sign-in-button">Sair</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Navegações -->
+            <nav class="nav">
+                <a href="../index.html">Home</a>
+                <a href="../html/quem-somos.html">Quem Somos</a>
+                <a href="../html/como-ajudar.html">Como Ajudar</a>
+                <a href="../html/dogs-adotar.html">Peludos para Adoção</a>
+                <a href="../html/responsavel.html">Guia do Responsável</a>
+                <a href="../html/criterios.html">Critérios de Adoção</a>
+                <a href="../html/denuncia.html">Denuncie</a>
+                <a href="../html/noticias.html">Notícias</a>
+            </nav>
+        </header>
+<!-- ---------------------------------------------------------------------------------------------------- -->
+
+        <main>
+
+            <!-- Introdução -->
+            <div style="width: 100%;">
+                <div class="titulo-noticias">
+                    <h1>Notícias do Vira</h1>
+                    <button id="toggleForm" class="bnt-adicionar-noticia" style="display: none;">Adicionar Notícia</button>
+                </div>
+                <div class="intro-noticias">
+                    <p>
+                        Aqui você encontra as últimas novidades, eventos e atualizações do Vira!<br>
+                        Fique por dentro de tudo que está acontecendo.
+                    </p>
+                </div>
+            </div>
+
+            <!-- Caso não tenha notícias, mostra a mensagem -->
+            <div id="placeholderNoticias" class="placeholder-noticias">
+                <p>Por enquanto, não há notícias. Fique atento para futuras atualizações!</p>
+            </div>
+
+            <!-- Adicionar Noticia: Modal do Forms -->
+            <div id="modal" class="modal-overlay">
+                <div class="modal-card">
+                    <button class="modal-close" id="modalClose">&times;</button>
+
+                    <h1>Adicionar Nova Notícia</h1>
+                    <form id="formNoticia">
+                        <div>
+                            <label>Título</label>
+                            <input type="text" id="titulo" placeholder="Título da Notícia" required />
+                        </div>
+
+                        <div>
+                            <label>Data do Acontecimento</label>
+                            <input type="date" id="data" required />
+                        </div>
+
+                        <div>
+                            <label>Descrição</label>
+                            <textarea id="descricao" placeholder="Descrição da notícia" required></textarea>
+                        </div>
+
+                        <div>
+                            <label>Adicione uma Imagem (opcional)</label>
+                            <input type="file" id="imagem" accept="image/*" />
+                        </div>
+
+                        <button type="submit" class="bnt-adicionar-noticia">Adicionar Notícia</button>
+                    </form>
+                </div>
+            </div>
+
+            <!-- Cards Criados das Notícias -->
+            <div id="conteudoNoticias"></div>
+
+        </main>
+
+<!-- ---------------------------------------------------------------------------------------------------- -->
+        <footer class="footer">
+            <div class="footer-container">
+                <div class="footer-info">
+                    <a href="mailto:viralataviracasa@gmail.com" target="_blank" class="info-line">
+                        viralataviracasa@gmail.com
+                    </a>
+                    <a href="https://maps.app.goo.gl/mmdSUhPtorgsG2gB6" target="_blank" class="info-line">
+                        blablablablabla, Valinhos - SP, CEP 00000-000
+                    </a>
+                    <p class="info">Ajude com PIX: <strong>CNPJ 37.190.945/0001-23</strong></p>
+                </div>
+            </div>
+            <p class="footer-copy">&copy; 2025 ViraLata ViraCasa. Todos os direitos reservados.</p>
+        </footer>
+<!-- ---------------------------------------------------------------------------------------------------- -->
+
+        <script src="../js/index.js"></script>
+        <script type="module" src="../js/noticias/index.js"></script>
+
+    </body>
+</html>

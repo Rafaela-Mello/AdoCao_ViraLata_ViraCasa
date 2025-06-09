@@ -1,0 +1,163 @@
+.card-denuncia {
+  max-width: 900px;
+  margin: 40px auto;
+  padding: 30px;
+  background-color: #fff8e6;
+  border-radius: 20px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
+  font-family: 'Segoe UI', sans-serif;
+  line-height: 1.7;
+  font-size: 1rem;
+  transition: transform 0.2s ease;
+}
+
+.card-denuncia:hover {
+  transform: scale(1.01);
+}
+
+.card-denuncia h4 {
+  font-size: 1rem;
+}
+
+.card-denuncia ol {
+  margin-left: 20px;
+  padding-left: 15px;
+}
+
+.card-denuncia ol li {
+  margin-bottom: 10px;
+  list-style-position: inside;
+  font-size: 0.9rem;
+  text-align: justify;
+}
+
+.card-denuncia p {
+  font-size: 0.9rem;
+}
+
+
+
+
+
+.box {
+  max-width: 1000px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+
+.box-text {
+  display: flex;
+  text-align: center;
+  flex-direction: column;
+  align-items: center; /* Centraliza o conteúdo interno */
+  max-width: 800px;     /* Limita a largura para melhor leitura */
+}
+
+.box-text h1 {
+  margin-bottom: 10px;
+  line-height: 1.6;
+}
+
+.box-text h3 {
+  line-height: 1.6;
+  margin-bottom: 30px;
+  font-size: 1rem;
+}
+
+.box-text p {
+  line-height: 1.6;
+}
+
+
+
+
+
+.cards-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 30px;
+  justify-content: center;
+  padding: 20px 0;
+}
+
+
+.card-pequeno {
+  width: 100%;
+  max-width: 420px;
+  margin: 10px;
+  padding: 30px;
+  flex: 1 1 300px;
+}
+
+.card-pequeno h4 {
+  font-size: 1.1rem;
+}
+
+.card-pequeno p {
+  text-align: justify;
+}
+
+.card-pequeno hr {
+  border: none;
+  border-top: 1px solid #e0d1b3;
+  margin: 20px 0;
+}
+
+.card-pequeno strong {
+  color: #8b0000;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+.saiba-mais {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 3px 8px;
+  font-size: 0.8rem;
+  background-color: #8b0000;
+  color: white;
+  text-decoration: none;
+  border-radius: 4px;
+  font-weight: bold;
+  transition: background-color 0.3s, color 0.3s;
+  margin-left: 10px;
+  margin-top: 6px;
+}
+
+.saiba-mais:hover {
+  border: 1px solid #8b0000;
+  background-color: transparent;
+  color: #8b0000;
+}
+
+
+
+
+
+
+
+
+/*
+.denuncie-img {
+  display: block;
+  margin: 40px auto;
+  max-width: 100%;
+  height: auto;
+  border-radius: 20px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
+}
+*/

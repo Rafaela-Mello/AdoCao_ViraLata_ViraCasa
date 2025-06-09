@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>ViraLata ViraCasa</title>
+    <link rel="stylesheet" href="css/header-footer/index.css" />
+    <link rel="stylesheet" href="css/body/index.css" />
+    <link rel="stylesheet" href="css/body/home/index.css" />
+  </head>
+
+  <!-- scroll para o topo -->
+  <button id="scrollTopBtn" title="Voltar ao Topo">⇧</button>
+
+  <!-- Firebase SDK -->
+  <script src="https://www.gstatic.com/firebasejs/9.8.1/firebase-app-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/9.8.1/firebase-auth-compat.js"></script>
+  <script src="/__/firebase/init.js"></script>
+
+  <body>
+
+  <!-- ---------------------------------------------------------------------------------------------------- -->
+    <header>
+      <div class="header">
+        <!-- Imagem Logo ViraLata-ViraCasa -->
+        <img src="images/logo.png" alt="Logo ViraLata ViraCasa" class="logo-central" />
+
+        <!-- Auth: login + cadastrar ou menssagem + sair -->
+        <div class="right-group">
+            <div id="auth-logged-out" class="sign-out">
+              <a href="html/sign-in/login/index.html">Entrar</a>
+              <a href="html/sign-in/cadastro/index.html">Cadastre-se</a>
+            </div>
+            
+            <div id="auth-logged-in" style="display: none; gap: 10px; align-items: center;">
+              <span id="welcomeMessage" class="message">Carregando...</span>
+              <button id="logOutButton" class="sign-in-button">Sair</button>
+            </div>
+        </div>
+      </div>
+
+      <!-- Navegações -->
+      <nav class="nav">
+        <a href="index.html">Home</a>
+        <a href="html/quem-somos.html">Quem Somos</a>
+        <a href="html/como-ajudar.html">Como Ajudar</a>
+        <a href="html/dogs-adotar.html">Peludos para Adoção</a>
+        <a href="html/responsavel.html">Guia do Responsável</a>
+        <a href="html/criterios.html">Critérios de Adoção</a>
+        <a href="html/denuncia.html">Denuncie</a>
+        <a href="html/noticias.html">Notícias</a>
+      </nav>
+    </header>
+<!-- ---------------------------------------------------------------------------------------------------- -->
+
+    <!-- Informações Gerais -->
+    <main>
+
+      <!-- Section 1 -->
+      <section class="section layout-1">
+        <div class="conteudo">
+          <div class="title-img">
+            <h1 class="main-title">Bem-vindo ao ViraLata ViraCasa</h1>
+            <div class="layout-1-box-text">
+              <h2>Um Entrelaçar de Mãos</h2>
+              <p>
+                Aqui acreditamos que cada cãozinho merece um lar cheio de carinho. Nosso objetivo é conectar cães resgatados com pessoas dispostas a oferecer amor, cuidado e uma nova chance.
+              </p>
+              <h4>Pronto para ter um novo amigo e um lar repleto de amor? Siga os passos abaixo:</h4>
+
+              <ol style="text-align: left; max-width: 800px;">
+                <li>Explore nossa galeria de cães disponíveis para adoção.</li>
+                <li>Escolha o amigo peludo que tocou seu coração.</li>
+                <li>Preencha o formulário de adoção com seus dados e perfil.</li>
+                <li>Nossa equipe entrará em contato para uma conversa e, se tudo correr bem, marcar a entrega!</li>
+              </ol>
+
+              <a href="html/dogs-adotar.html" class="saiba-mais-layout-1" >
+                Peludos para Adoção
+                <img src="images/home/paw-red.png" alt="Patinha" class="paw-icon" width="12">
+              </a>
+            </div>
+          </div>
+
+          <div>
+            <div class="layout-1-box-img">
+              <img src="images/home/guarda-respons-img.png" alt="Guarda Responsável Imagem Figurativa" width="365" />
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Section 2 -->
+      <section class="section layout-2">
+        <span class="mascara"></span>
+        <div>
+          <h1>Sobre o Projeto</h1>
+          <p>
+            O <strong>Projeto Vira Lata Vira Casa</strong> tem como missão promover a educação social,
+            cultural e ambiental.
+          </p>
+          <p>
+            <strong>Pilares essenciais para uma convivência mais justa e sustentável.</strong>
+          </p>
+          <p>
+            Por meio de ações sociais, comunitárias e educativas, buscamos despertar a consciência coletiva
+            para o respeito à vida em todas as suas formas. Valorizamos a solidariedade, a colaboração e o cuidado
+            com o meio ambiente, promovendo o bem-estar comum e incentivando atitudes que transformam realidades.
+          </p>
+        </div>
+        
+        <div>
+          <a href="html/quem-somos.html" class="saiba-mais-layout-2">
+            Quem Somos
+            <img src="images/home/home.png" alt="Casa" width="15"/>
+          </a>
+        </div>
+      </section>
+
+      <!-- Section 3 -->
+      <section class="section layout-3">
+        <div>
+          <h1>Três Formas de Ajudar</h1>
+          <a href="html/como-ajudar.html" class="saiba-mais-layout-3">
+            Como Ajudar
+            <img src="images/home/paw-white.png" alt="Patinha" class="paw-icon" width="12">
+          </a>
+        </div>
+
+        <div class="layout-3-div">
+          <div class="layout-3-divs">
+            <img src="images/home/dog1-section3.png" alt="Imagem Ilustrativa" class="layout-3-img" width="190" />
+            <h4>Doe</h4>
+            <p>
+              Você pode contribuir com qualquer quantia pelo site PagSeguro. Toda a verba arrecadada é destinada aos
+              cuidados dos animais resgatados, e prestamos contas publicamente por meio de relatórios mensais. 
+            </p>
+            <p>
+              Veja como contribuir e faça a sua doação!
+            </p>
+          </div>
+
+          <div class="layout-3-divs">
+            <img src="images/home/cat-section3.png" alt="Imagem Ilustrativa" class="layout-3-img" width="190" />
+            <h4>Apadrinhe um Animal</h4>
+            <p>
+              Se adotar não é uma opção no momento, apadrinhar é uma excelente forma de ajudar! Muitos animais precisam
+              de cuidados especiais. Com uma contribuição mensal, você pode ser padrinho ou madrinha e fazer a diferença na vida deles.
+            </p>
+            <p>
+              Toda ajuda faz a diferença!
+            </p>
+          </div>
+
+          <div class="layout-3-divs">
+            <img src="images/home/dog2-section3.png" alt="Imagem Ilustrativa" class="layout-3-img" width="190"/>
+            <h4>Seja um Lar Temporário</h4>
+            <p>
+              Não pode adotar definitivamente?
+            </p>
+            <p>
+              Que tal oferecer um lar temporário?
+            </p>
+            <p>
+              Você pode acolher um animalzinho provisoriamente, dando amor e cuidados até que ele encontre uma família para chamar de sua.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <!-- Section 4 -->
+      <section class="section layout-4" aria-labelledby="contato-title">
+        <h1 id="contato-title">Fale Conosco</h1>
+        <p class="subtitulo-contato">
+          Dúvidas, sugestões ou reclamações? Preencha o formulário abaixo e entraremos em contato.<br />
+          Ou fale diretamente conosco pelas redes sociais:
+        </p>
+
+        <!-- Redes Sociais -->
+        <div class="socials">
+          <a href="https://www.facebook.com/viralataviracasa" target="_blank">
+            <img src="images/sociais/facebook.png" alt="Facebook" />
+          </a>
+          <a href="https://www.instagram.com/viralataviracasa/" target="_blank">
+            <img src="images/sociais/instagram.png" alt="Instagram" />
+          </a>
+          <a href="#" target="_blank">
+            <img src="images/sociais/whatsapp.png" alt="WhatsApp" />
+          </a>
+        </div>
+
+        <!-- Formulário de contato -->
+        <form class="form-contato" id="contato-form">
+          <label for="nome">Nome</label>
+          <input type="text" id="nome" name="nome" placeholder="Seu nome completo" required />
+
+          <label for="email">E-mail</label>
+          <input type="email" id="email" name="email" placeholder="Seu e-mail" required />
+
+          <label for="mensagem">Mensagem</label>
+          <textarea id="mensagem" name="mensagem" rows="5" placeholder="Digite sua mensagem aqui..." required></textarea>
+
+          <button type="submit">Enviar Mensagem</button>
+        </form>
+        <p id="status-envio"></p>
+      </section>
+
+    </main>
+
+<!-- ---------------------------------------------------------------------------------------------------- -->
+
+    <footer class="footer">
+      <div class="footer-container">
+        <div class="footer-info">
+          <a href="mailto:viralataviracasa@gmail.com" target="_blank" class="info-line">
+            viralataviracasa@gmail.com
+          </a>
+          <a href="https://maps.app.goo.gl/mmdSUhPtorgsG2gB6" target="_blank" class="info-line">
+            blablablablabla, Valinhos - SP, CEP 00000-000
+          </a>
+          <p class="info">Ajude com PIX: <strong>CNPJ 37.190.945/0001-23</strong></p>
+        </div>
+      </div>
+      <p class="footer-copy">&copy; 2025 ViraLata ViraCasa. Todos os direitos reservados.</p>
+    </footer>
+
+<!-- ---------------------------------------------------------------------------------------------------- -->
+
+    <script type="module" src="js/index.js"></script>
+    <script type="module" src="js/fale-conosco/index.js"></script>
+
+  </body>
+</html>

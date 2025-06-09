@@ -1,0 +1,55 @@
+.como-ajudar-container {
+  max-width: 900px;
+  font-family: 'Segoe UI', sans-serif;
+}
+
+.como-ajudar-container h1 {
+  margin-bottom: 30px;
+}
+
+.card-ajuda {
+  background-color: #fff8e6;
+  border-radius: 15px;
+  padding: 25px;
+  margin-bottom: 35px;
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.08);
+  transition: transform 0.2s ease;
+}
+
+.card-ajuda:hover {
+  transform: scale(1.01);
+}
+
+.card-ajuda h4 {
+  margin-top: 10px;
+  margin-bottom: 15px;
+  color: #c54848;
+  font-size: 1.2rem;
+}
+
+.card-ajuda p {
+  line-height: 1.7;
+  font-size: 1rem;
+  text-align: justify;
+}
+
+.card-ajuda strong {
+  color: #c54848;
+}
+
+.card-ajuda ul li {
+  margin-bottom: 6px;
+  text-align: justify;
+}
+
+.mensagem h5 {
+  text-align: center;
+  font-size: 1rem;
+  color: #8b0000;
+  border-radius: 20px;
+  border: 2.5px dotted #c54848;
+  box-shadow: 0 8px 18px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  text-transform: uppercase;
+  margin-bottom: 50px;
+}

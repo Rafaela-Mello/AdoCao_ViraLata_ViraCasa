@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>ViraLata ViraCasa</title>
+        <link rel="stylesheet" href="../css/header-footer/index.css" />
+        <link rel="stylesheet" href="../css/body/index.css" />
+        <link rel="stylesheet" href="../css/body/denuncia/index.css" />
+    </head>
+    
+    <!-- scroll para o topo -->
+    <button id="scrollTopBtn" title="Voltar ao Topo">⇧</button>
+
+    <!-- núcleo do Firebase (inicialização da app) -->
+    <script defer src="/__/firebase/9.8.1/firebase-app-compat.js"></script>
+    <!-- módulo de autenticação -->
+    <script defer src="/__/firebase/9.8.1/firebase-auth-compat.js"></script>
+    <!-- Inicialização do Firebase (auto gerada) -->
+    <script defer src="/__/firebase/init.js?useEmulator=true"></script>
+
+    <body>
+
+<!-- ---------------------------------------------------------------------------------------------------- -->
+        <header>
+            <div class="header">
+                <!-- Imagem Logo ViraLata-ViraCasa -->
+                <img src="../images/logo.png" alt="Logo ViraLata ViraCasa" class="logo-central" />
+
+                <!-- Auth: login + cadastrar ou menssagem + sair -->
+                <div class="right-group">
+                    <div id="auth-logged-out" class="sign-out">
+                        <a href="../html/sign-in/login/index.html">Entrar</a>
+                        <a href="../html/sign-in/cadastro/index.html">Cadastre-se</a>
+                    </div>
+                    
+                    <div id="auth-logged-in" style="display: none; gap: 10px; align-items: center;">
+                        <span id="welcomeMessage" class="message">Carregando...</span>
+                        <button id="logOutButton" class="sign-in-button">Sair</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Navegações -->
+            <nav class="nav">
+                <a href="../index.html">Home</a>
+                <a href="../html/quem-somos.html">Quem Somos</a>
+                <a href="../html/como-ajudar.html">Como Ajudar</a>
+                <a href="../html/dogs-adotar.html">Peludos para Adoção</a>
+                <a href="../html/responsavel.html">Guia do Responsável</a>
+                <a href="../html/criterios.html">Critérios de Adoção</a>
+                <a href="../html/denuncia.html">Denuncie</a>
+                <a href="../html/noticias.html">Notícias</a>
+            </nav>
+        </header>
+<!-- ---------------------------------------------------------------------------------------------------- -->
+
+        <!-- Como Ajudar -->
+        <main>
+            <h1>Se eu encontrar um animal na rua, doente ou atropelado, o que fazer?</h1>
+
+            <div class="card-denuncia">
+                <h4>
+                    Infelizmente, os abrigos e protetores de animais estão lotados e geralmente dispõe de pouca ajuda
+                    e recursos escassos. A melhor opção é recolher o animal de rua e optar por uma das duas alternativas:
+                </h4>
+
+                <ol>
+                    <li>
+                        Você pode adotar este animal. Leve-o ao veterinário, vermifugue, vacine, castre, se informe
+                        a respeito dos cuidados necessários para a guarda responsável e parabéns por este enorme ato de amor.
+                    </li>
+                    <li>
+                        Se não pode adotar, uma alternativa é recolhê-lo e procurar um lar para este animal.
+                        Uma dica é procurar aliados, como amigos, parentes ou conhecidos que se sensibilizem com a
+                        situação e que estejam dispostos a ajudar com recursos financeiros, lar provisório, transporte,
+                        acesso à veterinário, etc. Você pode contar com a ajuda das Ongs para direcioná-lo com os
+                        procedimentos adequados e é claro, para ajudá-lo na divulgação do caso.
+                    </li>
+                </ol>
+            </div>
+
+            <div class="box">
+                <div class="box-text">
+                    <h1>Descobri um caso de maus-tratos animal, o que devo fazer?</h1>
+
+                    <p>
+                        Infelizmente casos de maus tratos são mais comuns do que imaginamos. Abandono, manter o
+                        animal preso a correntes, não fornecer alimentação e água adequados, deixar o animal em lugar
+                        impróprio ou anti-higiênico, envenenamento, agressão física e negligência de atendimento
+                        veterinário são exemplos.
+                    </p>
+
+                    <h3>
+                        Maus-tratos contra animais é crime, cujo autor está sujeito às penas da lei, com detenção de
+                        3 meses a 1 ano e multa (art. 32 da Lei 9605/98). Qualquer pessoa pode denunciar de forma anônima.
+                        <br />
+                        Reúna provas, testemunhas e siga os passos:
+                    </h3>
+                </div>
+
+                <div class="cards-container">
+                    <div class="card-denuncia card-pequeno">
+                        <h4>Animais domésticos:</h4>
+                        <p>
+                            Faça um B.O: Ele pode ser feito por telefone, na delegacia mais próxima da sua casa ou pelo site.
+                        </p>
+                        <a href="http://www.seguranca.sp.gov.br/" target="_blank" class="saiba-mais">Denuncie Gov</a>
+
+                        <hr />
+                    
+                        <p>
+                            Em SP, você também pode usar a <strong>Delegacia Eletrônica de Proteção Animal (DEPA)</strong>. 
+                            A denúncia exige identificação, mas seus dados podem ser mantidos em sigilo. É possível acompanhar o caso com o protocolo e CPF.
+                        </p>
+                        <a href="http://www.ssp.sp.gov.br/depa" target="_blank" class="saiba-mais">Denuncie DEPA</a>
+                    </div>
+
+                    <div class="card-denuncia card-pequeno">
+                        <h4>Animais silvestres:</h4>
+                        <p>
+                            Polícia Militar Ambiental: Denuncie crimes como caça, pesca ilegal, tráfico e venda de animais silvestres.
+                        </p>
+                        <a href="https://www.ambiente.sp.gov.br" target="_blank" class="saiba-mais">Denuncie PMA</a>
+                        
+                        <hr />
+
+                        <p>
+                            Também é possível denunciar por telefone:
+                            <br />
+                            - Prefeitura de SP: <strong>156</strong><br />
+                            - IBAMA: <strong>0800 61 80 80</strong>
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+        </main>
+
+<!-- ---------------------------------------------------------------------------------------------------- -->
+        <footer class="footer">
+            <div class="footer-container">
+                <div class="footer-info">
+                    <a href="mailto:viralataviracasa@gmail.com" target="_blank" class="info-line">
+                        viralataviracasa@gmail.com
+                    </a>
+                    <a href="https://maps.app.goo.gl/mmdSUhPtorgsG2gB6" target="_blank" class="info-line">
+                        blablablablabla, Valinhos - SP, CEP 00000-000
+                    </a>
+                    <p class="info">Ajude com PIX: <strong>CNPJ 37.190.945/0001-23</strong></p>
+                </div>
+            </div>
+            <p class="footer-copy">&copy; 2025 ViraLata ViraCasa. Todos os direitos reservados.</p>
+        </footer>
+<!-- ---------------------------------------------------------------------------------------------------- -->
+
+        <script src="../js/index.js"></script>
+
+    </body>
+</html>

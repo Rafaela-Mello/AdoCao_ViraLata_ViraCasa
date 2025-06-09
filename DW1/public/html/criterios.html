@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>ViraLata ViraCasa</title>
+        <link rel="stylesheet" href="../css/header-footer/index.css" />
+        <link rel="stylesheet" href="../css/body/index.css" />
+        <link rel="stylesheet" href="../css/body/criterios/index.css" />
+    </head>
+
+    <!-- scroll para o topo -->
+    <button id="scrollTopBtn" title="Voltar ao Topo">⇧</button>
+
+    <!-- núcleo do Firebase (inicialização da app) -->
+    <script defer src="/__/firebase/9.8.1/firebase-app-compat.js"></script>
+    <!-- módulo de autenticação -->
+    <script defer src="/__/firebase/9.8.1/firebase-auth-compat.js"></script>
+    <!-- Inicialização do Firebase (auto gerada) -->
+    <script defer src="/__/firebase/init.js?useEmulator=true"></script>
+
+    <body>
+
+<!-- ---------------------------------------------------------------------------------------------------- -->
+        <header>
+            <div class="header">
+                <!-- Imagem Logo ViraLata-ViraCasa -->
+                <img src="../images/logo.png" alt="Logo ViraLata ViraCasa" class="logo-central" />
+
+                <!-- Auth: login + cadastrar ou menssagem + sair -->
+                <div class="right-group">
+                    <div id="auth-logged-out" class="sign-out">
+                        <a href="../html/sign-in/login/index.html">Entrar</a>
+                        <a href="../html/sign-in/cadastro/index.html">Cadastre-se</a>
+                    </div>
+                    
+                    <div id="auth-logged-in" style="display: none; gap: 10px; align-items: center;">
+                        <span id="welcomeMessage" class="message">Carregando...</span>
+                        <button id="logOutButton" class="sign-in-button">Sair</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Navegações -->
+            <nav class="nav">
+                <a href="../index.html">Home</a>
+                <a href="../html/quem-somos.html">Quem Somos</a>
+                <a href="../html/como-ajudar.html">Como Ajudar</a>
+                <a href="../html/dogs-adotar.html">Peludos para Adoção</a>
+                <a href="../html/responsavel.html">Guia do Responsável</a>
+                <a href="../html/criterios.html">Critérios de Adoção</a>
+                <a href="../html/denuncia.html">Denuncie</a>
+                <a href="../html/noticias.html">Notícias</a>
+            </nav>
+        </header>
+<!-- ---------------------------------------------------------------------------------------------------- -->
+
+        <!-- Como Ajudar -->
+        <main>
+            <h1>Critérios para Adoção</h1>
+
+            <div class="criterios-adocao">
+                <ol>
+                    <li>Ser maior de 18 anos.</li>
+
+                    <li>
+                        Trazer <strong>cópia</strong> do comprovante de residência do último mês, em seu nome.<br>
+                        (O original deverá ser apresentado para comprovação).<br>
+                        Tempo mínimo de residência: <strong>12 meses</strong>.
+                    </li>
+
+                    <li>
+                        Trazer <strong>cópia</strong> de um documento pessoal de identificação.<br>
+                        (O original deverá ser apresentado para comprovação).
+                    </li>
+
+                    <li>
+                        Ser o <strong>responsável financeiro</strong> pela residência.<br>
+                        Se o adotante não for o responsável legal, este deverá estar presente e assinar o termo como anuente.
+                    </li>
+
+                    <li><strong>Não será permitida adoção em nome de terceiros.</strong></li>
+                    <li><strong>Não realizamos adoções para fora de Valinhos e região.</strong></li>
+                    <li><strong>Não fazemos doações de animais de grande porte para guarda ou fins semelhantes.</strong></li>
+
+                    <li>
+                        Antes da adoção, é necessário preencher um <strong>formulário</strong> (link abaixo).<br>
+                        Após análise, será feita uma <strong>entrevista</strong> para verificar se o perfil da família é compatível com o do animal.
+                    </li>
+
+                    <li>
+                        Após a entrevista, será assinado um <strong>Termo de Responsabilidade</strong> com compromissos como:
+                    <ul>
+                        <li>Acompanhamento por 6 meses após a adoção.</li>
+                        <li>Se filhote, até a castração e o primeiro ano de vida.</li>
+                        <li>Aceitar visitas do Projeto para verificar as condições do animal.</li>
+                        <li>
+                            O Projeto poderá intervir e recolher o animal se forem constatados maus-tratos ou descuido:
+                        <ul>
+                            <li>Presença de pulgas ou carrapatos.</li>
+                            <li>Vacinas atrasadas.</li>
+                            <li>Falta de abrigo adequado.</li>
+                            <li>Animal abaixo do peso ou amarrado em local inadequado.</li>
+                        </ul>
+                        </li>
+                    </ul>
+                    </li>
+
+                    <li>
+                        A família e o tutor devem estar cientes de que a <strong>guarda responsável</strong> inclui:
+                        <ul>
+                            <li>Comprometimento por até 15 anos ou mais.</li>
+                            <li>Despesas mensais com ração, vacinas, antiparasitários, consultas etc.</li>
+                            <li>Inclusão do animal nos planos da família: férias, mudanças, viagens etc.</li>
+                            <li>
+                                Entendimento do comportamento natural dos animais:
+                            <ul>
+                                <li><strong>Cães:</strong> latem, cavam, roem objetos, precisam de exercícios.</li>
+                                <li><strong>Gatos:</strong> arranham móveis, são noturnos, precisam de estímulos.</li>
+                            </ul>
+                            </li>
+                        </ul>
+                    </li>
+
+                    <li>
+                        Está ciente de todas essas responsabilidades e quer adotar?
+                        <strong><a href="dogs-adotar.html">Clique Aqui para Escolher e Adotar um Amigo!</a></strong>.
+                    </li>
+                </ol>
+            </div>
+
+            <section class="observacoes">
+                <h2>Observações Importantes</h2>
+                <p>
+                    O Projeto <strong>ViraLata ViraCasa</strong> abre espaço para que protetores independentes e ONGs participem dos eventos de adoção com seus animais resgatados.
+                    <strong>Contudo, o projeto não se responsabiliza pelos critérios de triagem adotados por esses terceiros, nem pelos animais doados por eles.</strong>
+                </p>
+                <h4>Recomendamos que os novos tutores solicitem:</h4>
+                <ul>
+                    <li>Identificação da ONG ou protetora responsável.</li>
+                    <li>Endereço e telefone de contato da protetora.</li>
+                    <li>Cartão de vacinação do animal adotado.</li>
+                </ul>
+            </section>
+
+            <div class="mensagem-final">
+                <h2>
+                    Só adote se estiver preparado e com condições. Respeito e amor são essenciais. Junte-se a nós!
+                </h2>
+            </div>
+        </main>
+
+<!-- ---------------------------------------------------------------------------------------------------- -->
+        <footer class="footer">
+            <div class="footer-container">
+                <div class="footer-info">
+                    <a href="mailto:viralataviracasa@gmail.com" target="_blank" class="info-line">
+                        viralataviracasa@gmail.com
+                    </a>
+                    <a href="https://maps.app.goo.gl/mmdSUhPtorgsG2gB6" target="_blank" class="info-line">
+                        blablablablabla, Valinhos - SP, CEP 00000-000
+                    </a>
+                    <p class="info">Ajude com PIX: <strong>CNPJ 37.190.945/0001-23</strong></p>
+                </div>
+            </div>
+            <p class="footer-copy">&copy; 2025 ViraLata ViraCasa. Todos os direitos reservados.</p>
+        </footer>
+<!-- ---------------------------------------------------------------------------------------------------- -->
+
+        <script src="../js/index.js"></script>
+
+    </body>
+</html>

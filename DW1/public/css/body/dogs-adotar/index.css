@@ -1,0 +1,731 @@
+/* Título + Botão na Intro */
+.titulo {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  max-width: 100%;
+  padding: 30px 20px 10px;
+}
+
+.titulo h1 {
+  flex: 1;
+  text-align: center;
+  margin: 0;
+}
+
+.titulo .bnt-adicionar-card-animal {
+  position: absolute;
+  right: 20px;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+/* Botão "Adicionar Cachorro" */
+.bnt-adicionar-card-animal {
+  display: inline-flex;
+  align-items: center;
+  padding: 8px 10px;
+  font-size: 0.8rem;
+  background-color: transparent;
+  border: 1px solid #8b0000;
+  color: #8b0000;
+  text-decoration: none;
+  border-radius: 4px;
+  font-weight: bold;
+  transition: background-color 0.3s, color 0.3s;
+  margin-left: 10px;
+  margin-top: 6px;
+  user-select: none;
+}
+
+.bnt-adicionar-card-animal:hover {
+  user-select: none;
+  background-color: #8b0000;
+  color: white;
+  cursor: pointer;
+}
+
+/* Mensagem Introdutória */
+.intro {
+  text-align: center;
+  max-width: 700px;
+  margin: 0 auto 30px;
+  font-size: 1rem;
+  line-height: 1.6;
+}
+
+
+
+/* Mensagem caso não haja animais */
+.placeholder {
+  text-align: center;
+  padding: 40px 20px;
+  color: #8b000093;
+  font-style: italic;
+  font-size: 1.1rem;
+  margin-bottom: 60px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* MODAL QUE ABRE P FORMS */
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0,0,0,0.6);
+  display: none; /* começa escondido */
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+/* O card/modal centralizado */
+.modal-card {
+  background-color: #fffef3;
+  border-radius: 10px;
+  padding: 30px;
+  max-width: 700px;
+  max-height: 90vh;
+  width: 100%;
+  box-shadow: 0 8px 24px rgba(0,0,0,0.2);
+  position: relative;
+  overflow-y: auto; /* rolagem vertical caso conteúdo grande */
+  box-sizing: border-box; /* ESSENCIAL para padding não expandir tamanho total */
+}
+
+/* MODIFICAR O SCROLL*/
+.modal-card::-webkit-scrollbar {
+  width: 10px; /* largura da barra */
+}
+.modal-card::-webkit-scrollbar-track {
+  border-radius: 10px;
+}
+.modal-card::-webkit-scrollbar-thumb {
+  background: #8b0000; /* cor da barra */
+  border-radius: 10px;
+}
+.modal-card::-webkit-scrollbar-thumb:hover {
+  background: #a52a2a; /* hover da barra */
+}
+
+/* Botão fechar no canto superior direito */
+.modal-close {
+  position: absolute;
+  top: 10px;
+  right: 15px;
+  background: none;
+  border: none;
+  font-size: 1.6rem;
+  cursor: pointer;
+  color: #8b0000;
+  font-weight: bold;
+  transition: color 0.3s ease;
+}
+
+.modal-close:hover {
+  color: #d14242;
+}
+
+
+
+
+
+
+
+
+
+
+
+/* Título do formulário */
+.modal-card h1 {
+  margin-top: 10px;
+  margin-bottom: 35px;
+  color: #8b0000;
+  text-align: center;
+  user-select: none;
+}
+
+/* Form */
+.modal-card form > div {
+  margin-bottom: 30px;
+  display: flex;
+  flex-direction: column;
+}
+
+.modal-card label {
+  margin-bottom: 6px;
+  font-weight: bold;
+  color: #8b0000;
+  font-size: 1rem;
+}
+
+.modal-card input[type="text"],
+.modal-card input[type="file"],
+.modal-card textarea,
+.modal-card select {
+  max-width: 100%;
+  box-sizing: border-box; /* conta padding e borda no tamanho */
+  padding: 8px;
+  font-size: 0.9rem;
+  border: 2px solid #d8cfae;
+  border-radius: 8px;
+  transition: border-color 0.3s ease;
+  font-family: 'Segoe UI', sans-serif;
+  resize: vertical;
+  min-height: 40px;
+}
+
+.modal-card input[type="file"],
+.modal-card select {
+  cursor: pointer;
+}
+
+/* Para navegadores baseados em WebKit (Chrome, Safari, Edge) */
+input[type="file"]::-webkit-file-upload-button {
+  cursor: pointer;
+}
+
+.modal-card input:focus,
+.modal-card textarea:focus,
+.modal-card select:focus {
+  border-color: #8b0000;
+  outline: none;
+  box-shadow: 0 0 6px rgba(139, 0, 0, 0.3);
+}
+
+.modal-card textarea {
+  min-height: 150px;
+}
+
+
+
+
+
+
+
+
+
+
+
+/* Esconde o radio original */
+.modal-card input[type="radio"] {
+  appearance: none; /* remove estilo padrão */
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  width: 14px;
+  height: 14px;
+  border: 1.8px solid #8b0000;
+  border-radius: 50%;
+  background-color: #fff;
+  cursor: pointer;
+  position: relative;
+  transition: border-color 0.3s ease, background-color 0.3s ease;
+}
+
+/* Quando estiver selecionado */
+.modal-card input[type="radio"]:checked {
+  background-color: #8b0000;
+  box-shadow: inset 0 0 0 2px #fff;
+}
+
+.options {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 6px;
+}
+
+.options label {
+  font-weight: normal;
+  display: flex;
+  align-items: center;
+  gap: 3px;
+  cursor: pointer;
+}
+
+.container-radio-saude {
+  justify-content: center;
+  gap: 80px; /* espaço entre os blocos */
+  flex-wrap: wrap; /* permite quebra em telas menores */
+}
+
+
+
+/* Não deixar a rolagem fora */
+body.modal-open {
+  overflow: hidden;
+  height: 100vh; /* para garantir que não role nada */
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* CARDS DOS CAES */
+
+.card-container {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap; /* permite quebrar linha */
+  gap: 20px;        /* espaço entre os cards */
+  justify-content: center; /* centraliza os cards */
+  margin-top: 30px;
+}
+
+.card-animal {
+  width: 200px;
+  height: 280px;
+  font-family: 'Segoe UI', sans-serif;
+  background-color: #d8cfae25;
+  border: 2px solid #d8cfae;
+  border-radius: 20px;
+  padding: 10px 20px;
+  margin-bottom: 30px;
+  position: relative;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+  transition: transform 0.2s ease;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column; /* organiza em coluna */
+  justify-content: space-between; /* empurra elementos para topo/baixo */
+  cursor: pointer;
+}
+
+.card-animal:hover {
+  transform: scale(1.01);
+}
+
+.card-animal h2 {
+  position: relative;
+  left: 50%;
+  transform: translateX(-50%);
+  margin: 0;
+  margin-bottom: 8px;
+  text-align: center;
+  width: calc(100% - 60px); /* evita sobreposição com o botão */
+  pointer-events: none; /* impede cliques no texto, se necessário */
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+  max-width: 50%;                       /* limite de largura */
+  white-space: normal;                 /* permite quebra de linha */
+}
+
+.card-animal p {
+  word-wrap: break-word;       /* quebra palavras longas */
+  overflow-wrap: break-word;   /* quebra palavras longas (fallback) */
+  max-width: 100%;             /* garante que não passe do container */
+  white-space: normal;         /* permite quebra de linha */
+  text-align: start;
+  margin: 0;
+  margin-bottom: 8px;
+}
+
+.card-animal img {
+  width: 200px;                /* ocupa toda a largura do card (ou do container interno) */
+  height: 120px;              /* altura fixa para manter padrão */
+  object-fit: cover;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+  margin-top: auto; /* empurra a imagem pro final */
+}
+
+/* Botão excluir */
+.excluir-card-animal {
+  position: absolute;
+  top: 15px;
+  right: 10px;
+  background-color: #8b0000;
+  color: white;
+  border: none;
+  padding: 4px 8px;
+  font-size: 0.75rem;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.excluir-card-animal:hover {
+  background-color: #b30000;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* CARDS DETALHADAMENTE DOS CAES */
+
+.modal-overlay-details-dogs {
+  position: fixed;
+  top: 0;
+  left: 0;
+  display: none;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.6);
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+.modal-card-details-dogs {
+  position: relative;
+  background-color: #fffef3;
+  border: 6px solid #d8cfae;
+  padding: 30px;
+  border-radius: 20px;
+  width: 800px;
+  height: 450px;
+  box-shadow: 0 4px 16px rgba(0,0,0,0.2);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;  /* espaça topo e final */
+  overflow-y: auto;       /* adiciona barra de rolagem vertical quando precisar */
+}
+
+.modal-card-details-dogs h1 {
+  position: relative;
+  left: 50%;
+  transform: translateX(-50%);
+  margin: 0;
+  margin-bottom: 20px;
+  text-align: center;
+  width: calc(100% - 60px); /* evita sobreposição com o botão */
+  pointer-events: none; /* impede cliques no texto, se necessário */
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+  max-width: 50%;                       /* limite de largura */
+  white-space: normal;                 /* permite quebra de linha */
+}
+
+
+
+
+
+
+
+
+
+
+
+
+.details-container {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+}
+
+.details-container img {
+  width: 300px;
+  height: auto;
+  object-fit: cover;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
+.container-info-history {
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  flex-direction: column;
+  margin-left: 40px;
+}
+
+.container-info-history p {
+  word-wrap: break-word;       /* quebra palavras longas */
+  overflow-wrap: break-word;   /* quebra palavras longas (fallback) */
+  max-width: 400px;             /* garante que não passe do container */
+  white-space: normal;         /* permite quebra de linha */
+  overflow: hidden;         /* esconde o excesso */
+  text-align: start;
+  margin: 0;
+  margin-bottom: 8px;
+}
+
+.container-info-history strong {
+  color: #8b0000;
+  font-weight: bold;
+}
+
+
+.details-container-info {
+  display: flex;
+  flex-direction: row;
+  gap: 40px;
+}
+
+
+.linha-separadora {
+  width: 100%;
+  border: none;
+  border-top: 1px solid #8b0000; /* ou outra cor que combine */
+  margin-bottom: 15px;
+}
+
+.history {
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-start;
+  flex-direction: row;
+}
+
+
+
+
+
+
+.formulario-adocao {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  flex-direction: column;
+}
+
+.formulario-adocao p {
+  margin: 0;
+}
+
+.formulario-aviso {
+  color: #b22222;
+}
+
+.formulario-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 6px 10px;
+  background-color: transparent;
+  color: #8b0000;
+  text-decoration: none;
+  border: 1px solid #8b0000;
+  border-radius: 4px;
+  font-weight: bold;
+  margin-top: 18px;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+.formulario-link:hover {
+  background-color: #8b0000;
+  color: white;
+}
+
+
+
+
+
+/* Botão fechar no canto superior direito */
+.modal-close-dogs {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background: none;
+  border: none;
+  font-size: 1.7rem;
+  cursor: pointer;
+  color: #8b0000;
+  font-weight: bold;
+  transition: color 0.3s ease;
+}
+
+.modal-close-dogs:hover {
+  color: #d14242;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* FILTROS */
+
+
+
+
+.all-filters {
+  display: flex;
+  justify-content: center;
+  width: 95%;
+  margin-bottom: 30px;
+  margin-top: 15px;
+}
+
+.container-filters {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  gap: 35px;
+  padding: 10px;
+  width: 80%;
+  border: 1px solid #8b0000;
+  border-radius: 8px;
+  font-family: 'Segoe UI', sans-serif;
+}
+
+.all-filters h4 {
+  color: #8b0000;
+  font-size: 1.1rem;
+  margin: 0;
+}
+
+.filter {
+  display: flex;
+  align-items: center;
+  flex-direction: row;
+  gap: 5px;
+}
+
+.filter label {
+  color: #8b0000;
+  font-size: 0.9rem;
+}
+
+
+
+.filter select {
+  padding: 0px 8px;
+  border: 1px solid #8b0000;
+  border-radius: 6px;
+  background-color: white;
+  transition: border-color 0.3s;
+  cursor: pointer;
+  font-family: 'Segoe UI', sans-serif;
+}
+
+.filter select:focus {
+  outline: none;
+  border-color: #8b0000;
+}
+
+
+
+
+
+.button-reset-filters {
+  padding: 2px 6px;
+  width: auto;
+  height: auto;
+  background-color: transparent;
+  color: #8b0000;
+  border: 1px solid #8b0000;
+  border-radius: 4px;
+  font-weight: bold;
+  font-size: 0.75rem;
+  cursor: pointer;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+.button-reset-filters:hover {
+  background-color: #8b0000;
+  color: white;
+}
+
+
+
+
+
+
+
