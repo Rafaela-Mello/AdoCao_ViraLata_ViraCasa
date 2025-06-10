@@ -2,7 +2,7 @@
 
 Viralata Viracasa é um site desenvolvido como parte de um projeto de extensão do curso de Tecnologia em Análise e Desenvolvimento de Sistemas (TADS).
 
-## 📌 Descrição do Projeto
+## Descrição do Projeto
 O sistema permite:
 
 - Que adotantes, visualizem os cães disponíveis e realizem pedidos de adoção.
@@ -11,21 +11,21 @@ O sistema permite:
 
 - Que a ONG mantenha um controle mais eficiente sobre os cães sob sua responsabilidade.
 
-## 🎯 Objetivos
+## Objetivos
 - Facilitar o processo de adoção de cães.
 
 - Otimizar a organização das informações dos animais.
 
 - Apoiar o trabalho da ONG na promoção da adoção responsável.
 
-## 🛠️ Tecnologias Utilizadas
+## Tecnologias Utilizadas
 - HTML, CSS, JavaScript
 
 - Interação Humano Computador (IHC)
 
 - Banco de Dados: MySQL
 
-## 🚧 Status do Projeto
+## Status do Projeto
 Em desenvolvimento...
 
 ## 👥 Integrantes:
