@@ -5,7 +5,7 @@ Viralata Viracasa é um site desenvolvido como parte de um projeto de extensão 
 ## Descrição do Projeto
 O sistema permite:
 
-- Que adotantes, visualizem os cães disponíveis e realizem pedidos de adoção.
+- Adotantes podem visualizar os cães disponíveis e realizem pedidos de adoção.
 
 - Que voluntários e lares temporários possam cadastrar novos cães e adicionar informações como fotos, histórico, comportamento e necessidades específicas.
 
