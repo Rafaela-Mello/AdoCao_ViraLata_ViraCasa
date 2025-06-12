@@ -1,0 +1,96 @@
+INSERT INTO adotante (nome, email, senha) VALUES
+('Ana Beatriz Lima', 'ana.lima@email.com', 'senha123'),
+('Carlos Henrique Souza', 'carlos.h@email.com', '12345678'),
+('Fernanda Gomes', 'fernanda.gomes@email.com', 'gomes789'),
+('Rafael Almeida', 'rafael.a@email.com', 'almeidax'),
+('Juliana Pires', 'juliana.p@email.com', 'juliana1'),
+('Marcela Torres', 'marcela.torres@email.com', 'torres123'),
+('Igor Mendes', 'igor.m@email.com', 'igorm456'),
+('Tatiane Oliveira', 'tatiane.o@email.com', 'tati789'),
+('Felipe Silva', 'felipe.silva@email.com', 'f123456'),
+('Luciana Costa', 'luciana.costa@email.com', 'lulu321');
+
+
+INSERT INTO cachorro (nome, porte, idade, sexo) VALUES
+('Bidu', 'Pequeno', '2 anos', 'Macho'),
+('Luna', 'Médio', '1 ano', 'Fêmea'),
+('Thor', 'Grande', '3 anos', 'Macho'),
+('Mel', 'Pequeno', '4 meses', 'Fêmea'),
+('Rex', 'Grande', '5 anos', 'Macho'),
+('Bela', 'Médio', '2 anos', 'Fêmea'),
+('Toby', 'Pequeno', '1 ano', 'Macho'),
+('Nina', 'Pequeno', '6 meses', 'Fêmea'),
+('Max', 'Grande', '3 anos', 'Macho'),
+('Sol', 'Médio', '2 anos', 'Fêmea'),
+('Zeus', 'Grande', '4 anos', 'Macho'),
+('Cacau', 'Pequeno', '8 meses', 'Fêmea'),
+('Fred', 'Médio', '2 anos', 'Macho'),
+('Amora', 'Pequeno', '1 ano', 'Fêmea'),
+('Bob', 'Grande', '6 anos', 'Macho'),
+('Lili', 'Pequeno', '3 anos', 'Fêmea'),
+('Duke', 'Grande', '2 anos', 'Macho'),
+('Maya', 'Médio', '5 meses', 'Fêmea'),
+('Jake', 'Grande', '4 anos', 'Macho'),
+('Lola', 'Médio', '2 anos', 'Fêmea'),
+('Pipoca', 'Pequeno', '3 anos', 'Fêmea'),
+('Rocky', 'Médio', '2 anos', 'Macho'),
+('Meg', 'Pequeno', '1 ano', 'Fêmea'),
+('Spike', 'Grande', '4 anos', 'Macho'),
+('Luna II', 'Médio', '7 meses', 'Fêmea'),
+('Chico', 'Pequeno', '5 anos', 'Macho'),
+('Zara', 'Grande', '6 anos', 'Fêmea'),
+('Tom', 'Médio', '1 ano', 'Macho'),
+('Lola II', 'Pequeno', '10 meses', 'Fêmea'),
+('Bruno', 'Grande', '2 anos', 'Macho');
+
+INSERT INTO vacina (nome_vacina, descricao) VALUES
+('V10', 'Protege contra 10 doenças virais caninas.'),
+('Antirrábica', 'Previne a raiva.'),
+('V8', 'Protege contra 8 doenças caninas.'),
+('Antirrábica', 'Previne a raiva.'),
+('V10', 'Protege contra 10 doenças virais caninas.'),
+('Gripe Canina', 'Previne a tosse dos canis.'),
+('Antirrábica', 'Previne a raiva.'),
+('Giárdia', 'Previne infecção por giárdia.'),
+('V10', 'Protege contra 10 doenças virais caninas.'),
+('Antirrábica', 'Previne a raiva.'),
+('Leptospirose', 'Previne contra leptospirose canina.'),
+('Coronavirus Canino', 'Protege contra o coronavírus específico dos cães.'),
+('Parvovirose', 'Previne a parvovirose, doença viral grave.');
+
+INSERT INTO historicoMedico (nome_cirurgia, descricao_cirurgia, cachorro_id, vacina_id) VALUES
+('Castrado', 'Castrado aos 6 meses.', 1, 1),
+('Retirada de tumor', 'Remoção de tumor benigno.', 2, 3),
+('Castrado', 'Castrado aos 8 meses.', 3, 5),
+('Fratura', 'Cirurgia de reparo de pata quebrada.', 4, 7),
+('Castrado', 'Castrado aos 7 meses.', 5, 9),
+('Castrado', 'Castrado aos 6 meses.', 11, 1),
+('Vacinação', 'Aplicação da vacina V10.', 12, 1),
+('Castrado', 'Castrado e vacinado.', 13, 2),
+('Cirurgia dentária', 'Extração de dente infeccionado.', 14, 6),
+('Tratamento de pele', 'Tratamento para dermatite alérgica.', 15, 8),
+('Castrado', 'Castrado aos 9 meses.', 16, 3),
+('Vacinação', 'Aplicação da vacina contra parvovirose.', 17, 13),
+('Cirurgia ocular', 'Correção de entrópio.', 18, 11),
+('Castrado', 'Castrado e vermifugado.', 19, 12),
+('Fratura', 'Reparo em fratura da pata traseira.', 20, 4);
+
+INSERT INTO cachorro_adotado (cachorro_id, adotante_id, data_adocao, data_volta) VALUES
+(1, 1, '2024-01-10', NULL),
+(3, 2, '2024-02-15', NULL),
+(5, 3, '2024-03-22', '2024-06-01'),
+(7, 4, '2024-04-05', NULL),
+(9, 5, '2024-05-19', NULL),
+(11, 6, '2024-06-01', NULL),
+(12, 7, '2024-06-03', '2024-06-10'),
+(13, 8, '2024-06-05', NULL),
+(14, 9, '2024-06-07', NULL),
+(15, 10, '2024-06-08', NULL),
+(16, 2, '2024-06-09', '2024-06-20'),
+(17, 4, '2024-06-10', NULL),
+(18, 3, '2024-06-10', NULL),
+(19, 8, '2024-06-11', '2024-06-15'),
+(20, 2, '2024-06-11', NULL);
+
+# Adiciona uma nova coluna na tabela de cachorros para saber se está disponivel para adoção ou não
+ALTER TABLE cachorro ADD disponivel_adocao BOOLEAN DEFAULT TRUE;
