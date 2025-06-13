@@ -129,3 +129,70 @@ document.addEventListener("DOMContentLoaded", () => {
 
 
 
+
+
+
+
+// Acessibilidade
+const btn = document.getElementById("acessibilidadeBtn");
+const menu = document.getElementById("acessibilidadeMenu");
+
+// Alterna o menu ao clicar no botão
+btn.addEventListener("click", (event) => {
+  event.stopPropagation();
+  menu.classList.toggle("oculto");
+});
+
+// Abre o menu ao passar o mouse no botão principal
+btn.addEventListener("mouseenter", () => {
+  menu.classList.remove("oculto");
+});
+
+// Fecha o menu ao tirar o mouse do menu e do botão
+const fecharSeMouseFora = (event) => {
+  const isMouseInside = menu.contains(event.relatedTarget) || btn.contains(event.relatedTarget);
+  if (!isMouseInside) {
+    menu.classList.add("oculto");
+  }
+};
+
+// Fecha o menu ao tirar o mouse do botão
+btn.addEventListener("mouseleave", fecharSeMouseFora);
+
+// Fecha o menu ao tirar o mouse do menu
+menu.addEventListener("mouseleave", fecharSeMouseFora);
+
+// Fecha o menu ao clicar fora
+document.addEventListener("click", (event) => {
+  const isClickInside = menu.contains(event.target) || btn.contains(event.target);
+  if (!isClickInside) {
+    menu.classList.add("oculto");
+  }
+});
+
+
+function alterarFonte(tamanho) {
+  document.body.style.fontSize = tamanho + "px";
+  localStorage.setItem("tamanhoFonte", tamanho); // salva a preferência
+}
+window.alterarFonte = alterarFonte; // Torna a função global
+
+function alternarNegrito() {
+  document.body.classList.toggle("texto-negrito");
+  const isNegrito = document.body.classList.contains("texto-negrito");
+  localStorage.setItem("negritoAtivado", isNegrito); // salva true ou false
+}
+window.alternarNegrito = alternarNegrito; // Torna a função global
+
+
+
+// Aplica as configurações salvas
+const tamanhoSalvo = localStorage.getItem("tamanhoFonte");
+if (tamanhoSalvo) {
+  document.body.style.fontSize = tamanhoSalvo + "px";
+}
+
+const negritoSalvo = localStorage.getItem("negritoAtivado");
+if (negritoSalvo === "true") {
+  document.body.classList.add("texto-negrito");
+}

@@ -1,3 +1,26 @@
+import { initializeApp } from "https://www.gstatic.com/firebasejs/9.8.1/firebase-app.js";
+import { getDatabase, ref, push, onValue, remove } from "https://www.gstatic.com/firebasejs/9.8.1/firebase-database.js";
+import { getAuth, onAuthStateChanged } from "https://www.gstatic.com/firebasejs/9.8.1/firebase-auth.js";
+
+
+const firebaseConfig = {
+  apiKey: "AIzaSyD2OxHi-B-HQ3pr7whuQdAUVJZf37k_d-c",
+  authDomain: "viralata-viracasa-11b4d.firebaseapp.com",
+  projectId: "viralata-viracasa-11b4d",
+  storageBucket: "viralata-viracasa-11b4d.firebasestorage.app",
+  messagingSenderId: "954083893298",
+  appId: "1:954083893298:web:b74b976e3dbd6746cf9c2b"
+};
+
+// Inicializa o app
+const app = initializeApp(firebaseConfig);
+const db = getDatabase(app);
+const auth = getAuth(app);
+
+
+
+
+
 const toggleBtn = document.getElementById('toggleForm');
 const modal = document.getElementById('modal');
 const modalClose = document.getElementById('modalClose');
@@ -21,73 +44,85 @@ modal.addEventListener('click', (e) => {
 });
 
 const form = document.getElementById('formNoticia');
-const main = document.getElementById('conteudoNoticias');
 
 
-form.addEventListener('submit', function (e) {
+
+
+
+form.addEventListener('submit', async function (e) {
   e.preventDefault();
 
   const titulo = document.getElementById('titulo').value;
   const data = document.getElementById('data').value;
   const descricao = document.getElementById('descricao').value;
-  const imagem = document.getElementById('imagem').files[0];
 
-  const div = document.createElement('div');
-  div.className = 'noticia';
+  const novaNoticia = {
+    titulo,
+    data,
+    descricao
+    // Se quiser salvar imagens, precisará subir no Firebase Storage
+  };
 
-  const h2 = document.createElement('h2');
-  h2.textContent = titulo;
+  await push(ref(db, 'noticias'), novaNoticia);
 
-  const pData = document.createElement('p');
-  const dataObj = new Date(data);
-  const opcoes = { day: '2-digit', month: 'long', year: 'numeric' };
-  const dataFormatada = dataObj.toLocaleDateString('pt-BR', opcoes);
-
-  // Coloca "Valinhos, 17 de Outubro de 2023"
-  pData.textContent = `Valinhos, ${dataFormatada}`;
-
-  const pDesc = document.createElement('p');
-  pDesc.textContent = descricao;
-
-  // Botão de excluir
-  const btnExcluir = document.createElement('button');
-  btnExcluir.className = 'excluir-noticia';
-  btnExcluir.textContent = 'Excluir';
-  btnExcluir.addEventListener('click', () => {
-    div.remove();
-
-    // Verifica se não há mais notícias dentro do container 'main'
-    if (main.children.length === 0) {
-      const placeholder = document.getElementById('placeholderNoticias');
-      if (placeholder) {
-        placeholder.style.display = 'block'; // mostra o placeholder novamente
-      }
-    }
-  });
-
-  div.appendChild(btnExcluir);
-  div.appendChild(h2);
-  div.appendChild(pData);
-  div.appendChild(pDesc);
-
-  if (imagem) {
-    const img = document.createElement('img');
-    img.src = URL.createObjectURL(imagem);
-    img.alt = 'Imagem do evento';
-    div.appendChild(img);
-  }
-
-  // Oculta o placeholder se existir
-  const placeholder = document.getElementById('placeholderNoticias');
-  if (placeholder) {
-    placeholder.style.display = 'none';
-  }
-
-  main.appendChild(div);
   form.reset();
+  modal.style.display = 'none';
+  document.body.classList.remove('modal-open');
+});
 
-  modal.style.display = 'none'; // fecha modal ao enviar
-  document.body.classList.remove('modal-open'); // libera scroll body
+
+
+
+
+
+
+const main = document.getElementById('conteudoNoticias');
+const placeholder = document.getElementById('placeholderNoticias');
+
+onValue(ref(db, 'noticias'), (snapshot) => {
+  main.innerHTML = ''; // Limpa tudo antes de renderizar
+
+  if (snapshot.exists()) {
+    placeholder.style.display = 'none';
+
+    snapshot.forEach(child => {
+      const noticia = child.val();
+      const key = child.key;
+
+      const div = document.createElement('div');
+      div.className = 'noticia';
+
+      const h2 = document.createElement('h2');
+      h2.textContent = noticia.titulo;
+
+      const dataObj = new Date(noticia.data);
+      const opcoes = { day: '2-digit', month: 'long', year: 'numeric' };
+      const dataFormatada = dataObj.toLocaleDateString('pt-BR', opcoes);
+
+      const pData = document.createElement('p');
+      pData.textContent = `Valinhos, ${dataFormatada}`;
+
+      const pDesc = document.createElement('p');
+      pDesc.textContent = noticia.descricao;
+
+      const btnExcluir = document.createElement('button');
+      btnExcluir.className = 'excluir-noticia';
+      btnExcluir.textContent = 'Excluir';
+      btnExcluir.addEventListener('click', async () => {
+        await remove(ref(db, `noticias/${key}`));
+      });
+
+      div.appendChild(btnExcluir);
+      div.appendChild(h2);
+      div.appendChild(pData);
+      div.appendChild(pDesc);
+
+      main.appendChild(div);
+    });
+
+  } else {
+    placeholder.style.display = 'block';
+  }
 });
 
 
@@ -107,19 +142,14 @@ form.addEventListener('submit', function (e) {
 
 
 
-// mostra o botao de adicionar noticia de tiver o email = admin@admin.com
-const auth = firebase.auth();
 
+// mostra o botao de adicionar noticia de tiver o email = admin@admin.com
 document.addEventListener("DOMContentLoaded", () => {
   const botaoAdicionar = document.getElementById("toggleForm");
 
-  auth.onAuthStateChanged((user) => {
-    if (user) {
-      if (user.email === "admin@admin.com") {
-        botaoAdicionar.style.display = "inline-block";
-      } else {
-        botaoAdicionar.style.display = "none";
-      }
+  onAuthStateChanged(auth, (user) => {
+    if (user && user.email === "admin@admin.com") {
+      botaoAdicionar.style.display = "inline-block";
     } else {
       botaoAdicionar.style.display = "none";
     }

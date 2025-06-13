@@ -48,6 +48,7 @@ const animais = [];
 
 
 
+const db = firebase.database();
 
 
 
@@ -73,52 +74,6 @@ form.addEventListener('submit', function (e) {
   const historia = document.getElementById('historia').value;
   const imagem = document.getElementById('imagem').files[0];
 
-  const div = document.createElement('div');
-  div.className = 'card-animal';
-
-  const h2 = document.createElement('h2');
-  h2.textContent = nome;
-
-  const pIdade = document.createElement('p');
-  pIdade.innerHTML = `<span style="color: #8b0000; font-weight: bold;">Idade:</span> ${idadeTexto}`;
-
-  const pSexo = document.createElement('p');
-  pSexo.innerHTML = `<span style="color: #8b0000; font-weight: bold;">Sexo:</span> ${sexo === 'macho' ? 'Macho' : 'Fêmea'}`;
-
-  const pPorte = document.createElement('p');
-  pPorte.innerHTML = `<span style="color: #8b0000; font-weight: bold;">Porte:</span> ${porte.charAt(0).toUpperCase() + porte.slice(1)}`;
-
-  const btnExcluir = document.createElement('button');
-  btnExcluir.className = 'excluir-card-animal';
-  btnExcluir.textContent = 'Excluir';
-
-  btnExcluir.addEventListener('click', (event) => {
-    event.stopPropagation();
-    const index = animais.indexOf(animal);
-    if (index !== -1) {
-      animais.splice(index, 1);
-    }
-    if (main.children.length === 0) {
-      const placeholder = document.getElementById('placeholder');
-      if (placeholder) {
-        placeholder.style.display = 'block';
-      }
-    }
-    renderizarCards(animais);
-  });
-
-  div.appendChild(btnExcluir);
-  div.appendChild(h2);
-  div.appendChild(pIdade);
-  div.appendChild(pSexo);
-  div.appendChild(pPorte);
-
-  if (imagem) {
-    const img = document.createElement('img');
-    img.src = URL.createObjectURL(imagem);
-    img.alt = `Imagem de ${nome}`;
-    div.appendChild(img);
-  }
 
 
   const animal = {
@@ -135,16 +90,111 @@ form.addEventListener('submit', function (e) {
     castrado: castrado === 'sim' ? 'Sim' : 'Não',
     estadoSaude,
     historia,
-    imagem: imagem ? URL.createObjectURL(imagem) : '',
+    imagem: '',  // Por enquanto vazio, vamos tratar imagem depois
   };
 
-  animais.push(animal);
-  renderizarCards(animais);
 
-  form.reset();
-  modal.style.display = 'none';
-  document.body.classList.remove('modal-open');
+  const storageRef = firebase.storage().ref();
+
+  if (imagem) {
+    const uploadTask = storageRef.child('animais/' + imagem.name).put(imagem);
+
+    uploadTask.then(snapshot => snapshot.ref.getDownloadURL())
+      .then(downloadURL => {
+        animal.imagem = downloadURL;
+
+        // Salva no Firestore com o URL da imagem
+        const novoAnimalRef = db.ref('animais').push();
+        return novoAnimalRef.set(animal).then(() => {
+          animal.id = novoAnimalRef.key; // salva o id gerado no objeto local
+        });
+      })
+      .then(() => {
+        console.log('Animal com imagem salvo no Firestore');
+        animais.push(animal);
+        renderizarCards(animais);
+        form.reset();
+        modal.style.display = 'none';
+        document.body.classList.remove('modal-open');
+      })
+      .catch((error) => {
+        console.error('Erro ao salvar animal com imagem:', error);
+      });
+  } else {
+    // Sem imagem, salva direto
+      const novoAnimalRef = db.ref('animais').push();
+      novoAnimalRef.set(animal).then(() => {
+        animal.id = novoAnimalRef.key;
+        console.log('Animal salvo no Firestore com sucesso!');
+        animais.push(animal);
+        renderizarCards(animais);
+        form.reset();
+        modal.style.display = 'none';
+        document.body.classList.remove('modal-open');
+      })
+      .catch((error) => {
+        console.error('Erro ao salvar no Firestore:', error);
+      });
+  }
 });
+
+
+
+
+
+
+
+
+
+
+
+
+document.addEventListener('DOMContentLoaded', () => {
+  // 1. Carrega dados do JSON e coloca no array animais
+  fetch('dogs.json')
+    .then(response => response.json())
+    .then(data => {
+      animais.length = 0;
+      data.forEach(item => {
+        animais.push({
+          ...item,
+          idadeValor: item.idadeCadastro,  // valor para filtro (string)
+          idadeTexto: item.idadeCadastro   // texto para exibição (mesmo valor)
+        });
+      });
+      renderizarCards(animais); // renderiza os cards do JSON
+      // 2. Depois carrega dados do Firebase e adiciona ao array
+      carregarAnimaisDoFirebase();
+    })
+    .catch(error => {
+      console.error('Erro ao carregar o JSON:', error);
+      // mesmo que JSON falhe, tenta carregar do Firebase
+      carregarAnimaisDoFirebase();
+    });
+});
+
+// Função separada para carregar do Firebase e juntar ao array
+function carregarAnimaisDoFirebase() {
+  db.ref('animais').once('value')
+    .then(snapshot => {
+      snapshot.forEach(childSnapshot => {
+        const animalData = childSnapshot.val();
+        animalData.id = childSnapshot.key;
+        // Evita duplicar se o mesmo id já existir (caso haja dados iguais)
+        if (!animais.some(a => a.id === animalData.id)) {
+          animais.push(animalData);
+        }
+      });
+      renderizarCards(animais); // atualiza com dados combinados
+    })
+    .catch(error => {
+      console.error('Erro ao carregar animais do Firebase:', error);
+    });
+}
+
+
+
+
 
 
 
@@ -191,14 +241,18 @@ function renderizarCards(animaisFiltrados) {
 
     btnExcluir.addEventListener('click', (event) => {
       event.stopPropagation();
-
-      // Remove o animal do array principal comparando pelo nome
-      const index = animais.findIndex(a => a.nome === animal.nome);
+      const index = animais.findIndex(a => a.id === animal.id);
       if (index !== -1) {
-        animais.splice(index, 1);
+        // Remove no Firestore
+        db.ref('animais/' + animais[index].id).remove()
+          .then(() => {
+            animais.splice(index, 1);
+            filtrarAnimais();
+          })
+          .catch(error => {
+            console.error('Erro ao excluir animal:', error);
+          });
       }
-
-      filtrarAnimais();
     });
 
     div.appendChild(btnExcluir);
@@ -221,12 +275,6 @@ function renderizarCards(animaisFiltrados) {
     main.appendChild(div);
   });
 }
-
-
-
-
-
-
 
 
 
@@ -371,3 +419,49 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 });
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// Aguarda o Firebase estar inicializado e usa onAuthStateChanged
+let userLogado = false; // flag para saber se usuário está logado
+
+  firebase.auth().onAuthStateChanged(function(user) {
+    if (user) {
+      userLogado = true;
+      document.getElementById('aviso-login').style.display = 'none';
+    } else {
+      userLogado = false;
+      document.getElementById('aviso-login').style.display = 'block';
+    }
+  });
+
+  document.getElementById('link-adocao').addEventListener('click', function(event) {
+    event.preventDefault(); // impede o comportamento padrão do link
+    
+    if (userLogado) {
+      // Se logado, abre o formulário do Google Forms em nova aba
+      window.open('https://forms.gle/yxBGPHt9bemZxmpn8', '_blank');
+    } else {
+      // Se não logado, redireciona para a página de login
+      window.location.href = '../html/sign-in/login/index.html';
+    }
+  });

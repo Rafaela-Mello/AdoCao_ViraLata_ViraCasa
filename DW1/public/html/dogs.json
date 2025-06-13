@@ -1,0 +1,47 @@
+[
+  {
+    "nome": "Thor",
+    "idadeCadastro": "2 anos",
+    "sexo": "Macho",
+    "porte": "Grande",
+    "raca": "Vira-Lata",
+    "cor": "Preto e Marrom",
+    "temperamento": "Protetor, leal",
+    "vacinado": "sim",
+    "vermifugado": "sim",
+    "castrado": "sim",
+    "estadoSaude": "Ótimo",
+    "historia": "Resgatado de maus tratos, mas está saudável e pronto para adoção.",
+    "imagem": "../images/home/dog1-section3.png"
+  },
+  {
+    "nome": "Luna",
+    "idadeCadastro": "6 - 8 meses",
+    "sexo": "Fêmea",
+    "porte": "Médio",
+    "raca": "Vira-Lata",
+    "cor": "Caramelo",
+    "temperamento": "Brincalhona, sociável",
+    "vacinado": "sim",
+    "vermifugado": "sim",
+    "castrado": "nao",
+    "estadoSaude": "Boa",
+    "historia": "Foi abandonada filhote, mas se desenvolveu bem com os cuidados do abrigo.",
+    "imagem": "../images/cachorro.png"
+  },
+  {
+    "nome": "Fred",
+    "idadeCadastro": "4 anos",
+    "sexo": "Macho",
+    "porte": "Pequeno",
+    "raca": "Vira-Lata",
+    "cor": "Branco",
+    "temperamento": "Calmo, dócil",
+    "vacinado": "nao",
+    "vermifugado": "sim",
+    "castrado": "sim",
+    "estadoSaude": "Regular",
+    "historia": "Entregue por uma família que não podia mais cuidar dele.",
+    "imagem": "../images/home/dog2-section3.png"
+  }
+]

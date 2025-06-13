@@ -24,6 +24,25 @@
 <!-- ---------------------------------------------------------------------------------------------------- -->
         <header>
             <div class="header">
+
+                <!-- Acessibilidade: pessoas com Deficiência Visual (PCDs) -->
+                <div class="acessibilidade-wrapper">
+                    <button id="acessibilidadeBtn" aria-haspopup="true" aria-expanded="false">Acessibilidade ▾</button>
+                    <div id="acessibilidadeMenu" class="menu oculto" role="menu">
+                        <div class="dropdown">
+                            <button class="dropdown-btn">Tamanho da Fonte ▸</button>
+                            <div class="dropdown-content">
+                                <button onclick="alterarFonte(12)">12px</button>
+                                <button onclick="alterarFonte(14)">14px</button>
+                                <button onclick="alterarFonte(16)">16px</button>
+                                <button onclick="alterarFonte(18)">18px</button>
+                                <button onclick="alterarFonte(20)">20px</button>
+                            </div>
+                        </div>
+                        <button onclick="alternarNegrito()">Textos em Negrito</button>
+                    </div>
+                </div>
+                
                 <!-- Imagem Logo ViraLata-ViraCasa -->
                 <img src="../images/logo.png" alt="Logo ViraLata ViraCasa" class="logo-central" />
 
@@ -51,6 +70,7 @@
                 <a href="../html/criterios.html">Critérios de Adoção</a>
                 <a href="../html/denuncia.html">Denuncie</a>
                 <a href="../html/noticias.html">Notícias</a>
+                <a href="../html/fale-conosco.html">Fale Conosco</a>
             </nav>
         </header>
 <!-- ---------------------------------------------------------------------------------------------------- -->
@@ -140,15 +160,9 @@
 <!-- ---------------------------------------------------------------------------------------------------- -->
         <footer class="footer">
             <div class="footer-container">
-                <div class="footer-info">
-                    <a href="mailto:viralataviracasa@gmail.com" target="_blank" class="info-line">
-                        viralataviracasa@gmail.com
-                    </a>
-                    <a href="https://maps.app.goo.gl/mmdSUhPtorgsG2gB6" target="_blank" class="info-line">
-                        blablablablabla, Valinhos - SP, CEP 00000-000
-                    </a>
-                    <p class="info">Ajude com PIX: <strong>CNPJ 37.190.945/0001-23</strong></p>
-                </div>
+                <a href="https://maps.app.goo.gl/ktrJtq9y8c2NqzRw7" target="_blank" class="info-line">
+                    R. Luís Spiandorelli Neto, 161 - Lot. Paiquere, Valinhos - SP, CEP 13271-570
+                </a>
             </div>
             <p class="footer-copy">&copy; 2025 ViraLata ViraCasa. Todos os direitos reservados.</p>
         </footer>

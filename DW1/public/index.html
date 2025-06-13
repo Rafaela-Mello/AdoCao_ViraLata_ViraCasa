@@ -22,6 +22,25 @@
   <!-- ---------------------------------------------------------------------------------------------------- -->
     <header>
       <div class="header">
+
+        <!-- Acessibilidade: pessoas com Deficiência Visual (PCDs) -->
+        <div class="acessibilidade-wrapper">
+          <button id="acessibilidadeBtn" aria-haspopup="true" aria-expanded="false">Acessibilidade ▾</button>
+          <div id="acessibilidadeMenu" class="menu oculto" role="menu">
+            <div class="dropdown">
+              <button class="dropdown-btn">Tamanho da Fonte ▸</button>
+              <div class="dropdown-content">
+                <button onclick="alterarFonte(12)">12px</button>
+                <button onclick="alterarFonte(14)">14px</button>
+                <button onclick="alterarFonte(16)">16px</button>
+                <button onclick="alterarFonte(18)">18px</button>
+                <button onclick="alterarFonte(20)">20px</button>
+              </div>
+            </div>
+            <button onclick="alternarNegrito()">Textos em Negrito</button>
+          </div>
+        </div>
+
         <!-- Imagem Logo ViraLata-ViraCasa -->
         <img src="images/logo.png" alt="Logo ViraLata ViraCasa" class="logo-central" />
 
@@ -49,6 +68,7 @@
         <a href="html/criterios.html">Critérios de Adoção</a>
         <a href="html/denuncia.html">Denuncie</a>
         <a href="html/noticias.html">Notícias</a>
+        <a href="html/fale-conosco.html">Fale Conosco</a>
       </nav>
     </header>
 <!-- ---------------------------------------------------------------------------------------------------- -->
@@ -141,7 +161,7 @@
           </div>
 
           <div class="layout-3-divs">
-            <img src="images/home/cat-section3.png" alt="Imagem Ilustrativa" class="layout-3-img" width="190" />
+            <img src="images/home/dog2-section3.png" alt="Imagem Ilustrativa" class="layout-3-img" width="190" />
             <h4>Apadrinhe um Animal</h4>
             <p>
               Se adotar não é uma opção no momento, apadrinhar é uma excelente forma de ajudar! Muitos animais precisam
@@ -153,7 +173,7 @@
           </div>
 
           <div class="layout-3-divs">
-            <img src="images/home/dog2-section3.png" alt="Imagem Ilustrativa" class="layout-3-img" width="190"/>
+            <img src="images/home/dog3-section3.png" alt="Imagem Ilustrativa" class="layout-3-img" width="190"/>
             <h4>Seja um Lar Temporário</h4>
             <p>
               Não pode adotar definitivamente?
@@ -168,58 +188,15 @@
         </div>
       </section>
 
-      <!-- Section 4 -->
-      <section class="section layout-4" aria-labelledby="contato-title">
-        <h1 id="contato-title">Fale Conosco</h1>
-        <p class="subtitulo-contato">
-          Dúvidas, sugestões ou reclamações? Preencha o formulário abaixo e entraremos em contato.<br />
-          Ou fale diretamente conosco pelas redes sociais:
-        </p>
-
-        <!-- Redes Sociais -->
-        <div class="socials">
-          <a href="https://www.facebook.com/viralataviracasa" target="_blank">
-            <img src="images/sociais/facebook.png" alt="Facebook" />
-          </a>
-          <a href="https://www.instagram.com/viralataviracasa/" target="_blank">
-            <img src="images/sociais/instagram.png" alt="Instagram" />
-          </a>
-          <a href="#" target="_blank">
-            <img src="images/sociais/whatsapp.png" alt="WhatsApp" />
-          </a>
-        </div>
-
-        <!-- Formulário de contato -->
-        <form class="form-contato" id="contato-form">
-          <label for="nome">Nome</label>
-          <input type="text" id="nome" name="nome" placeholder="Seu nome completo" required />
-
-          <label for="email">E-mail</label>
-          <input type="email" id="email" name="email" placeholder="Seu e-mail" required />
-
-          <label for="mensagem">Mensagem</label>
-          <textarea id="mensagem" name="mensagem" rows="5" placeholder="Digite sua mensagem aqui..." required></textarea>
-
-          <button type="submit">Enviar Mensagem</button>
-        </form>
-        <p id="status-envio"></p>
-      </section>
-
     </main>
 
 <!-- ---------------------------------------------------------------------------------------------------- -->
 
     <footer class="footer">
       <div class="footer-container">
-        <div class="footer-info">
-          <a href="mailto:viralataviracasa@gmail.com" target="_blank" class="info-line">
-            viralataviracasa@gmail.com
-          </a>
-          <a href="https://maps.app.goo.gl/mmdSUhPtorgsG2gB6" target="_blank" class="info-line">
-            blablablablabla, Valinhos - SP, CEP 00000-000
-          </a>
-          <p class="info">Ajude com PIX: <strong>CNPJ 37.190.945/0001-23</strong></p>
-        </div>
+        <a href="https://maps.app.goo.gl/ktrJtq9y8c2NqzRw7" target="_blank" class="info-line">
+          R. Luís Spiandorelli Neto, 161 - Lot. Paiquere, Valinhos - SP, CEP 13271-570
+        </a>
       </div>
       <p class="footer-copy">&copy; 2025 ViraLata ViraCasa. Todos os direitos reservados.</p>
     </footer>
@@ -227,7 +204,7 @@
 <!-- ---------------------------------------------------------------------------------------------------- -->
 
     <script type="module" src="js/index.js"></script>
-    <script type="module" src="js/fale-conosco/index.js"></script>
+    
 
   </body>
 </html>
