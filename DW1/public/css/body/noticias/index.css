@@ -257,7 +257,7 @@ body.modal-open {
   word-wrap: break-word;       /* quebra palavras longas */
   overflow-wrap: break-word;   /* quebra palavras longas (fallback) */
   max-width: 100%;             /* garante que não passe do container */
-  white-space: normal;         /* permite quebra de linha */
+  white-space: pre-line;
 }
 
 .noticia img {

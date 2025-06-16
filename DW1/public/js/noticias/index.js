@@ -1,23 +1,10 @@
-import { initializeApp } from "https://www.gstatic.com/firebasejs/9.8.1/firebase-app.js";
-import { getDatabase, ref, push, onValue, remove } from "https://www.gstatic.com/firebasejs/9.8.1/firebase-database.js";
-import { getAuth, onAuthStateChanged } from "https://www.gstatic.com/firebasejs/9.8.1/firebase-auth.js";
 
 
-const firebaseConfig = {
-  apiKey: "AIzaSyD2OxHi-B-HQ3pr7whuQdAUVJZf37k_d-c",
-  authDomain: "viralata-viracasa-11b4d.firebaseapp.com",
-  projectId: "viralata-viracasa-11b4d",
-  storageBucket: "viralata-viracasa-11b4d.firebasestorage.app",
-  messagingSenderId: "954083893298",
-  appId: "1:954083893298:web:b74b976e3dbd6746cf9c2b"
-};
-
-// Inicializa o app
-const app = initializeApp(firebaseConfig);
-const db = getDatabase(app);
-const auth = getAuth(app);
+const auth = firebase.auth();
+const db = firebase.database();
 
 
+let noticias = []; // array que vai juntar JSON + Firebase
 
 
 
@@ -49,6 +36,8 @@ const form = document.getElementById('formNoticia');
 
 
 
+const noticiasRef = db.ref('noticias');
+
 form.addEventListener('submit', async function (e) {
   e.preventDefault();
 
@@ -56,14 +45,9 @@ form.addEventListener('submit', async function (e) {
   const data = document.getElementById('data').value;
   const descricao = document.getElementById('descricao').value;
 
-  const novaNoticia = {
-    titulo,
-    data,
-    descricao
-    // Se quiser salvar imagens, precisará subir no Firebase Storage
-  };
+  const novaNoticia = { titulo, data, descricao };
 
-  await push(ref(db, 'noticias'), novaNoticia);
+  await noticiasRef.push(novaNoticia); // compat usa assim
 
   form.reset();
   modal.style.display = 'none';
@@ -79,61 +63,98 @@ form.addEventListener('submit', async function (e) {
 const main = document.getElementById('conteudoNoticias');
 const placeholder = document.getElementById('placeholderNoticias');
 
-onValue(ref(db, 'noticias'), (snapshot) => {
-  main.innerHTML = ''; // Limpa tudo antes de renderizar
+// Função para renderizar notícias na tela
+function renderizarCards(noticiasArray) {
+  main.innerHTML = ''; // limpa
+  if (noticiasArray.length === 0) {
+    placeholder.style.display = 'block';
+    return;
+  }
+  placeholder.style.display = 'none';
 
-  if (snapshot.exists()) {
-    placeholder.style.display = 'none';
+  noticiasArray.forEach(noticia => {
+    const div = document.createElement('div');
+    div.className = 'noticia';
 
-    snapshot.forEach(child => {
-      const noticia = child.val();
-      const key = child.key;
+    const h2 = document.createElement('h2');
+    h2.textContent = noticia.titulo;
 
-      const div = document.createElement('div');
-      div.className = 'noticia';
+    const dataObj = new Date(noticia.data);
+    const opcoes = { day: '2-digit', month: 'long', year: 'numeric' };
+    const dataFormatada = dataObj.toLocaleDateString('pt-BR', opcoes);
 
-      const h2 = document.createElement('h2');
-      h2.textContent = noticia.titulo;
+    const pData = document.createElement('p');
+    pData.textContent = `Valinhos, ${dataFormatada}`;
 
-      const dataObj = new Date(noticia.data);
-      const opcoes = { day: '2-digit', month: 'long', year: 'numeric' };
-      const dataFormatada = dataObj.toLocaleDateString('pt-BR', opcoes);
+    const pDesc = document.createElement('p');
+    pDesc.innerText = noticia.descricao;
 
-      const pData = document.createElement('p');
-      pData.textContent = `Valinhos, ${dataFormatada}`;
-
-      const pDesc = document.createElement('p');
-      pDesc.textContent = noticia.descricao;
-
+    // Se a notícia veio do Firebase, pode ter o id para excluir
+    if (noticia.id) {
       const btnExcluir = document.createElement('button');
       btnExcluir.className = 'excluir-noticia';
       btnExcluir.textContent = 'Excluir';
       btnExcluir.addEventListener('click', async () => {
-        await remove(ref(db, `noticias/${key}`));
+        await remove(ref(db, `noticias/${noticia.id}`));
       });
-
       div.appendChild(btnExcluir);
-      div.appendChild(h2);
-      div.appendChild(pData);
-      div.appendChild(pDesc);
+    }
 
-      main.appendChild(div);
+    div.appendChild(h2);
+    div.appendChild(pData);
+    div.appendChild(pDesc);
+
+    if (noticia.imagem) {
+      const img = document.createElement('img');
+      img.src = noticia.imagem;
+      img.alt = `Imagem da notícia ${noticia.titulo}`;
+      img.className = 'imagem-noticia'; // adicione uma classe se quiser estilizar
+      div.appendChild(img);
+    }
+
+    main.appendChild(div);
+  });
+}
+
+
+
+
+// Função para carregar notícias do Firebase
+function carregarNoticiasDoFirebase() {
+  noticiasRef.once('value')
+    .then(snapshot => {
+      snapshot.forEach(childSnapshot => {
+        const noticia = childSnapshot.val();
+        noticia.id = childSnapshot.key;
+        if (!noticias.some(n => n.id === noticia.id)) {
+          noticias.push(noticia);
+        }
+      });
+      renderizarCards(noticias);
+    })
+    .catch(error => {
+      console.error('Erro ao carregar notícias:', error);
+      renderizarCards(noticias);
     });
+}
 
-  } else {
-    placeholder.style.display = 'block';
-  }
+
+// Ao carregar o DOM, buscar notícias do JSON e depois do Firebase
+document.addEventListener('DOMContentLoaded', () => {
+  fetch('noticias.json')
+    .then(response => response.json())
+    .then(data => {
+      console.log('Notícias do JSON:', data);
+
+      noticias = data; // já é array, atribui direto
+      renderizarCards(noticias);
+      carregarNoticiasDoFirebase();
+    })
+    .catch(error => {
+      console.error('Erro ao carregar JSON:', error);
+      carregarNoticiasDoFirebase();
+    });
 });
-
-
-
-
-
-
-
-
-
-
 
 
 
@@ -155,3 +176,4 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   });
 });
+
