@@ -30,6 +30,11 @@ header {
   height: 130px;
 }
 
+
+
+
+
+
 /* agrupamento acessibilidade + login/cadastro */
 .right-group {
   margin-left: auto;
@@ -88,6 +93,20 @@ header {
   background-color: #f0f0f0;
   transform: scale(1.05);
 }
+
+
+#auth-logged-out,
+#auth-logged-in {
+  display: none;
+}
+
+
+
+
+
+
+
+
 
 
 
@@ -218,15 +237,14 @@ header {
 /* ACESSIBILIDADE */
 
 .acessibilidade-wrapper {
-  position: absolute;
-  top: 20px; /* ajuste conforme necessário */
-  left: 30px;
-  z-index: 1001;
+  position: fixed;
+  top: 228px; /* ajuste a altura conforme a altura da sua nav */
+  right: 20px;
+  z-index: 9999;
 }
 
 #acessibilidadeBtn {
-  background-color: #fefefe;
-  color: #8b0000;
+  background-color: #8b0000;
   font-weight: 600;
   padding: 6px 8px;
   font-size: 12px;
@@ -244,8 +262,7 @@ header {
 
 .menu {
   position: absolute;
-  left: 0;
-  margin-top: 2px;
+  right: 0;
   background-color: #fff;
   border: 1px solid #ddd;
   border-radius: 6px;
@@ -290,7 +307,7 @@ header {
 .dropdown-content {
   display: none;
   position: absolute;
-  left: calc(100% + 2px); /* empurra o submenu mais para a direita */
+  right: calc(100% + 2px); /* empurra o submenu mais para a direita */
   top: 0;
   background-color: #fff;
   border: 1px solid #ddd;
@@ -320,7 +337,7 @@ header {
   content: "";
   position: absolute;
   top: 0;
-  left: -20px;       /* desloca essa área invisível para a esquerda */
+  right: -20px;       /* desloca essa área invisível para a direita */
   width: 20px;       /* largura da área invisível */
   height: 100%;
   background: transparent;

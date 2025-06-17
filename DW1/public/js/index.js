@@ -85,16 +85,13 @@ document.addEventListener("DOMContentLoaded", () => {
       console.log("user", user)
 
       if (user) {
-        if (loggedIn) loggedIn.style.display = 'flex';
-        if (loggedOut) loggedOut.style.display = 'none';
-        if (welcomeMessage) {
-          const nome = user.email || "Usuário";
-          welcomeMessage.textContent = `Bem-vindo(a), ${nome}!`;
-        }
-      } else {
-        if (loggedIn) loggedIn.style.display = 'none';
-        if (loggedOut) loggedOut.style.display = 'flex';
-      }
+      loggedIn.style.display = 'flex';
+      loggedOut.style.display = 'none';
+      welcomeMessage.textContent = `Bem-vindo(a), ${user.email || "Usuário"}!`;
+    } else {
+      loggedIn.style.display = 'none';
+      loggedOut.style.display = 'flex';
+    }
   });
 
   const logOutButton = document.getElementById("logOutButton");

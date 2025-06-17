@@ -25,24 +25,6 @@
         <header>
             <div class="header">
 
-                <!-- Acessibilidade: pessoas com Deficiência Visual (PCDs) -->
-                <div class="acessibilidade-wrapper">
-                    <button id="acessibilidadeBtn" aria-haspopup="true" aria-expanded="false">Acessibilidade ▾</button>
-                    <div id="acessibilidadeMenu" class="menu oculto" role="menu">
-                        <div class="dropdown">
-                            <button class="dropdown-btn">Tamanho da Fonte ▸</button>
-                            <div class="dropdown-content">
-                                <button onclick="alterarFonte(12)">12px</button>
-                                <button onclick="alterarFonte(14)">14px</button>
-                                <button onclick="alterarFonte(16)">16px</button>
-                                <button onclick="alterarFonte(18)">18px</button>
-                                <button onclick="alterarFonte(20)">20px</button>
-                            </div>
-                        </div>
-                        <button onclick="alternarNegrito()">Textos em Negrito</button>
-                    </div>
-                </div>
-
                 <!-- Imagem Logo ViraLata-ViraCasa -->
                 <img src="../images/logo.png" alt="Logo ViraLata ViraCasa" class="logo-central" />
 
@@ -75,6 +57,26 @@
         </header>
 <!-- ---------------------------------------------------------------------------------------------------- -->
 
+        <!-- Acessibilidade: pessoas com Deficiência Visual (PCDs) -->
+        <div class="acessibilidade-wrapper">
+            <button id="acessibilidadeBtn" aria-haspopup="true" aria-expanded="false" aria-label="Abrir menu de acessibilidade" style="background: none; border: none; padding: 0; cursor: pointer;">
+                <img src="../images/acessibilidade.png" alt="Acessibilidade" width="34" height="34">
+            </button>
+            <div id="acessibilidadeMenu" class="menu oculto" role="menu">
+                <div class="dropdown">
+                    <button class="dropdown-btn">◂ Tamanho da Fonte</button>
+                    <div class="dropdown-content">
+                        <button onclick="alterarFonte(12)">12px</button>
+                        <button onclick="alterarFonte(14)">14px</button>
+                        <button onclick="alterarFonte(16)">16px</button>
+                        <button onclick="alterarFonte(18)">18px</button>
+                        <button onclick="alterarFonte(20)">20px</button>
+                    </div>
+                </div>
+                <button onclick="alternarNegrito()">ㅤ­­­ ­Textos em Negrito</button>
+            </div>
+        </div>
+        
         <!-- Como Ajudar -->
         <main>
             <h1 id="contato-title">Fale Conosco</h1>

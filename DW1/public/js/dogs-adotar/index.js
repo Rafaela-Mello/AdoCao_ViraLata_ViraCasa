@@ -29,6 +29,7 @@ modal.addEventListener('click', (e) => {
 
 const animais = [];
 
+let usuarioAdmin = false;
 
 
 
@@ -235,27 +236,29 @@ function renderizarCards(animaisFiltrados) {
     const pPorte = document.createElement('p');
     pPorte.innerHTML = `<span style="color: #8b0000; font-weight: bold;">Porte:</span> ${animal.porte}`;
 
-    const btnExcluir = document.createElement('button');
-    btnExcluir.className = 'excluir-card-animal';
-    btnExcluir.textContent = 'Excluir';
+    if (usuarioAdmin) {
+      const btnExcluir = document.createElement('button');
+      btnExcluir.className = 'excluir-card-animal';
+      btnExcluir.textContent = 'Excluir';
 
-    btnExcluir.addEventListener('click', (event) => {
-      event.stopPropagation();
-      const index = animais.findIndex(a => a.id === animal.id);
-      if (index !== -1) {
-        // Remove no Firestore
-        db.ref('animais/' + animais[index].id).remove()
-          .then(() => {
-            animais.splice(index, 1);
-            filtrarAnimais();
-          })
-          .catch(error => {
-            console.error('Erro ao excluir animal:', error);
-          });
-      }
-    });
+      btnExcluir.addEventListener('click', (event) => {
+        event.stopPropagation();
+        const index = animais.findIndex(a => a.id === animal.id);
+        if (index !== -1) {
+          // Remove no Firestore
+          db.ref('animais/' + animais[index].id).remove()
+            .then(() => {
+              animais.splice(index, 1);
+              filtrarAnimais();
+            })
+            .catch(error => {
+              console.error('Erro ao excluir animal:', error);
+            });
+        }
+      });
+      div.appendChild(btnExcluir);
+    }
 
-    div.appendChild(btnExcluir);
     div.appendChild(h2);
     div.appendChild(pIdade);
     div.appendChild(pSexo);
@@ -410,11 +413,14 @@ document.addEventListener("DOMContentLoaded", () => {
     if (user) {
       if (user.email === "admin@admin.com") {
         botaoAdicionar.style.display = "inline-block";
+        usuarioAdmin = true;
       } else {
         botaoAdicionar.style.display = "none";
+        usuarioAdmin = false;
       }
     } else {
       botaoAdicionar.style.display = "none";
+      usuarioAdmin = false;
     }
   });
 });

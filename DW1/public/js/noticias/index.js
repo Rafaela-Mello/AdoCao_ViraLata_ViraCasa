@@ -5,6 +5,7 @@ const db = firebase.database();
 
 
 let noticias = []; // array que vai juntar JSON + Firebase
+let usuarioAdmin = false;
 
 
 
@@ -89,16 +90,31 @@ function renderizarCards(noticiasArray) {
     const pDesc = document.createElement('p');
     pDesc.innerText = noticia.descricao;
 
-    // Se a notícia veio do Firebase, pode ter o id para excluir
-    if (noticia.id) {
+    // para excluir tando do json (momentaneo) se clicar no botão quanto do firebase
+    if (usuarioAdmin) {
       const btnExcluir = document.createElement('button');
       btnExcluir.className = 'excluir-noticia';
       btnExcluir.textContent = 'Excluir';
-      btnExcluir.addEventListener('click', async () => {
-        await remove(ref(db, `noticias/${noticia.id}`));
+      btnExcluir.addEventListener('click', (event) => {
+        event.stopPropagation(); // evita cliques indesejados no card
+
+        const index = noticias.findIndex(n => n.id === noticia.id);
+        if (index !== -1) {
+          // Remove no Firebase
+          db.ref('noticias/' + noticias[index].id).remove()
+            .then(() => {
+              noticias.splice(index, 1); // remove do array local
+              renderizarCards(noticias); // re-renderiza os cards
+            })
+            .catch(error => {
+              console.error('Erro ao excluir notícia:', error);
+            });
+        }
       });
+
       div.appendChild(btnExcluir);
     }
+
 
     div.appendChild(h2);
     div.appendChild(pData);
@@ -165,15 +181,25 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
 // mostra o botao de adicionar noticia de tiver o email = admin@admin.com
+
+
 document.addEventListener("DOMContentLoaded", () => {
   const botaoAdicionar = document.getElementById("toggleForm");
 
-  onAuthStateChanged(auth, (user) => {
-    if (user && user.email === "admin@admin.com") {
-      botaoAdicionar.style.display = "inline-block";
+  auth.onAuthStateChanged((user) => {
+    if (user) {
+      if (user.email === "admin@admin.com") {
+        botaoAdicionar.style.display = "inline-block";
+        usuarioAdmin = true;
+      } else {
+        botaoAdicionar.style.display = "none";
+        usuarioAdmin = false;
+      }
     } else {
       botaoAdicionar.style.display = "none";
+      usuarioAdmin = false;
     }
   });
 });
+
 

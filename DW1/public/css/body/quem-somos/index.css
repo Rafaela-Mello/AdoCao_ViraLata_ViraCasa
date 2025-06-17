@@ -72,14 +72,14 @@
 
 .card-sobre-projeto h5 {
   text-align: center;
-  font-size: 1.2rem;
+  font-size: 1.10rem;
   margin-top: 20px;
-  color: #c54848;
+  color: #8b0000;
   text-transform: uppercase;
 }
 
 .card-sobre-projeto strong {
-  color: #c54848;
+  color: #8b0000;
 }
 
 
@@ -103,19 +103,14 @@
 
 .card-origem-projeto h2 {
   text-align: center;
-  font-size: 1.6rem;
+  font-size: 1.4rem;
+  text-transform: uppercase;
+
 }
 
-.card-origem-projeto h4 {
-  text-align: center;
-  color: #c54848;
-  font-size: 1rem;
-  font-weight: bold;
-  text-transform: uppercase;
-}
 
 .card-origem-projeto strong {
-  color: #c54848;
+  color: #8b0000;
 }
 
 
