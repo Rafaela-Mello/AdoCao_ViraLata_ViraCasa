@@ -19,11 +19,10 @@ O sistema permite:
 - Apoiar o trabalho da ONG na promoção da adoção responsável.
 
 ## Tecnologias Utilizadas
-- HTML, CSS, JavaScript
-
-- Interação Humano Computador (IHC)
-
+- Desenvolvimento Web: HTML, CSS, JavaScript, FireBase
 - Banco de Dados: MySQL
+- Interação Humano Computador (IHC): Draw.io, Figma
+
 
 ## Status do Projeto
 Em desenvolvimento...
