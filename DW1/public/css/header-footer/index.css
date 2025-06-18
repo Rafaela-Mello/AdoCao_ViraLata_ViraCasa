@@ -55,7 +55,7 @@ header {
   color: #8b0000;
   text-decoration: none;
   font-weight: 600;
-  font-size: 12px;
+  font-size: 0.9em;
   padding: 8px 14px;
   border-radius: 6px;
   transition: background-color 0.3s ease, transform 0.2s ease;
@@ -81,7 +81,7 @@ header {
   background-color: #fff;
   color: #8b0000;
   text-decoration: none;
-  font-size: 12px;
+  font-size: 0.9em;
   padding: 6px 10px;
   border: none;
   border-radius: 6px;
@@ -170,7 +170,7 @@ header {
   background-repeat: repeat;
   background-size: contain;
   color: #8b0000;
-  font-size: 14px;
+  font-size: 1em;
   padding: 16px;
 }
 
@@ -196,7 +196,7 @@ header {
 
 .footer-copy {
   text-align: center;
-  font-size: 12px;
+  font-size: 0.9em;
   color: #5c0000;
   margin-top: 18px;
 }

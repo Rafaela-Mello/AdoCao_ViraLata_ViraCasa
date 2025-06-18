@@ -7,7 +7,7 @@
   box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
   font-family: 'Segoe UI', sans-serif;
   line-height: 1.7;
-  font-size: 1rem;
+  font-size: 1em;
   transition: transform 0.2s ease;
 }
 
@@ -16,7 +16,7 @@
 }
 
 .card-denuncia h4 {
-  font-size: 1rem;
+  font-size: 1.2em;
 }
 
 .card-denuncia ol {
@@ -27,12 +27,12 @@
 .card-denuncia ol li {
   margin-bottom: 10px;
   list-style-position: inside;
-  font-size: 0.9rem;
+  font-size: 1em;
   text-align: justify;
 }
 
 .card-denuncia p {
-  font-size: 0.9rem;
+  font-size: 1em;
 }
 
 
@@ -64,7 +64,7 @@
 .box-text h3 {
   line-height: 1.6;
   margin-bottom: 30px;
-  font-size: 1rem;
+  font-size: 1em;
 }
 
 .box-text p {
@@ -93,7 +93,7 @@
 }
 
 .card-pequeno h4 {
-  font-size: 1.1rem;
+  font-size: 1.2em;
 }
 
 .card-pequeno p {
@@ -127,7 +127,7 @@
   align-items: center;
   gap: 6px;
   padding: 3px 8px;
-  font-size: 0.8rem;
+  font-size: 0.9em;
   background-color: #8b0000;
   color: white;
   text-decoration: none;

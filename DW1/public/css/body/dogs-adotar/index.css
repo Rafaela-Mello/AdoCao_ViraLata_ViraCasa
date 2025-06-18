@@ -27,7 +27,7 @@
   display: inline-flex;
   align-items: center;
   padding: 8px 10px;
-  font-size: 0.8rem;
+  font-size: 0.9em;
   background-color: transparent;
   border: 1px solid #8b0000;
   color: #8b0000;
@@ -52,7 +52,7 @@
   text-align: center;
   max-width: 700px;
   margin: 0 auto 30px;
-  font-size: 1rem;
+  font-size: 1.1em;
   line-height: 1.6;
 }
 
@@ -64,7 +64,7 @@
   padding: 40px 20px;
   color: #8b000093;
   font-style: italic;
-  font-size: 1.1rem;
+  font-size: 1.2em;
   margin-bottom: 60px;
 }
 
@@ -152,7 +152,7 @@
   right: 15px;
   background: none;
   border: none;
-  font-size: 1.6rem;
+  font-size: 1.7em;
   cursor: pointer;
   color: #8b0000;
   font-weight: bold;
@@ -193,7 +193,7 @@
   margin-bottom: 6px;
   font-weight: bold;
   color: #8b0000;
-  font-size: 1rem;
+  font-size: 1.1em;
 }
 
 .modal-card input[type="text"],
@@ -203,7 +203,7 @@
   max-width: 100%;
   box-sizing: border-box; /* conta padding e borda no tamanho */
   padding: 8px;
-  font-size: 0.9rem;
+  font-size: 1em;
   border: 2px solid #d8cfae;
   border-radius: 8px;
   transition: border-color 0.3s ease;
@@ -396,7 +396,7 @@ body.modal-open {
   color: white;
   border: none;
   padding: 4px 8px;
-  font-size: 0.75rem;
+  font-size: 0.85em;
   border-radius: 8px;
   cursor: pointer;
   transition: background-color 0.3s ease;
@@ -612,7 +612,7 @@ body.modal-open {
   right: 10px;
   background: none;
   border: none;
-  font-size: 1.7rem;
+  font-size: 1.8em;
   cursor: pointer;
   color: #8b0000;
   font-weight: bold;
@@ -668,7 +668,7 @@ body.modal-open {
 
 .all-filters h4 {
   color: #8b0000;
-  font-size: 1.1rem;
+  font-size: 1.1em;
   margin: 0;
 }
 
@@ -681,7 +681,7 @@ body.modal-open {
 
 .filter label {
   color: #8b0000;
-  font-size: 0.9rem;
+  font-size: 1em;
 }
 
 
@@ -714,7 +714,7 @@ body.modal-open {
   border: 1px solid #8b0000;
   border-radius: 4px;
   font-weight: bold;
-  font-size: 0.75rem;
+  font-size: 0.85em;
   cursor: pointer;
   transition: background-color 0.3s, color 0.3s;
 }

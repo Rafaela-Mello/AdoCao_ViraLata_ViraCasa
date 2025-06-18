@@ -3,7 +3,7 @@
 
 
 .subtitulo-contato {
-  font-size: 1rem;
+  font-size: 1em;
   text-align: center;
   line-height: 1.4;
 }
@@ -31,7 +31,7 @@
 .email {
   color: #8b0000;
   font-weight: 500;
-  font-size: 1rem;
+  font-size: 1.1em;
   margin-bottom: 4px;
 }
 
@@ -76,14 +76,14 @@
 .form-contato label {
   font-weight: 600;
   color: #8b0000;
-  font-size: 1rem;
+  font-size: 1.1em;
 }
 
 .form-contato input,
 .form-contato textarea {
   width: 600px;
   padding: 8px 12px;
-  font-size: 0.86rem;
+  font-size: 1em;
   border-radius: 8px;
   border: 1px solid #ccc;
   box-sizing: border-box;
@@ -116,7 +116,7 @@
 
 #status-envio {
   margin-top: 14px;
-  font-size: 0.95rem;
+  font-size: 1em;
   color: green;
   min-height: 1.2em;
   text-align: center;

@@ -24,12 +24,12 @@
   margin-top: 10px;
   margin-bottom: 15px;
   color: #c54848;
-  font-size: 1.2rem;
+  font-size: 1.2em;
 }
 
 .card-ajuda p {
   line-height: 1.7;
-  font-size: 1rem;
+  font-size: 1em;
   text-align: justify;
 }
 
@@ -44,7 +44,7 @@
 
 .mensagem h5 {
   text-align: center;
-  font-size: 1rem;
+  font-size: 1em;
   color: #8b0000;
   border-radius: 20px;
   border: 2.5px dotted #c54848;

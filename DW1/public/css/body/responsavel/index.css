@@ -10,7 +10,7 @@
   color: #4a3f2a;
   font-family: 'Segoe UI', sans-serif;
   line-height: 1.7;
-  font-size: 1rem;
+  font-size: 1em;
   text-align: justify;
   transition: transform 0.2s ease;
 }
@@ -21,7 +21,7 @@
 
 .card-guarda-resp h4 {
   color: #c54848;
-  font-size: 1.2rem;
+  font-size: 1.3em;
   margin-top: 10px;
   text-align: center;
 }
@@ -57,7 +57,7 @@
 
 .card-citacao h3 {
   font-weight: normal;
-  font-size: 1.1rem;
+  font-size: 1.2em;
   line-height: 1.6;
   color: #000000;
   margin: 0;

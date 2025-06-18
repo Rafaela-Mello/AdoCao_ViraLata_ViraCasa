@@ -10,7 +10,7 @@
   font-family: 'Segoe UI', sans-serif;
   color: #4a3f2a;
   line-height: 1.7;
-  font-size: 1rem;
+  font-size: 1em;
   transition: transform 0.2s ease;
   text-align: left; /* ALINHAMENTO À ESQUERDA */
 }
@@ -95,7 +95,7 @@ section {
   margin-bottom: 0.6rem;
   list-style-position: inside;
   text-align: justify;
-  font-size: 0.9rem;
+  font-size: 0.9em;
 }
 
 .observacoes h4 {
