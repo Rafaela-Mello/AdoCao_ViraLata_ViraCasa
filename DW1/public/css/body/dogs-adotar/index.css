@@ -1,4 +1,6 @@
-/* Título + Botão na Intro */
+/* Página Peludos para Adoção */
+
+/* título + botão adicionar dog */
 .titulo {
   position: relative;
   display: flex;
@@ -22,7 +24,6 @@
   margin-right: 40px;
 }
 
-/* Botão "Adicionar Cachorro" */
 .bnt-adicionar-card-animal {
   display: inline-flex;
   align-items: center;
@@ -47,7 +48,7 @@
   cursor: pointer;
 }
 
-/* Mensagem Introdutória */
+/* mensagem introdutória */
 .intro {
   text-align: center;
   max-width: 700px;
@@ -56,9 +57,7 @@
   line-height: 1.6;
 }
 
-
-
-/* Mensagem caso não haja animais */
+/* mensagem caso não haja animais */
 .placeholder {
   text-align: center;
   padding: 40px 20px;
@@ -68,41 +67,10 @@
   margin-bottom: 60px;
 }
 
+/* ------------------------------------------------------- */
 
+/* modal do adicionar cachorro -> forms */
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-/* MODAL QUE ABRE P FORMS */
 .modal-overlay {
   position: fixed;
   top: 0;
@@ -110,13 +78,12 @@
   width: 100%;
   height: 100%;
   background-color: rgba(0,0,0,0.6);
-  display: none; /* começa escondido */
+  display: none;
   justify-content: center;
   align-items: center;
   z-index: 1000;
 }
 
-/* O card/modal centralizado */
 .modal-card {
   background-color: #fffef3;
   border-radius: 10px;
@@ -126,26 +93,26 @@
   width: 100%;
   box-shadow: 0 8px 24px rgba(0,0,0,0.2);
   position: relative;
-  overflow-y: auto; /* rolagem vertical caso conteúdo grande */
-  box-sizing: border-box; /* ESSENCIAL para padding não expandir tamanho total */
+  overflow-y: auto;
+  box-sizing: border-box;
 }
 
-/* MODIFICAR O SCROLL*/
+/* modificação do srollview */
 .modal-card::-webkit-scrollbar {
-  width: 10px; /* largura da barra */
+  width: 10px;
 }
 .modal-card::-webkit-scrollbar-track {
   border-radius: 10px;
 }
 .modal-card::-webkit-scrollbar-thumb {
-  background: #8b0000; /* cor da barra */
+  background: #8b0000;
   border-radius: 10px;
 }
 .modal-card::-webkit-scrollbar-thumb:hover {
-  background: #a52a2a; /* hover da barra */
+  background: #a52a2a;
 }
 
-/* Botão fechar no canto superior direito */
+/* botão fechar no canto superior direito */
 .modal-close {
   position: absolute;
   top: 10px;
@@ -163,17 +130,7 @@
   color: #d14242;
 }
 
-
-
-
-
-
-
-
-
-
-
-/* Título do formulário */
+/* título do forms */
 .modal-card h1 {
   margin-top: 10px;
   margin-bottom: 35px;
@@ -182,7 +139,6 @@
   user-select: none;
 }
 
-/* Form */
 .modal-card form > div {
   margin-bottom: 30px;
   display: flex;
@@ -201,7 +157,7 @@
 .modal-card textarea,
 .modal-card select {
   max-width: 100%;
-  box-sizing: border-box; /* conta padding e borda no tamanho */
+  box-sizing: border-box;
   padding: 8px;
   font-size: 1em;
   border: 2px solid #d8cfae;
@@ -217,7 +173,7 @@
   cursor: pointer;
 }
 
-/* Para navegadores baseados em WebKit (Chrome, Safari, Edge) */
+/* para navegadores baseados em WebKit (Chrome, Safari, Edge) */
 input[type="file"]::-webkit-file-upload-button {
   cursor: pointer;
 }
@@ -234,17 +190,7 @@ input[type="file"]::-webkit-file-upload-button {
   min-height: 150px;
 }
 
-
-
-
-
-
-
-
-
-
-
-/* Esconde o radio original */
+/* modificação do radio */
 .modal-card input[type="radio"] {
   appearance: none; /* remove estilo padrão */
   -webkit-appearance: none;
@@ -259,7 +205,6 @@ input[type="file"]::-webkit-file-upload-button {
   transition: border-color 0.3s ease, background-color 0.3s ease;
 }
 
-/* Quando estiver selecionado */
 .modal-card input[type="radio"]:checked {
   background-color: #8b0000;
   box-shadow: inset 0 0 0 2px #fff;
@@ -283,50 +228,26 @@ input[type="file"]::-webkit-file-upload-button {
 
 .container-radio-saude {
   justify-content: center;
-  gap: 80px; /* espaço entre os blocos */
-  flex-wrap: wrap; /* permite quebra em telas menores */
+  gap: 80px;
+  flex-wrap: wrap;
 }
 
-
-
-/* Não deixar a rolagem fora */
+/* não deixar a rolagem fora */
 body.modal-open {
   overflow: hidden;
-  height: 100vh; /* para garantir que não role nada */
+  height: 100vh;
 }
 
+/* ------------------------------------------------------- */
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-/* CARDS DOS CAES */
+/* cards dos cachorros */
 
 .card-container {
   width: 100%;
   display: flex;
-  flex-wrap: wrap; /* permite quebrar linha */
-  gap: 20px;        /* espaço entre os cards */
-  justify-content: center; /* centraliza os cards */
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: center;
   margin-top: 30px;
 }
 
@@ -344,8 +265,8 @@ body.modal-open {
   transition: transform 0.2s ease;
   overflow: hidden;
   display: flex;
-  flex-direction: column; /* organiza em coluna */
-  justify-content: space-between; /* empurra elementos para topo/baixo */
+  flex-direction: column;
+  justify-content: space-between;
   cursor: pointer;
 }
 
@@ -360,34 +281,34 @@ body.modal-open {
   margin: 0;
   margin-bottom: 8px;
   text-align: center;
-  width: calc(100% - 60px); /* evita sobreposição com o botão */
-  pointer-events: none; /* impede cliques no texto, se necessário */
+  width: calc(100% - 60px);
+  pointer-events: none;
   word-wrap: break-word;
   overflow-wrap: break-word;
-  max-width: 50%;                       /* limite de largura */
-  white-space: normal;                 /* permite quebra de linha */
+  max-width: 50%;
+  white-space: normal;
 }
 
 .card-animal p {
-  word-wrap: break-word;       /* quebra palavras longas */
-  overflow-wrap: break-word;   /* quebra palavras longas (fallback) */
-  max-width: 100%;             /* garante que não passe do container */
-  white-space: normal;         /* permite quebra de linha */
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+  max-width: 100%;
+  white-space: normal;
   text-align: start;
   margin: 0;
   margin-bottom: 8px;
 }
 
 .card-animal img {
-  width: 200px;                /* ocupa toda a largura do card (ou do container interno) */
-  height: 120px;              /* altura fixa para manter padrão */
+  width: 200px;
+  height: 120px;
   object-fit: cover;
   border-radius: 10px;
   box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-  margin-top: auto; /* empurra a imagem pro final */
+  margin-top: auto;
 }
 
-/* Botão excluir */
+/* botão excluir */
 .excluir-card-animal {
   position: absolute;
   top: 15px;
@@ -406,45 +327,9 @@ body.modal-open {
   background-color: #b30000;
 }
 
+/* ------------------------------------------------------- */
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-/* CARDS DETALHADAMENTE DOS CAES */
+/* cards detalhamento dos cachorros */
 
 .modal-overlay-details-dogs {
   position: fixed;
@@ -470,8 +355,8 @@ body.modal-open {
   box-shadow: 0 4px 16px rgba(0,0,0,0.2);
   display: flex;
   flex-direction: column;
-  justify-content: space-between;  /* espaça topo e final */
-  overflow-y: auto;       /* adiciona barra de rolagem vertical quando precisar */
+  justify-content: space-between;
+  overflow-y: auto;
 }
 
 .modal-card-details-dogs h1 {
@@ -481,24 +366,13 @@ body.modal-open {
   margin: 0;
   margin-bottom: 20px;
   text-align: center;
-  width: calc(100% - 60px); /* evita sobreposição com o botão */
-  pointer-events: none; /* impede cliques no texto, se necessário */
+  width: calc(100% - 60px);
+  pointer-events: none;
   word-wrap: break-word;
   overflow-wrap: break-word;
-  max-width: 50%;                       /* limite de largura */
-  white-space: normal;                 /* permite quebra de linha */
+  max-width: 50%;
+  white-space: normal;
 }
-
-
-
-
-
-
-
-
-
-
-
 
 .details-container {
   display: flex;
@@ -524,11 +398,11 @@ body.modal-open {
 }
 
 .container-info-history p {
-  word-wrap: break-word;       /* quebra palavras longas */
-  overflow-wrap: break-word;   /* quebra palavras longas (fallback) */
-  max-width: 400px;             /* garante que não passe do container */
-  white-space: normal;         /* permite quebra de linha */
-  overflow: hidden;         /* esconde o excesso */
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+  max-width: 400px;
+  white-space: normal;
+  overflow: hidden;
   text-align: start;
   margin: 0;
   margin-bottom: 8px;
@@ -539,18 +413,16 @@ body.modal-open {
   font-weight: bold;
 }
 
-
 .details-container-info {
   display: flex;
   flex-direction: row;
   gap: 40px;
 }
 
-
 .linha-separadora {
   width: 100%;
   border: none;
-  border-top: 1px solid #8b0000; /* ou outra cor que combine */
+  border-top: 1px solid #8b0000;
   margin-bottom: 15px;
 }
 
@@ -560,11 +432,6 @@ body.modal-open {
   justify-content: flex-start;
   flex-direction: row;
 }
-
-
-
-
-
 
 .formulario-adocao {
   display: flex;
@@ -601,11 +468,7 @@ body.modal-open {
   color: white;
 }
 
-
-
-
-
-/* Botão fechar no canto superior direito */
+/* botão fechar no canto superior direito */
 .modal-close-dogs {
   position: absolute;
   top: 10px;
@@ -623,28 +486,9 @@ body.modal-open {
   color: #d14242;
 }
 
+/* ------------------------------------------------------- */
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-/* FILTROS */
-
-
-
+/* filtros */
 
 .all-filters {
   display: flex;
@@ -684,8 +528,6 @@ body.modal-open {
   font-size: 1em;
 }
 
-
-
 .filter select {
   padding: 0px 8px;
   border: 1px solid #8b0000;
@@ -700,10 +542,6 @@ body.modal-open {
   outline: none;
   border-color: #8b0000;
 }
-
-
-
-
 
 .button-reset-filters {
   padding: 2px 6px;
@@ -723,10 +561,3 @@ body.modal-open {
   background-color: #8b0000;
   color: white;
 }
-
-
-
-
-
-
-

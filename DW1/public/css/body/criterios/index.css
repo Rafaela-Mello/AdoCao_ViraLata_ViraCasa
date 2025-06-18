@@ -12,7 +12,7 @@
   line-height: 1.7;
   font-size: 1em;
   transition: transform 0.2s ease;
-  text-align: left; /* ALINHAMENTO À ESQUERDA */
+  text-align: left;
 }
 
 .criterios-adocao:hover {
@@ -49,24 +49,6 @@
   text-decoration: underline;
 }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-/* Estilização geral das seções */
 section {
   border-radius: 12px;
   max-width: 800px;
@@ -75,11 +57,10 @@ section {
   font-family: 'Segoe UI', sans-serif;
 }
 
-/* Observações */
 .observacoes ul {
   list-style: disc;
-  margin: 0.5rem 0 0 0;  /* Remove margem lateral e superior */
-  padding-left: 1.2rem;  /* Alinha a lista com o texto */
+  margin: 0.5rem 0 0 0;
+  padding-left: 1.2rem;
   margin-bottom: 30px;
 }
 
@@ -95,7 +76,7 @@ section {
   margin-bottom: 0.6rem;
   list-style-position: inside;
   text-align: justify;
-  font-size: 0.9em;
+  font-size: 1em;
 }
 
 .observacoes h4 {
@@ -108,26 +89,16 @@ section {
   color: #8b0000; /* cor vermelha das bolinhas */
 }
 
-
-
-
-
-
-
-
-
 .mensagem-final h2 {
   text-align: center;
   margin: 50px;
   margin-bottom: 100px;
   font-family: 'Segoe UI', sans-serif;
-  padding-bottom: 20px; /* espaço entre o texto e a linha */
-  position: relative; /* necessário para o ::after funcionar corretamente */
+  padding-bottom: 20px;
+  position: relative;
   display: inline-block;
   color: #8b0000;
 }
-
-
 
 .mensagem-final h2::after {
   content: '';
@@ -135,7 +106,7 @@ section {
   left: 50%;
   bottom: 0;
   transform: translateX(-50%);
-  width: 850px;            /* largura da linha */
-  height: 1.5px;             /* espessura da linha */
-  background-color: #8b0000; /* cor da linha */
+  width: 850px;
+  height: 1.5px;
+  background-color: #8b0000;
 }

@@ -4,6 +4,10 @@ const modalClose = document.getElementById('modalClose');
 const form = document.getElementById('formAnimal');
 const main = document.getElementById('conteudoAnimais');
 
+const db = firebase.database();
+const animais = [];
+let usuarioAdmin = false;
+
 toggleBtn.addEventListener('click', () => {
   modal.style.display = 'flex'; // mostra o modal
   document.body.classList.add('modal-open'); // bloqueia scroll body
@@ -15,7 +19,7 @@ modalClose.addEventListener('click', () => {
   form.reset(); // limpa todos os campos do formulário, incluindo os radios
 });
 
-// Fecha modal se clicar fora do card
+// fecha modal se clicar fora do card
 modal.addEventListener('click', (e) => {
   if (e.target === modal) {
     modal.style.display = 'none';
@@ -26,43 +30,16 @@ modal.addEventListener('click', (e) => {
 
 
 
-
-const animais = [];
-
-let usuarioAdmin = false;
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-const db = firebase.database();
-
-
+// ---------------------------------------------------------------------------------------------------
+// PEGAR VALORES DO SUBMIT
 
 form.addEventListener('submit', function (e) {
   e.preventDefault();
 
-  // Captura os valores aqui dentro, no momento do submit:
   const nome = document.getElementById('nome').value;
-
   const idadeSelect = document.getElementById('idadeCadastro');
   const idadeTexto = idadeSelect.selectedOptions[0].text; // acessa o texto visível da opção selecionada
   const idadeValor = idadeSelect.value; // o valor para comparar no filtro
-
   const sexo = form.querySelector('input[name="sexo"]:checked')?.value || '';
   const porte = document.getElementById('tipo-porte').value;
   const raca = document.getElementById('raca').value;
@@ -74,8 +51,6 @@ form.addEventListener('submit', function (e) {
   const estadoSaude = document.getElementById('estadoSaude').value;
   const historia = document.getElementById('historia').value;
   const imagem = document.getElementById('imagem').files[0];
-
-
 
   const animal = {
     nome,
@@ -91,9 +66,8 @@ form.addEventListener('submit', function (e) {
     castrado: castrado === 'sim' ? 'Sim' : 'Não',
     estadoSaude,
     historia,
-    imagem: '',  // Por enquanto vazio, vamos tratar imagem depois
+    imagem: '',
   };
-
 
   const storageRef = firebase.storage().ref();
 
@@ -104,7 +78,7 @@ form.addEventListener('submit', function (e) {
       .then(downloadURL => {
         animal.imagem = downloadURL;
 
-        // Salva no Firestore com o URL da imagem
+        // salva no Firestore com o URL da imagem
         const novoAnimalRef = db.ref('animais').push();
         return novoAnimalRef.set(animal).then(() => {
           animal.id = novoAnimalRef.key; // salva o id gerado no objeto local
@@ -122,7 +96,7 @@ form.addEventListener('submit', function (e) {
         console.error('Erro ao salvar animal com imagem:', error);
       });
   } else {
-    // Sem imagem, salva direto
+    // sem imagem, salva direto
       const novoAnimalRef = db.ref('animais').push();
       novoAnimalRef.set(animal).then(() => {
         animal.id = novoAnimalRef.key;
@@ -141,17 +115,11 @@ form.addEventListener('submit', function (e) {
 
 
 
+// ---------------------------------------------------------------------------------------------------
+// CARREGAR DADOS DO JSON PRIMEIRO E DEPOIS DO FIREBASE
 
-
-
-
-
-
-
-
-
+// carregar primeiro dados do JSON
 document.addEventListener('DOMContentLoaded', () => {
-  // 1. Carrega dados do JSON e coloca no array animais
   fetch('dogs.json')
     .then(response => response.json())
     .then(data => {
@@ -164,24 +132,22 @@ document.addEventListener('DOMContentLoaded', () => {
         });
       });
       renderizarCards(animais); // renderiza os cards do JSON
-      // 2. Depois carrega dados do Firebase e adiciona ao array
-      carregarAnimaisDoFirebase();
+      carregarAnimaisDoFirebase(); // depois carrega dados do Firebase e adiciona ao array
     })
     .catch(error => {
       console.error('Erro ao carregar o JSON:', error);
-      // mesmo que JSON falhe, tenta carregar do Firebase
       carregarAnimaisDoFirebase();
     });
 });
 
-// Função separada para carregar do Firebase e juntar ao array
+// função separada para carregar do Firebase e juntar ao array
 function carregarAnimaisDoFirebase() {
   db.ref('animais').once('value')
     .then(snapshot => {
       snapshot.forEach(childSnapshot => {
         const animalData = childSnapshot.val();
         animalData.id = childSnapshot.key;
-        // Evita duplicar se o mesmo id já existir (caso haja dados iguais)
+        // evita duplicar se o mesmo id já existir (caso haja dados iguais)
         if (!animais.some(a => a.id === animalData.id)) {
           animais.push(animalData);
         }
@@ -195,19 +161,8 @@ function carregarAnimaisDoFirebase() {
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
+// ---------------------------------------------------------------------------------------------------
+// RENDERIZAR CARDS
 
 function renderizarCards(animaisFiltrados) {
   main.innerHTML = ''; // limpa os cards
@@ -281,29 +236,25 @@ function renderizarCards(animaisFiltrados) {
 
 
 
+// ---------------------------------------------------------------------------------------------------
+// DETALHAMENTO DOS CARDS DOS CACHORROS
 
+const modalDetalhes = document.getElementById('modalDetalhes');
+const closeDetalhes = document.getElementById('closeDetalhes');
 
-
-
-
-
-  // CARD DETALHES DE CADA CACHORRO
-  const modalDetalhes = document.getElementById('modalDetalhes');
-  const closeDetalhes = document.getElementById('closeDetalhes');
-
-  const detalheNome = document.getElementById('detalheNome');
-  const detalheIdade = document.getElementById('detalheIdade');
-  const detalheSexo = document.getElementById('detalheSexo');
-  const detalhePorte = document.getElementById('detalhePorte');
-  const detalheRaca = document.getElementById('detalheRaca');
-  const detalheCor = document.getElementById('detalheCor');
-  const detalheTemperamento = document.getElementById('detalheTemperamento');
-  const detalheVacinado = document.getElementById('detalheVacinado');
-  const detalheVermifugado = document.getElementById('detalheVermifugado');
-  const detalheCastrado = document.getElementById('detalheCastrado');
-  const detalheSaude = document.getElementById('detalheEstadoSaude');
-  const detalheHistoria = document.getElementById('detalheHistoria');
-  const detalheImagem = document.getElementById('detalheImagem');
+const detalheNome = document.getElementById('detalheNome');
+const detalheIdade = document.getElementById('detalheIdade');
+const detalheSexo = document.getElementById('detalheSexo');
+const detalhePorte = document.getElementById('detalhePorte');
+const detalheRaca = document.getElementById('detalheRaca');
+const detalheCor = document.getElementById('detalheCor');
+const detalheTemperamento = document.getElementById('detalheTemperamento');
+const detalheVacinado = document.getElementById('detalheVacinado');
+const detalheVermifugado = document.getElementById('detalheVermifugado');
+const detalheCastrado = document.getElementById('detalheCastrado');
+const detalheSaude = document.getElementById('detalheEstadoSaude');
+const detalheHistoria = document.getElementById('detalheHistoria');
+const detalheImagem = document.getElementById('detalheImagem');
 
 function exibirDetalhes(animal) {
   detalheNome.textContent = animal.nome;
@@ -339,18 +290,9 @@ modalDetalhes.addEventListener('click', (e) => {
 
 
 
-
-
-
-
-
-
-
-
-
-
-
+// ---------------------------------------------------------------------------------------------------
 // FILTROS PARA ACHAR O CACHORRO
+
 const selectSexo = document.getElementById('sexo');
 const selectIdade = document.getElementById('idadeFiltro');
 const selectPorte = document.getElementById('tamanho');
@@ -383,25 +325,8 @@ document.querySelector('.button-reset-filters').addEventListener('click', () => 
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+// ---------------------------------------------------------------------------------------------------
+// AUTH DO ADMIN
 
 // mostra o botao de adicionar animal de tiver o email = admin@admin.com
 const auth = firebase.auth();
@@ -427,47 +352,29 @@ document.addEventListener("DOMContentLoaded", () => {
 
 
 
+// ---------------------------------------------------------------------------------------------------
+// VERIFICAR SE ESTA LOGADO PARA ACESSAR O LINK DE ADOÇÃO
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-// Aguarda o Firebase estar inicializado e usa onAuthStateChanged
 let userLogado = false; // flag para saber se usuário está logado
 
-  firebase.auth().onAuthStateChanged(function(user) {
-    if (user) {
-      userLogado = true;
-      document.getElementById('aviso-login').style.display = 'none';
-    } else {
-      userLogado = false;
-      document.getElementById('aviso-login').style.display = 'block';
-    }
-  });
+firebase.auth().onAuthStateChanged(function(user) {
+  if (user) {
+    userLogado = true;
+    document.getElementById('aviso-login').style.display = 'none';
+  } else {
+    userLogado = false;
+    document.getElementById('aviso-login').style.display = 'block';
+  }
+});
 
-  document.getElementById('link-adocao').addEventListener('click', function(event) {
-    event.preventDefault(); // impede o comportamento padrão do link
-    
-    if (userLogado) {
-      // Se logado, abre o formulário do Google Forms em nova aba
-      window.open('https://forms.gle/yxBGPHt9bemZxmpn8', '_blank');
-    } else {
-      // Se não logado, redireciona para a página de login
-      window.location.href = '../html/sign-in/login/index.html';
-    }
-  });
+document.getElementById('link-adocao').addEventListener('click', function(event) {
+  event.preventDefault(); // impede o comportamento padrão do link
+  
+  if (userLogado) {
+    // Se logado, abre o formulário do Google Forms em nova aba
+    window.open('https://forms.gle/yxBGPHt9bemZxmpn8', '_blank');
+  } else {
+    // Se não logado, redireciona para a página de login
+    window.location.href = '../html/sign-in/login/index.html';
+  }
+});

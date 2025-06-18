@@ -1,4 +1,4 @@
-/* Guarda Responsável - Estrutura de texto */
+/* Página Guia do Responsavel */
 
 .card-guarda-resp {
   max-width: 900px;
@@ -35,11 +35,7 @@
   margin-bottom: 10px;
 }
 
-
-
-
-
-/* Citação */
+/* citação */
 .card-citacao {
   max-width: 800px;
   margin: 30px auto;
@@ -70,4 +66,3 @@
   font-weight: bold;
   color: #8b0000;
 }
-

@@ -1,3 +1,13 @@
+/* Body de todas as Páginas */
+
+
+body {
+  font-family: 'Segoe UI', sans-serif;
+  font-size: 14px;
+  margin: 0;
+  padding: 0;
+}
+
 main {
   display: flex;
   flex-direction: column;
@@ -40,26 +50,6 @@ main p {
   line-height: 1.6;
 }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 /* para voltar para cima */
 #scrollTopBtn {
   position: fixed;
@@ -83,38 +73,9 @@ main p {
   background-color: #a52a2a;
 }
 
+/* ------------------------------------------------------- */
 
-
-
-
-
-
-
-
-
-
-
-
-/* Imagem Gerais das Páginas */
-.all-imgs-navs {
-  border-radius: 8px;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-  margin-top: 20px;
-}
-
-
-
-
-
-
-
-
-
-
-
-
-
-/* Critérios para Adotar*/
+/* critérios para Adotar*/
 .criterios-adocao {
   text-align: left; /* ALINHAMENTO À ESQUERDA */
 }

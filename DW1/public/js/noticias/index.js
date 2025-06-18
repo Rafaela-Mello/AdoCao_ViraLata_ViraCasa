@@ -1,17 +1,15 @@
-
+const toggleBtn = document.getElementById('toggleForm');
+const modal = document.getElementById('modal');
+const modalClose = document.getElementById('modalClose');
+const form = document.getElementById('formNoticia');
+const main = document.getElementById('conteudoNoticias');
+const placeholder = document.getElementById('placeholderNoticias');
 
 const auth = firebase.auth();
 const db = firebase.database();
 
-
 let noticias = []; // array que vai juntar JSON + Firebase
 let usuarioAdmin = false;
-
-
-
-const toggleBtn = document.getElementById('toggleForm');
-const modal = document.getElementById('modal');
-const modalClose = document.getElementById('modalClose');
 
 toggleBtn.addEventListener('click', () => {
   modal.style.display = 'flex';  // mostra o modal
@@ -23,7 +21,7 @@ modalClose.addEventListener('click', () => {
   document.body.classList.remove('modal-open'); // libera scroll body
 });
 
-// Fecha modal se clicar fora do card
+// fecha modal se clicar fora do card
 modal.addEventListener('click', (e) => {
   if (e.target === modal) {
     modal.style.display = 'none';
@@ -31,11 +29,10 @@ modal.addEventListener('click', (e) => {
   }
 });
 
-const form = document.getElementById('formNoticia');
 
 
-
-
+// ---------------------------------------------------------------------------------------------------
+// PEGAR VALORES DO SUBMIT
 
 const noticiasRef = db.ref('noticias');
 
@@ -57,14 +54,9 @@ form.addEventListener('submit', async function (e) {
 
 
 
+// ---------------------------------------------------------------------------------------------------
+// RENDERIZAÇÃO DOS CARDS DAS NOTICIAS
 
-
-
-
-const main = document.getElementById('conteudoNoticias');
-const placeholder = document.getElementById('placeholderNoticias');
-
-// Função para renderizar notícias na tela
 function renderizarCards(noticiasArray) {
   main.innerHTML = ''; // limpa
   if (noticiasArray.length === 0) {
@@ -100,7 +92,7 @@ function renderizarCards(noticiasArray) {
 
         const index = noticias.findIndex(n => n.id === noticia.id);
         if (index !== -1) {
-          // Remove no Firebase
+          // remove no Firebase
           db.ref('noticias/' + noticias[index].id).remove()
             .then(() => {
               noticias.splice(index, 1); // remove do array local
@@ -114,7 +106,6 @@ function renderizarCards(noticiasArray) {
 
       div.appendChild(btnExcluir);
     }
-
 
     div.appendChild(h2);
     div.appendChild(pData);
@@ -134,8 +125,27 @@ function renderizarCards(noticiasArray) {
 
 
 
+// ---------------------------------------------------------------------------------------------------
+// CARREGAR DADOS DO JSON PRIMEIRO E DEPOIS DO FIREBASE
 
-// Função para carregar notícias do Firebase
+// carregar primeiro dados do JSON
+document.addEventListener('DOMContentLoaded', () => {
+  fetch('noticias.json')
+    .then(response => response.json())
+    .then(data => {
+      console.log('Notícias do JSON:', data);
+
+      noticias = data; // já é array, atribui direto
+      renderizarCards(noticias);
+      carregarNoticiasDoFirebase();
+    })
+    .catch(error => {
+      console.error('Erro ao carregar JSON:', error);
+      carregarNoticiasDoFirebase();
+    });
+});
+
+// função separada para carregar do Firebase e juntar ao array
 function carregarNoticiasDoFirebase() {
   noticiasRef.once('value')
     .then(snapshot => {
@@ -155,34 +165,11 @@ function carregarNoticiasDoFirebase() {
 }
 
 
-// Ao carregar o DOM, buscar notícias do JSON e depois do Firebase
-document.addEventListener('DOMContentLoaded', () => {
-  fetch('noticias.json')
-    .then(response => response.json())
-    .then(data => {
-      console.log('Notícias do JSON:', data);
 
-      noticias = data; // já é array, atribui direto
-      renderizarCards(noticias);
-      carregarNoticiasDoFirebase();
-    })
-    .catch(error => {
-      console.error('Erro ao carregar JSON:', error);
-      carregarNoticiasDoFirebase();
-    });
-});
+// ---------------------------------------------------------------------------------------------------
+// AUTH DO ADMIN
 
-
-
-
-
-
-
-
-
-// mostra o botao de adicionar noticia de tiver o email = admin@admin.com
-
-
+// mostra o botao de adicionar animal de tiver o email = admin@admin.com
 document.addEventListener("DOMContentLoaded", () => {
   const botaoAdicionar = document.getElementById("toggleForm");
 
@@ -201,5 +188,3 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   });
 });
-
-

@@ -1,14 +1,10 @@
-
-
-
+/* Página Fale Conosco */
 
 .subtitulo-contato {
   font-size: 1em;
   text-align: center;
   line-height: 1.4;
 }
-
-
 
 .socials {
   display: flex;
@@ -27,7 +23,6 @@
   filter: brightness(0.8);
 }
 
-
 .email {
   color: #8b0000;
   font-weight: 500;
@@ -39,15 +34,6 @@
   color: #a52a2a;
   cursor: pointer;
 }
-
-
-
-
-
-
-
-
-
 
 .container {
   background-color: #fff8e6;
@@ -61,8 +47,6 @@
 .container:hover {
   transform: scale(1.01);
 }
-
-
 
 .form-contato {
   width: 100%;

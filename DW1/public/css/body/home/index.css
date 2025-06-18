@@ -1,18 +1,18 @@
+/* Página Home */
+
 /* classe base para todas as seções */
 .section {
     min-height: 100vh;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    box-sizing: border-box; /* faz o total do box ter tudo: padding, margin */
+    box-sizing: border-box;
 }
 
+/* ------------------------------------------------------- */
 
+/* section 1 */
 
-
-
-
-/* layout para cada seção */
 .main-title {
   margin: 0;
   margin-top: 40px;
@@ -22,32 +22,22 @@
 .title-img {
   display: flex;
   flex-direction: column;
-  max-width: 60%; /* para não ocupar a tela toda e deixar espaço pra imagem */
-
+  max-width: 60%;
 }
 
 .conteudo {
   display: flex;
   flex-direction: row;
-  justify-content: flex-end; /* empurra conteúdo para perto da imagem */
+  justify-content: flex-end;
 }
 
-
-
-
-
-
-
-
-
-/* Container que envolve texto e imagem lado a lado */
 .layout-1 {
   position: relative;
   width: 100%;
   display: flex;
   flex-direction: row;
-  align-items: flex-start; /* alinhado ao topo */
-  justify-content: space-between; /* espaço entre texto e imagem */
+  align-items: flex-start;
+  justify-content: space-between;
 }
 
 .layout-1 ol {
@@ -59,18 +49,16 @@
   color: black;
 }
 
-/* Box do texto, alinhado para a esquerda */
 .layout-1-box-text {
   padding: 25px;
   margin-bottom: 40px;
 }
 
-/* Box da imagem, um pouco avançando sobre o texto */
 .layout-1-box-img {
   display: flex;
   flex-direction: column;
   align-items: center;
-  margin-left: 30px; /* espaçamento entre texto e imagem */
+  margin-left: 30px;
 }
 
 .saiba-mais-layout-1 {
@@ -93,23 +81,9 @@
   color: white;
 }
 
+/* ------------------------------------------------------- */
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+/* section 2 */
 
 .layout-2 {
     position: relative;
@@ -122,17 +96,17 @@
     color: white;
     background-image: url('../../../images/home/cachorros-wallpaper.png');
     background-size: cover;
-    background-position: left center; /* mostra a metade esquerda da imagem */
+    background-position: left center;
     background-repeat: no-repeat;
-    background-attachment: fixed; /* fixa a imagem no fundo */
+    background-attachment: fixed;
 }
 
 .layout-2 h1 {
   color: #fff;
   margin-bottom: 40px;
-  position: relative; /* necessário para o ::after funcionar corretamente */
+  position: relative;
   display: inline-block;
-  padding-bottom: 10px; /* espaço entre o texto e a linha */
+  padding-bottom: 10px;
 }
 
 .layout-2 h1::after {
@@ -141,7 +115,7 @@
   left: 50%;
   bottom: 0;
   transform: translateX(-50%);
-  width: 150px; /* comprimento da linha, você pode ajustar */
+  width: 150px;
   height: 1px;
   background-color: #fff;
 }
@@ -155,14 +129,14 @@
     width: 100%;
     height: 100%;
     background: rgba(0, 0, 0, 0.6);
-    z-index: 1; /* ADICIONE ISSO */
+    z-index: 1;
 }
 
-/* Conteúdo dentro da seção fica acima do overlay */
+/* conteúdo dentro da seção fica acima do overlay */
 .section.layout-2 > div {
   position: relative;
   z-index: 2;
-  max-width: 500px; /* opcional, para controlar largura do texto */
+  max-width: 500px;
 }
 
 .saiba-mais-layout-2 {
@@ -184,16 +158,9 @@
     background-color: #a52a2a;
 }
 
+/* ------------------------------------------------------- */
 
-
-
-
-
-
-
-
-
-
+/* section 3 */
 
 .layout-3 {
   width: 100%;
@@ -230,14 +197,14 @@
   height: 400px;
   background-color: transparent;
   padding: 20px;
-  border: 2px solid #8b0000; /* define a borda */
+  border: 2px solid #8b0000;
   border-radius: 30px;
   transition: background-color 0.3s ease, border-color 0.3s ease;
 }
 
 .layout-3-divs:hover {
-  background-color: #edd27817; /* cor leve no fundo ao passar o mouse */
-  border-color: #edd278a2; /* muda a cor da borda no hover */
+  background-color: #edd27817;
+  border-color: #edd278a2;
 }
 
 /* h1 dentro da div quando o mouse passa */
@@ -249,11 +216,11 @@
 .layout-3-img {
   object-fit: cover;
   border-radius: 50%;
-  border: 4px solid #8b0000; /* define a borda */
+  border: 4px solid #8b0000;
 }
 
 .layout-3-divs:hover .layout-3-img {
-  border-color: #edd278a2; /* nova cor da borda da imagem no hover da div */
+  border-color: #edd278a2;
   transition: border-color 0.3s ease;
 }
 
@@ -275,46 +242,3 @@
 .saiba-mais-layout-3:hover {
   background-color: #a52a2a;
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-.box-img {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
-
-.section img {
-    max-width: 100%;
-    height: auto;
-}
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

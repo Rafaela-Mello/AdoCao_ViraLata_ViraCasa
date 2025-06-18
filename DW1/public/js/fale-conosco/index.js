@@ -11,7 +11,6 @@ const firebaseConfig = {
   appId: "1:954083893298:web:b74b976e3dbd6746cf9c2b"
 };
 
-// Initialize Firebase
 const app = initializeApp(firebaseConfig);
 const database = getDatabase(app);
 const auth = getAuth(app);
@@ -52,8 +51,6 @@ if (form) {
     });
   });
 }
-
-
 
 function showStatus(msg, color) {
   status.textContent = msg;

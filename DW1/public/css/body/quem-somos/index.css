@@ -1,5 +1,6 @@
+/* Página Quem Somos */
 
-/* Card Citação */
+/* card citação */
 .card-citacao {
   max-width: 800px;
   margin: 30px auto;
@@ -31,31 +32,9 @@
   color: #8b0000;
 }
 
+/* ------------------------------------------------------- */
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-/* Card Sobre o Projeto */
+/* card sobre o projeto */
 .card-sobre-projeto {
   max-width: 900px;
   margin: 10px auto;
@@ -82,10 +61,7 @@
   color: #8b0000;
 }
 
-
-
-
-/* Card Sobre a História do Projeto */
+/* card sobre a história do projeto */
 .card-origem-projeto {
   max-width: 900px;
   margin: 10px auto;
@@ -108,12 +84,9 @@
 
 }
 
-
 .card-origem-projeto strong {
   color: #8b0000;
 }
-
-
 
 .galeria-fotos-projeto {
   display: flex;

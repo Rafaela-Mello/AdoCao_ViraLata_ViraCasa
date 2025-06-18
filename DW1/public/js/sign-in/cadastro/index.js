@@ -1,9 +1,5 @@
-// Import the functions you need from the SDKs you need
 import { initializeApp } from "https://www.gstatic.com/firebasejs/11.9.0/firebase-app.js";
-// TODO: Add SDKs for Firebase products that you want to use
-// https://firebase.google.com/docs/web/setup#available-libraries
 
-// Your web app's Firebase configuration
 const firebaseConfig = {
   apiKey: "AIzaSyD2OxHi-B-HQ3pr7whuQdAUVJZf37k_d-c",
   authDomain: "viralata-viracasa-11b4d.firebaseapp.com",
@@ -13,12 +9,7 @@ const firebaseConfig = {
   appId: "1:954083893298:web:b74b976e3dbd6746cf9c2b"
 };
 
-// Initialize Firebase
 const app = initializeApp(firebaseConfig);
-
-
-
-
 
 const createUserButton = document.getElementById('createUserButton');
 const emailInput = document.getElementById('emailInput');

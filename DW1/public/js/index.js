@@ -1,4 +1,4 @@
-// voltar para o topo
+// scrollview de voltar para o topo
 const scrollTopBtn = document.getElementById("scrollTopBtn");
 
   window.onscroll = function () {
@@ -15,18 +15,9 @@ const scrollTopBtn = document.getElementById("scrollTopBtn");
 
 
 
+// ---------------------------------------------------------------------------------------------------
 
-
-
-
-
-
-
-
-
-
-
-// Função para ativar animação quando a seção entrar na viewport
+// função para ativar animação quando a seção entrar na viewport
 const sections = document.querySelectorAll('.section');
 
 const observer = new IntersectionObserver((entries) => {
@@ -45,12 +36,7 @@ sections.forEach(section => observer.observe(section));
 
 
 
-
-
-
-
-
-
+// ---------------------------------------------------------------------------------------------------
 
 // trocar imagens patas link - home
 const links = document.querySelectorAll('.saiba-mais-layout-1');
@@ -68,11 +54,9 @@ links.forEach(link => {
 
 
 
+// ---------------------------------------------------------------------------------------------------
 
-
-
-
-// Verificação de Auth (menssagem + sair)
+// verificação de auth (menssagem + sair)
 document.addEventListener("DOMContentLoaded", () => {
 
   firebase
@@ -111,41 +95,24 @@ document.addEventListener("DOMContentLoaded", () => {
 
 
 
+// ---------------------------------------------------------------------------------------------------
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-// Acessibilidade
+// acessibilidade
 const btn = document.getElementById("acessibilidadeBtn");
 const menu = document.getElementById("acessibilidadeMenu");
 
-// Alterna o menu ao clicar no botão
+// alterna o menu ao clicar no botão
 btn.addEventListener("click", (event) => {
   event.stopPropagation();
   menu.classList.toggle("oculto");
 });
 
-// Abre o menu ao passar o mouse no botão principal
+// abre o menu ao passar o mouse no botão principal
 btn.addEventListener("mouseenter", () => {
   menu.classList.remove("oculto");
 });
 
-// Fecha o menu ao tirar o mouse do menu e do botão
+// fecha o menu ao tirar o mouse do menu e do botão
 const fecharSeMouseFora = (event) => {
   const isMouseInside = menu.contains(event.relatedTarget) || btn.contains(event.relatedTarget);
   if (!isMouseInside) {
@@ -153,13 +120,10 @@ const fecharSeMouseFora = (event) => {
   }
 };
 
-// Fecha o menu ao tirar o mouse do botão
-btn.addEventListener("mouseleave", fecharSeMouseFora);
+btn.addEventListener("mouseleave", fecharSeMouseFora); // fecha o menu ao tirar o mouse do botão
+menu.addEventListener("mouseleave", fecharSeMouseFora); // Fecha o menu ao tirar o mouse do menu
 
-// Fecha o menu ao tirar o mouse do menu
-menu.addEventListener("mouseleave", fecharSeMouseFora);
-
-// Fecha o menu ao clicar fora
+// fecha o menu ao clicar fora
 document.addEventListener("click", (event) => {
   const isClickInside = menu.contains(event.target) || btn.contains(event.target);
   if (!isClickInside) {
@@ -167,23 +131,22 @@ document.addEventListener("click", (event) => {
   }
 });
 
-
+// altera a fonte
 function alterarFonte(tamanho) {
   document.body.style.fontSize = tamanho + "px";
   localStorage.setItem("tamanhoFonte", tamanho); // salva a preferência
 }
-window.alterarFonte = alterarFonte; // Torna a função global
+window.alterarFonte = alterarFonte; // torna a função global
 
+// coloca em negrito
 function alternarNegrito() {
   document.body.classList.toggle("texto-negrito");
   const isNegrito = document.body.classList.contains("texto-negrito");
   localStorage.setItem("negritoAtivado", isNegrito); // salva true ou false
 }
-window.alternarNegrito = alternarNegrito; // Torna a função global
+window.alternarNegrito = alternarNegrito; // torna a função global
 
-
-
-// Aplica as configurações salvas
+// aplica as configurações salvas
 const tamanhoSalvo = localStorage.getItem("tamanhoFonte");
 if (tamanhoSalvo) {
   document.body.style.fontSize = tamanhoSalvo + "px";

@@ -1,4 +1,6 @@
-/* Título + Botão na Intro */
+/* Página Notícias */
+
+/* título + botão de adicionar noticias */
 .titulo-noticias {
   position: relative;
   display: flex;
@@ -21,7 +23,7 @@
   transform: translateY(-50%);
 }
 
-/* Botão "Adicionar Notícia" */
+/* botão "Adicionar Notícia" */
 .bnt-adicionar-noticia {
   display: inline-flex;
   align-items: center;
@@ -46,7 +48,7 @@
   user-select: none;
 }
 
-/* Mensagem Introdutória */
+/* mensagem introdutória */
 .intro-noticias {
   text-align: center;
   max-width: 700px;
@@ -55,8 +57,7 @@
   line-height: 1.6;
 }
 
-
-/* Mensagem caso não haja notícias */
+/* mensagem caso não haja notícias */
 .placeholder-noticias {
   text-align: center;
   padding: 40px 20px;
@@ -67,22 +68,10 @@
 }
 
 
+/* ------------------------------------------------------- */
 
+/* modal para adicionar noticia -> forms */
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-/* MODAL QUE ABRE P FORMS */
 .modal-overlay {
   position: fixed;
   top: 0;
@@ -90,13 +79,12 @@
   width: 100%;
   height: 100%;
   background-color: rgba(0,0,0,0.6);
-  display: none; /* começa escondido */
+  display: none;
   justify-content: center;
   align-items: center;
   z-index: 1000;
 }
 
-/* O card/modal centralizado */
 .modal-card {
   background-color: #fffef3;
   border-radius: 10px;
@@ -106,26 +94,26 @@
   width: 100%;
   box-shadow: 0 8px 24px rgba(0,0,0,0.2);
   position: relative;
-  overflow-y: auto; /* rolagem vertical caso conteúdo grande */
-  box-sizing: border-box; /* ESSENCIAL para padding não expandir tamanho total */
+  overflow-y: auto;
+  box-sizing: border-box;
 }
 
-/* MODIFICAR O SCROLL*/
+/* modificação do srollview */
 .modal-card::-webkit-scrollbar {
-  width: 10px; /* largura da barra */
+  width: 10px;
 }
 .modal-card::-webkit-scrollbar-track {
   border-radius: 10px;
 }
 .modal-card::-webkit-scrollbar-thumb {
-  background: #8b0000; /* cor da barra */
+  background: #8b0000;
   border-radius: 10px;
 }
 .modal-card::-webkit-scrollbar-thumb:hover {
-  background: #a52a2a; /* hover da barra */
+  background: #a52a2a;
 }
 
-/* Botão fechar no canto superior direito */
+/* botão fechar no canto superior direito */
 .modal-close {
   position: absolute;
   top: 10px;
@@ -143,9 +131,7 @@
   color: #d14242;
 }
 
-
-
-/* Título do formulário */
+/* título do formulário */
 .modal-card h1 {
   margin-top: 10px;
   margin-bottom: 35px;
@@ -155,7 +141,6 @@
   
 }
 
-/* Form */
 .modal-card form > div {
   margin-bottom: 20px;
   display: flex;
@@ -174,7 +159,7 @@
 .modal-card input[type="file"],
 .modal-card textarea {
   max-width: 100%;
-  box-sizing: border-box; /* conta padding e borda no tamanho */
+  box-sizing: border-box;
   padding: 8px;
   font-size: 1em;
   border: 2px solid #d8cfae;
@@ -197,34 +182,16 @@
   box-shadow: 0 0 6px rgba(139, 0, 0, 0.4);
 }
 
-
-
-/* Não deixar a rolagem fora */
+/* não deixar a rolagem fora */
 body.modal-open {
   overflow: hidden;
-  height: 100vh; /* para garantir que não role nada */
+  height: 100vh;
 }
 
+/* ------------------------------------------------------- */
 
+/* cards das notícias */
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-/* CARDS DAS NOTICIAS */
 .noticia {
   width: 800px;
   font-family: 'Segoe UI', sans-serif;
@@ -244,19 +211,19 @@ body.modal-open {
 }
 
 .noticia h2 {
-  margin: 20px auto 10px auto;           /* centraliza horizontalmente */
+  margin: 20px auto 10px auto;
   word-wrap: break-word;
   overflow-wrap: break-word;
-  max-width: 90%;                       /* limite de largura */
-  white-space: normal;                 /* permite quebra de linha */
-  text-align: center;                  /* centraliza o texto */
+  max-width: 90%;
+  white-space: normal;
+  text-align: center;
 }
 
 .noticia p {
   margin-bottom: 35px;
-  word-wrap: break-word;       /* quebra palavras longas */
-  overflow-wrap: break-word;   /* quebra palavras longas (fallback) */
-  max-width: 100%;             /* garante que não passe do container */
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+  max-width: 100%;
   white-space: pre-line;
 }
 
@@ -268,7 +235,7 @@ body.modal-open {
   box-shadow: 0 4px 8px rgba(0,0,0,0.1);
 }
 
-/* Botão excluir */
+/* botão excluir */
 .excluir-noticia {
   position: absolute;
   top: 15px;
@@ -286,31 +253,3 @@ body.modal-open {
 .excluir-noticia:hover {
   background-color: #b30000;
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

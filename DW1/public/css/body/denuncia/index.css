@@ -1,3 +1,5 @@
+/* Página Denuncie */
+
 .card-denuncia {
   max-width: 900px;
   margin: 40px auto;
@@ -35,10 +37,6 @@
   font-size: 1em;
 }
 
-
-
-
-
 .box {
   max-width: 1000px;
   display: flex;
@@ -47,13 +45,12 @@
   flex-direction: column;
 }
 
-
 .box-text {
   display: flex;
   text-align: center;
   flex-direction: column;
-  align-items: center; /* Centraliza o conteúdo interno */
-  max-width: 800px;     /* Limita a largura para melhor leitura */
+  align-items: center;
+  max-width: 800px;
 }
 
 .box-text h1 {
@@ -71,10 +68,6 @@
   line-height: 1.6;
 }
 
-
-
-
-
 .cards-container {
   display: flex;
   flex-wrap: wrap;
@@ -82,7 +75,6 @@
   justify-content: center;
   padding: 20px 0;
 }
-
 
 .card-pequeno {
   width: 100%;
@@ -110,18 +102,6 @@
   color: #8b0000;
 }
 
-
-
-
-
-
-
-
-
-
-
-
-
 .saiba-mais {
   display: inline-flex;
   align-items: center;
@@ -143,21 +123,3 @@
   background-color: transparent;
   color: #8b0000;
 }
-
-
-
-
-
-
-
-
-/*
-.denuncie-img {
-  display: block;
-  margin: 40px auto;
-  max-width: 100%;
-  height: auto;
-  border-radius: 20px;
-  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
-}
-*/
