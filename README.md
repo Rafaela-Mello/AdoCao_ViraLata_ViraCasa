@@ -19,11 +19,10 @@ O sistema permite:
 - Apoiar o trabalho da ONG na promoção da adoção responsável.
 
 ## Tecnologias Utilizadas
-- HTML, CSS, JavaScript
-
-- Interação Humano Computador (IHC)
-
+- Desenvolvimento Web: HTML, CSS, JavaScript, FireBase
 - Banco de Dados: MySQL
+- Interação Humano Computador (IHC): Draw.io, Figma
+
 
 ## Status do Projeto
 Em desenvolvimento...
@@ -34,4 +33,4 @@ Em desenvolvimento...
 - Rafaela Laryssa Mello Neto - CP303061X
 - Sophia Ferreira Boonen - CP3031756
 
-link URL: https://viralata-viracasa-11b4d.web.app/
+Link URL: https://viralata-viracasa-11b4d.web.app/
