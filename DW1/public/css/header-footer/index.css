@@ -304,3 +304,134 @@ body.texto-negrito h6 {
   color: #5c0000;
   margin-top: 18px;
 }
+
+
+
+
+
+
+/* ------------------------------------------------------- */
+
+
+
+
+
+/* PARA SMARTPHONES */
+
+@media screen and (max-width: 768px) {
+  .header {
+    flex-direction: column; /* empilha os elementos */
+    align-items: center;
+    text-align: center;
+    padding: 30px 15px;
+    position: relative; /* para corrigir o contexto do position da logo */
+  }
+
+  .logo-central {
+    position: static; /* remove o posicionamento absoluto */
+    transform: none; /* cancela o translateX */
+    margin-bottom: 20px;
+    width: 100px; /* reduz a largura da logo */
+    height: auto; /* altura proporcional */
+  }
+
+  .right-group {
+    margin-left: 0;
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+  }
+
+  .sign-out {
+    flex-direction: column;
+    gap: 6px;
+    align-items: center;
+  }
+
+  .sign-out a,
+  .sign-in-button {
+    width: 100%;
+    max-width: 200px;
+    text-align: center;
+    padding: 10px 0;
+    font-size: 1em;
+  }
+
+  .message {
+    font-size: 1em;
+    text-align: center;
+  }
+
+  .nav {
+    flex-direction: column;
+    gap: 15px;
+    padding: 15px 10px;
+  }
+
+  .nav a {
+    display: block;
+    width: 100%;
+    text-align: center;
+    padding: 12px 0;
+    font-size: 1em;
+  }
+
+  .acessibilidade-wrapper {
+    top: auto;
+    bottom: 400px;
+    right: 10px;
+    z-index: 99999;
+  }
+
+  #acessibilidadeBtn {
+    font-size: 14px;
+    padding: 10px 12px;
+  }
+
+  .menu {
+    min-width: 140px;
+    left: auto;
+    right: 10px;
+    bottom: 300px; /* ajusta para aparecer acima do botão */
+    position: fixed;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+  }
+
+  .menu button,
+  .dropdown-btn,
+  .dropdown-content button {
+    font-size: 14px;
+    padding: 14px 20px;
+  }
+
+  .dropdown-content {
+    right: 180px;
+    top: 0;
+    min-width: 140px;
+  }
+
+  .dropdown-content::before {
+    right: 180px;
+  }
+
+  .footer {
+    padding: 20px 10px;
+    text-align: center;
+  }
+
+  .footer-container {
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  .info-line {
+    font-size: 0.9em;
+    padding: 0 10px;
+    word-break: break-word; /* Quebra linha em palavras longas */
+  }
+
+  .footer-copy {
+    font-size: 0.8em;
+    margin-top: 12px;
+  }
+}

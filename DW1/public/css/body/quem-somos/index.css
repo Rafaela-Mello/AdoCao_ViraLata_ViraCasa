@@ -106,3 +106,65 @@ main p {
   border-radius: 10px;
   box-shadow: 0 4px 8px rgba(0,0,0,0.1);
 }
+
+
+
+/* ------------------------------------------------------- */
+
+
+
+/* PARA SMARTPHONES */
+
+@media screen and (max-width: 768px) {
+  .card-citacao {
+    max-width: 100%;
+    margin: 20px 15px;
+    padding: 15px 10px;
+    border-left-width: 4px;
+  }
+
+  .card-citacao h3 {
+    font-size: 1em;
+    line-height: 1.4;
+  }
+
+  .card-citacao span {
+    font-size: 0.9em;
+  }
+
+  .card-sobre-projeto,
+  .card-origem-projeto {
+    max-width: 100%;
+    margin: 15px 15px 40px 15px;
+    padding: 20px 15px;
+    font-size: 1em;
+    line-height: 1.5;
+  }
+
+  main h2 {
+    font-size: 1.1em;
+    padding: 0 10px;
+  }
+
+  main h5 {
+    font-size: 1em;
+    margin-top: 15px;
+    padding: 0 10px;
+  }
+
+  main p {
+    text-indent: 1.2em;
+  }
+
+  .galeria-fotos-projeto {
+    gap: 10px;
+    justify-content: center;
+  }
+
+  .galeria-fotos-projeto img {
+    width: 45vw; /* 45% da largura da viewport */
+    height: auto;
+    max-height: 150px;
+    border-radius: 8px;
+  }
+}

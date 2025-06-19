@@ -70,3 +70,57 @@ main p {
   font-weight: bold;
   color: #8b0000;
 }
+
+
+
+/* ------------------------------------------------------- */
+
+
+
+/* PARA SMARTPHONES */
+
+@media screen and (max-width: 768px) {
+  .card-guarda-resp {
+    max-width: 100%;
+    margin: 20px 10px;
+    padding: 20px 15px;
+    font-size: 0.95em;
+    line-height: 1.5;
+  }
+
+  .card-guarda-resp h4 {
+    font-size: 1.1em;
+    margin-top: 8px;
+    text-align: center;
+  }
+
+  .card-guarda-resp ul {
+    padding-left: 20px;
+    margin-top: 8px;
+  }
+
+  .card-guarda-resp li {
+    margin-bottom: 8px;
+  }
+
+  main p {
+    text-indent: 1em;
+  }
+
+  .card-citacao {
+    max-width: 100%;
+    margin: 20px 10px;
+    padding: 12px 12px;
+    font-size: 1em;
+  }
+
+  .card-citacao h3 {
+    font-size: 1.1em;
+    line-height: 1.4;
+  }
+
+  .card-citacao span {
+    font-size: 0.9em;
+    margin-top: 3px;
+  }
+}

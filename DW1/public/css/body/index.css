@@ -111,3 +111,71 @@ main p {
   transform: scale(1.1);
   filter: brightness(0.8);
 }
+
+
+
+/* ------------------------------------------------------- */
+
+
+
+/* PARA SMARTPHONES */
+
+@media screen and (max-width: 768px) {
+  main {
+    padding: 15px;
+  }
+
+  main h1 {
+    font-size: 1.6em;
+    margin-top: 25px;
+  }
+
+  main h2 {
+    font-size: 1.3em;
+    margin-bottom: 20px;
+  }
+
+  main h3 {
+    font-size: 1.1em;
+    margin-top: 15px;
+    margin-bottom: 20px;
+  }
+
+  main h4 {
+    font-size: 1em;
+    margin-bottom: 20px;
+  }
+
+  main p {
+    max-width: 100%;
+    font-size: 1em;
+    margin: 8px 0;
+  }
+
+  .criterios-adocao ol > li {
+    margin-bottom: 14px;
+    padding-left: 8px;
+  }
+
+  .criterios-adocao ul {
+    padding-left: 20px;
+    margin-top: 8px;
+  }
+
+  .socials {
+    gap: 14px;
+  }
+
+  .socials img {
+    width: 24px;
+    height: 24px;
+  }
+
+  #scrollTopBtn {
+    width: 36px;
+    height: 36px;
+    font-size: 20px;
+    bottom: 15px;
+    right: 15px;
+  }
+}

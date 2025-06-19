@@ -88,3 +88,38 @@ body {
 .login-link a:hover {
     text-decoration: underline;
 }
+
+
+
+/* ------------------------------------------------------- */
+
+
+
+/* PARA SMARTPHONES */
+
+@media screen and (max-width: 768px) {
+  body {
+    padding: 20px;
+  }
+
+  .container {
+    flex-direction: column;
+    gap: 30px;
+    padding: 0 10px;
+  }
+
+  .cadastro-container {
+    width: 100%;
+    max-width: 400px;
+    padding: 20px 20px 30px 20px;
+  }
+
+  .cadastro-container input,
+  .cadastro-container button {
+    font-size: 1em;
+  }
+
+  .login-link {
+    font-size: 16px;
+  }
+}

@@ -59,6 +59,8 @@
   flex-direction: column;
   align-items: center;
   margin-left: 30px;
+  flex: 1 1 35%; /* Cresce, encolhe e largura base 35% */
+
 }
 
 .saiba-mais-layout-1 {
@@ -249,4 +251,99 @@
 
 .saiba-mais-layout-3:hover {
   background-color: #a52a2a;
+}
+
+
+
+/* ------------------------------------------------------- */
+
+
+
+/* PARA SMARTPHONES */
+
+@media screen and (max-width: 768px) {
+  .section {
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    min-height: auto;
+    padding: 20px 10px;
+  }
+
+  /* section 1 */
+  .title-img {
+    max-width: 100%;
+    margin-bottom: 20px;
+  }
+
+  .conteudo {
+    flex-direction: column;
+    justify-content: center;
+  }
+
+  .layout-1 {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .layout-1-box-img {
+    margin-left: 0;
+    margin-top: 20px;
+  }
+
+  .layout-1-box-text {
+    padding: 15px;
+    margin-bottom: 30px;
+  }
+
+  .layout-1 ol {
+    font-size: 0.95em;
+  }
+
+  /* section 2 */
+  .section.layout-2 > div {
+    max-width: 100%;
+    padding: 0 10px;
+  }
+
+  .layout-2 h1 {
+    font-size: 1.8em;
+    margin-bottom: 30px;
+  }
+
+  .container-link-layout-2 {
+    gap: 8px;
+    margin-bottom: 30px;
+  }
+
+  .saiba-mais-layout-2 {
+    padding: 8px 14px;
+    font-size: 0.9em;
+  }
+
+  /* section 3 */
+  .layout-3-div {
+    flex-direction: column;
+    margin: 20px 0;
+    gap: 30px;
+  }
+
+  .layout-3-divs {
+    width: 90%;
+    height: auto;
+  }
+
+  .layout-3-div h4 {
+    font-size: 1.1em;
+  }
+
+  .layout-3-img {
+    width: 120px;
+    height: 120px;
+  }
+
+  .saiba-mais-layout-3 {
+    padding: 8px 14px;
+    font-size: 0.9em;
+  }
 }

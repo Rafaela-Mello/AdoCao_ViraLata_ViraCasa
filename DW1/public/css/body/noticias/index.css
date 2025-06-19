@@ -253,3 +253,80 @@ body.modal-open {
 .excluir-noticia:hover {
   background-color: #b30000;
 }
+
+
+
+/* ------------------------------------------------------- */
+
+
+
+/* PARA SMARTPHONES */
+
+@media screen and (max-width: 768px) {
+  /* Título e botão centralizados, botão abaixo do título */
+  .titulo-noticias {
+    flex-direction: column;
+    padding: 20px 10px 10px;
+    position: relative;
+  }
+
+  .titulo-noticias h1 {
+    flex: none;
+    text-align: center;
+    margin-bottom: 10px;
+  }
+
+  .bnt-adicionar-noticia {
+    position: static;
+    transform: none;
+    margin-left: 0;
+    margin-top: 0;
+    align-self: center;
+  }
+
+  /* Mensagens com largura máxima menor */
+  .intro-noticias,
+  .placeholder-noticias {
+    max-width: 90%;
+    font-size: 0.95em;
+    padding: 0 10px;
+  }
+
+  /* Modal */
+  .modal-card {
+    max-width: 95%;
+    max-height: 80vh;
+    padding: 20px;
+  }
+
+  /* Notícias - cards */
+  .noticia {
+    width: 100%;
+    padding: 15px;
+  }
+
+  .noticia h2 {
+    font-size: 1.3em;
+    max-width: 100%;
+  }
+
+  .noticia p {
+    font-size: 0.95em;
+    margin-bottom: 25px;
+  }
+
+  .noticia img {
+    max-width: 100%;
+    height: auto;
+    margin: 0 auto 15px;
+    display: block;
+  }
+
+  /* Botão excluir menor */
+  .excluir-noticia {
+    padding: 5px 10px;
+    font-size: 0.9em;
+    top: 10px;
+    right: 10px;
+  }
+}

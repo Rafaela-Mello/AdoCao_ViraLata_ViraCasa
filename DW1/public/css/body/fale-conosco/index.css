@@ -90,3 +90,56 @@
   opacity: 1;
   transition: opacity 0.3s ease;
 }
+
+
+
+/* ------------------------------------------------------- */
+
+
+
+/* PARA SMARTPHONES */
+
+@media screen and (max-width: 768px) {
+  .container {
+    margin: 20px 10px;
+    padding: 20px 15px;
+  }
+
+  .form-contato input,
+  .form-contato textarea {
+    width: 100%;
+    max-width: 100%;
+    padding: 10px;
+    font-size: 1em;
+  }
+
+  .form-contato label {
+    font-size: 1em;
+  }
+
+  .form-contato {
+    gap: 12px;
+    margin-top: 20px;
+    padding: 0 5px;
+  }
+
+  .subtitulo-contato {
+    font-size: 0.95em;
+    padding: 0 10px;
+  }
+
+  .email {
+    font-size: 1em;
+  }
+
+  #status-envio {
+    font-size: 0.95em;
+    padding: 0 10px;
+  }
+
+  .form-contato button {
+    width: 100%;
+    padding: 12px 0;
+    font-size: 1.1em;
+  }
+}

@@ -55,3 +55,51 @@
   text-transform: uppercase;
   margin-bottom: 50px;
 }
+
+
+
+/* ------------------------------------------------------- */
+
+
+
+/* PARA SMARTPHONES */
+
+@media screen and (max-width: 768px) {
+  .como-ajudar-container {
+    max-width: 100%;
+    padding: 0 15px;
+    box-sizing: border-box;
+  }
+
+  .como-ajudar-container h1 {
+    font-size: 1.5em;
+    margin-bottom: 20px;
+  }
+
+  .card-ajuda {
+    padding: 20px 15px;
+    margin-bottom: 25px;
+  }
+
+  .card-ajuda h4 {
+    font-size: 1.1em;
+    margin-top: 8px;
+    margin-bottom: 12px;
+  }
+
+  .card-ajuda p {
+    font-size: 0.95em;
+    line-height: 1.5;
+  }
+
+  .card-ajuda ul li {
+    font-size: 0.95em;
+    margin-bottom: 5px;
+  }
+
+  .mensagem h5 {
+    font-size: 0.9em;
+    padding: 15px 10px;
+    margin-bottom: 35px;
+  }
+}

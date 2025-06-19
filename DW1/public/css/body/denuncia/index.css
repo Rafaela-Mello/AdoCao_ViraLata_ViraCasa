@@ -116,3 +116,72 @@
   background-color: transparent;
   color: #8b0000;
 }
+
+
+
+/* ------------------------------------------------------- */
+
+
+
+/* PARA SMARTPHONES */
+
+@media screen and (max-width: 768px) {
+  .container {
+    margin: 20px 10px;
+  }
+
+  .card-denuncia {
+    width: 100%;
+    padding: 15px;
+    font-size: 0.95em;
+  }
+
+  .card-denuncia h4 {
+    font-size: 1em;
+  }
+
+  .card-denuncia ol {
+    margin-left: 5px;
+    padding: 0 10px;
+  }
+
+  .card-denuncia ol li {
+    font-size: 0.95em;
+    margin-bottom: 8px;
+  }
+
+  .card-denuncia p {
+    font-size: 0.95em;
+  }
+
+  .box-text {
+    padding: 0 10px;
+  }
+
+  .cards-container {
+    gap: 20px;
+    padding: 15px 0;
+    flex-direction: column;
+  }
+
+  .card-pequeno {
+    max-width: 100%;
+    margin: 10px 0;
+    padding: 15px;
+  }
+
+  .card-pequeno h4 {
+    font-size: 1em;
+  }
+
+  .card-pequeno p {
+    font-size: 0.95em;
+  }
+
+  .saiba-mais {
+    font-size: 0.85em;
+    margin-left: 0;
+    margin-top: 10px;
+    padding: 6px 10px;
+  }
+}

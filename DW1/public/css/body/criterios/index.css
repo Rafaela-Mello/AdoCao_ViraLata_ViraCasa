@@ -110,3 +110,62 @@ section {
   height: 1.5px;
   background-color: #8b0000;
 }
+
+
+
+/* ------------------------------------------------------- */
+
+
+
+/* PARA SMARTPHONES */
+
+@media screen and (max-width: 768px) {
+  .criterios-adocao {
+    max-width: 100%;
+    margin: 20px 10px;
+    padding: 20px 15px;
+    font-size: 0.95em;
+    line-height: 1.5;
+  }
+
+  .criterios-adocao ol {
+    margin-left: 15px;
+    padding-left: 10px;
+  }
+
+  .criterios-adocao ol li {
+    margin-bottom: 15px;
+  }
+
+  .criterios-adocao ul {
+    margin-left: 15px;
+  }
+
+  .criterios-adocao ul ul {
+    margin-left: 15px;
+  }
+
+  section {
+    max-width: 100%;
+    padding: 1rem;
+  }
+
+  .observacoes ul {
+    padding-left: 1rem;
+    margin-bottom: 20px;
+  }
+
+  .observacoes ul li {
+    font-size: 0.95em;
+    margin-bottom: 0.5rem;
+  }
+
+  .mensagem-final h2 {
+    margin: 30px 10px 50px;
+    font-size: 1.5em;
+  }
+
+  .mensagem-final h2::after {
+    width: 90%;
+  }
+}

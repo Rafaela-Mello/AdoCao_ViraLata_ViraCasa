@@ -529,3 +529,44 @@ body.modal-open {
   background-color: #8b0000;
   color: white;
 }
+
+
+
+/* ------------------------------------------------------- */
+
+
+
+/* PARA SMARTPHONES */
+
+@media screen and (max-width: 768px) {
+  .all-filters {
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+    padding: 15px 10px;
+  }
+
+  .filter {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 4px;
+    width: 100%;
+    max-width: 300px;
+  }
+
+  .filter label {
+    font-size: 1em;
+  }
+
+  .filter select {
+    width: 100%;
+    font-size: 1em;
+    padding: 6px 8px;
+  }
+
+  .button-reset-filters {
+    width: auto;
+    padding: 6px 12px;
+    font-size: 1em;
+  }
+}

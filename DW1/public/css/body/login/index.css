@@ -125,3 +125,41 @@ body {
 .login-container .register-link a:hover {
     text-decoration: underline;
 }
+
+
+
+/* ------------------------------------------------------- */
+
+
+
+/* PARA SMARTPHONES */
+
+@media screen and (max-width: 768px) {
+  body {
+    padding: 20px;
+  }
+
+  .container {
+    flex-direction: column;
+    gap: 30px;
+    padding: 0 10px;
+  }
+
+  .login-container {
+    width: 100%;
+    max-width: 400px;
+    padding: 20px 20px 30px 20px;
+    box-sizing: border-box;
+  }
+
+  .login-container input[type="email"],
+  .login-container input[type="password"],
+  .buttonEmail,
+  .buttonGoogle {
+    font-size: 1em;
+  }
+
+  .login-container .register-link {
+    font-size: 16px;
+  }
+}
