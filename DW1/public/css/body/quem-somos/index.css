@@ -49,12 +49,22 @@
   text-align: justify;
 }
 
-.card-sobre-projeto h5 {
+main h2 {
+  text-align: center;
+  color: #8b0000;
+  text-transform: uppercase;
+  font-size: 1.3em;
+}
+
+main h5 {
   text-align: center;
   font-size: 1.10em;
   margin-top: 20px;
   color: #8b0000;
-  text-transform: uppercase;
+}
+
+main p {
+  text-indent: 1.5em;
 }
 
 .card-sobre-projeto strong {
@@ -75,13 +85,6 @@
   line-height: 1.7;
   font-size: 1.1em;
   text-align: justify;
-}
-
-.card-origem-projeto h2 {
-  text-align: center;
-  font-size: 1.4em;
-  text-transform: uppercase;
-
 }
 
 .card-origem-projeto strong {

@@ -12,9 +12,11 @@ const firebaseConfig = {
 const app = initializeApp(firebaseConfig);
 
 const authEmailPassButton = document.getElementById('authEmailPassButton');
+const authGoogleButton = document.getElementById('authGoogleButton');
 const emailInput = document.getElementById('emailInput');
 const passwordInput = document.getElementById('passwordInput');
 
+// Autenticar com E-mail e Senha
 if (authEmailPassButton) {
   authEmailPassButton.addEventListener('click', () => {
     firebase.auth()
@@ -28,3 +30,19 @@ if (authEmailPassButton) {
       });
   });
 }
+
+// Autenticar com Google
+authGoogleButton.addEventListener('click', function () {
+    // Providers
+    var provider = new firebase.auth.GoogleAuthProvider();
+    firebase
+     .auth()
+     .signInWithPopup(provider)
+     .then(function (result) {
+            alert('Autenticado ' + emailInput.value);
+            window.location.href = "../../../index.html";
+        }).catch(function (error) {
+            console.log(error);
+            alert('Falha na autenticação');
+        });
+});

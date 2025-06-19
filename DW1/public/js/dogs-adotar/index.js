@@ -299,13 +299,15 @@ const selectPorte = document.getElementById('tamanho');
 
 function filtrarAnimais() {
   const sexo = selectSexo.value;
-  const idade = selectIdade.value;
+  const idadeValor = selectIdade.value; // o valor para comparar no filtro
+  const idadeTexto = selectIdade.selectedOptions[0].text; // acessa o texto visível da opção selecionada
+
   const porte = selectPorte.value;
 
   const resultado = animais.filter(animal => {
     const condSexo = sexo === 'todos' || animal.sexo.toLowerCase() === (sexo === 'macho' ? 'macho' : 'fêmea');
     const condPorte = porte === 'todos' || animal.porte.toLowerCase() === porte;
-    const condIdade = idade === 'todos' || animal.idadeValor === idade;
+    const condIdade = idadeValor === 'todos' || animal.idadeValor === idadeValor || animal.idadeTexto === idadeTexto;
     return condSexo && condPorte && condIdade;
   });
 

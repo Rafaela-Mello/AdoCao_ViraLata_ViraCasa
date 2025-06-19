@@ -15,24 +15,43 @@
   </head>
 
   <body>
-    <main class="login-container">
-      <h1>Entrar</h1>
+    <main>
 
-      <form id="loginForm">
-        <label for="emailInput">Email:</label>
-        <input type="email" id="emailInput" placeholder="Digite seu email" required />
+      <div class="container">
+        <img src="../../../images/logo.png" alt="Logo" width="180" height="180">
 
-        <label for="passwordInput">Senha:</label>
-        <input type="password" id="passwordInput" placeholder="Digite sua senha" required />
-      </form>
+        <div class="login-container">
+          <h1>Login</h1>
 
-      <div div class="d-grid gap-2 mx-auto">
-        <button id="authEmailPassButton">Entrar</button>
+          <form id="loginForm">
+            <label for="emailInput">E-mail:</label>
+            <input type="email" id="emailInput" placeholder="Digite seu e-mail" required />
+
+            <label for="passwordInput">Senha:</label>
+            <input type="password" id="passwordInput" placeholder="Digite sua senha" required />
+          </form>
+
+          <div style="display: flex; flex-direction: column; gap: 20px; margin-top: 20px; margin-bottom: 40px;">
+            <div>
+              <button id="authEmailPassButton" class="buttonEmail">Entre</button>
+            </div>
+
+            <div class="divider">ou</div>
+
+            <div>
+              <button id="authGoogleButton" class="buttonGoogle">
+                <img src="../../../images/sociais/google.png" alt="Logo Google" width="15" height="15">
+                Google
+              </button>
+            </div>
+          </div>
+
+          <div class="register-link">
+            Ainda não tem conta? <a href="../cadastro/index.html">Cadastre-se</a>
+          </div>
+        </div>
       </div>
 
-      <div class="register-link">
-        Ainda não tem conta? <a href="../cadastro/index.html">Cadastre-se</a>
-      </div>
     </main>
 
     <script type="module" src="../../../js/sign-in/login/index.js"></script>

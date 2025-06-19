@@ -1,9 +1,12 @@
 /* Página Denuncie */
 
-.card-denuncia {
-  max-width: 900px;
+.container {
   margin: 40px auto;
-  padding: 30px;
+}
+
+.card-denuncia {
+  width: 950px;
+  padding: 20px;
   background-color: #fff8e6;
   border-radius: 20px;
   box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
@@ -18,17 +21,17 @@
 }
 
 .card-denuncia h4 {
-  font-size: 1.2em;
+  font-size: 1.1em;
 }
 
 .card-denuncia ol {
-  margin-left: 20px;
-  padding-left: 15px;
+  margin-left: 10px;
+  padding: 0 15px;
 }
 
 .card-denuncia ol li {
   margin-bottom: 10px;
-  list-style-position: inside;
+  list-style-position: outside;
   font-size: 1em;
   text-align: justify;
 }
@@ -38,7 +41,6 @@
 }
 
 .box {
-  max-width: 1000px;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -47,26 +49,17 @@
 
 .box-text {
   display: flex;
-  text-align: center;
-  flex-direction: column;
   align-items: center;
-  max-width: 800px;
-}
-
-.box-text h1 {
-  margin-bottom: 10px;
+  flex-direction: column;
+  text-align: justify;
+  text-indent: 1.5em;
   line-height: 1.6;
 }
 
-.box-text h3 {
-  line-height: 1.6;
-  margin-bottom: 30px;
-  font-size: 1em;
+.box-text strong {
+  color: #8b0000;
 }
 
-.box-text p {
-  line-height: 1.6;
-}
 
 .cards-container {
   display: flex;
@@ -80,12 +73,12 @@
   width: 100%;
   max-width: 420px;
   margin: 10px;
-  padding: 30px;
+  padding: 20px;
   flex: 1 1 300px;
 }
 
 .card-pequeno h4 {
-  font-size: 1.2em;
+  font-size: 1.1em;
 }
 
 .card-pequeno p {

@@ -1,29 +1,6 @@
 /* Página Peludos para Adoção */
 
-/* título + botão adicionar dog */
-.titulo {
-  position: relative;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  max-width: 100%;
-  padding: 30px 20px 10px;
-}
-
-.titulo h1 {
-  flex: 1;
-  text-align: center;
-  margin: 0;
-}
-
-.titulo .bnt-adicionar-card-animal {
-  position: absolute;
-  right: 20px;
-  top: 50%;
-  transform: translateY(-50%);
-  margin-right: 40px;
-}
-
+/* botão adicionar cachorro */
 .bnt-adicionar-card-animal {
   display: inline-flex;
   align-items: center;
@@ -36,8 +13,6 @@
   border-radius: 4px;
   font-weight: bold;
   transition: background-color 0.3s, color 0.3s;
-  margin-left: 10px;
-  margin-top: 6px;
   user-select: none;
 }
 
@@ -493,20 +468,13 @@ body.modal-open {
 .all-filters {
   display: flex;
   justify-content: center;
-  width: 95%;
+  width: 100%;
   margin-bottom: 30px;
-  margin-top: 15px;
-}
-
-.container-filters {
   display: flex;
   flex-direction: row;
-  justify-content: center;
   gap: 35px;
-  padding: 10px;
-  width: 80%;
-  border: 1px solid #8b0000;
-  border-radius: 8px;
+  padding: 20px;
+  background-color: #FDFAD9;
   font-family: 'Segoe UI', sans-serif;
 }
 

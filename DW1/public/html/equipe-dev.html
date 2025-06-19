@@ -6,7 +6,7 @@
         <title>ViraLata ViraCasa</title>
         <link rel="stylesheet" href="../css/header-footer/index.css" />
         <link rel="stylesheet" href="../css/body/index.css" />
-        <link rel="stylesheet" href="../css/body/fale-conosco/index.css" />
+        <link rel="stylesheet" href="../css/body/equipe-dev/index.css" />
 
         <!-- núcleo do Firebase (inicialização da app) -->
         <script defer src="/__/firebase/9.8.1/firebase-app-compat.js"></script>
@@ -45,15 +45,10 @@
 
             <!-- Navegações -->
             <nav class="nav">
-                <a href="../index.html">Home</a>
-                <a href="../html/quem-somos.html">Quem Somos</a>
-                <a href="../html/como-ajudar.html">Como Ajudar</a>
-                <a href="../html/dogs-adotar.html">Peludos para Adoção</a>
-                <a href="../html/responsavel.html">Guia do Responsável</a>
-                <a href="../html/criterios.html">Critérios de Adoção</a>
-                <a href="../html/denuncia.html">Denuncie</a>
-                <a href="../html/noticias.html">Notícias</a>
-                <a href="../html/fale-conosco.html">Fale Conosco</a>
+                <a href="../index.html" style="display: flex; justify-content: center; gap: 10px;">
+                    <img src="../images/equipe-dev/goback.png" alt="Go back to Home" width="20" height="20">
+                    Volte para o Home
+                </a>
             </nav>
         </header>
 
@@ -79,42 +74,44 @@
             </div>
         </div>
         
-        <!-- Como Ajudar -->
+        <!-- Equipe de Desenvolvedores -->
         <main>
-            <h1>Fale Conosco</h1>
-            <p class="subtitulo-contato">
-                Tem dúvidas, sugestões ou reclamações? Preencha o formulário ou fale conosco diretamente.
+            <h1>Equipe de Desenvolvedores</h1>
+            <h3>Conheça as pessoas por trás deste projeto!</h3>
+
+            <p>
+                Somos um time apaixonado por tecnologia, inovação e, acima de tudo, pelo bem-estar animal.
+                Esta plataforma foi criada com o objetivo de conectar pessoas e transformar vidas — tanto dos
+                animais quanto dos humanos que os acolhem.
+
+                <br/><br/>
+
+                Somos estudantes do Instituto Federal de São Paulo (IFSP), cursando Análise e Desenvolvimento de Sistemas (ADS).
+                Cada linha de código foi escrita com dedicação, carinho e o desejo de fazer a diferença.
+                Aqui você pode conhecer os desenvolvedores que tornaram este projeto possível.
             </p>
 
-            <a href="mailto:viralataviracasa@gmail.com" target="_blank" class="email">
-                viralataviracasa@gmail.com
-            </a>
-
-            <!-- Redes Sociais -->
-            <div class="socials">
-                <a href="https://www.facebook.com/viralataviracasa" target="_blank">
-                    <img src="../images/sociais/facebook.png" alt="Facebook" />
-                </a>
-                <a href="https://www.instagram.com/viralataviracasa/" target="_blank">
-                    <img src="../images/sociais/instagram.png" alt="Instagram" />
-                </a>
-            </div>
-
-            <!-- Formulário de contato -->
+            <!-- Card Equipe -->
             <div class="container">
-                <form class="form-contato" id="contato-form">
-                    <label for="nome">Nome</label>
-                    <input type="text" id="nome" name="nome" placeholder="Nome completo" required />
+                <div class="dev">
+                    <h4>Ashmide JN Baptiste</h4>
+                    <img src="../images/equipe-dev/ashmide.png" alt="Ashmide JN Baptiste" width="110" height="110"/>
+                </div>
 
-                    <label for="email">E-mail</label>
-                    <input type="email" id="email" name="email" placeholder="E-mail" required />
+                <div class="dev">
+                    <h4>Melissa Batista</h4>
+                    <img src="../images/equipe-dev/melissa.png" alt="Melissa Batista" width="110" height="110"/>
+                </div>
 
-                    <label for="mensagem">Mensagem</label>
-                    <textarea id="mensagem" name="mensagem" rows="5" placeholder="Digite sua mensagem aqui..." required></textarea>
+                <div class="dev">
+                    <h4>Rafaela Mello</h4>
+                    <img src="../images/equipe-dev/rafaela.png" alt="Rafaela Mello" width="110" height="110"/>
+                </div>
 
-                    <button type="submit">Enviar Mensagem</button>
-                </form>
-                <p id="status-envio"></p>
+                <div class="dev">
+                    <h4>Sophia Boonen</h4>
+                    <img src="../images/equipe-dev/sophia.png" alt="Sophia Boonen" width="110" height="110"/>
+                </div>
             </div>
 
         </main>
@@ -133,6 +130,5 @@
 <!-- ---------------------------------------------------------------------------------------------------- -->
 
         <script src="../js/index.js"></script>
-        <script type="module" src="../js/fale-conosco/index.js"></script>
     </body>
 </html>

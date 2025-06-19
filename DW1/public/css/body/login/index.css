@@ -6,17 +6,28 @@ body {
     align-items: center;
     min-height: 100vh;
     margin: 0;
-    background-color: #f8f8f8;
     font-family: Arial, sans-serif;
+    background-color: #efdb97;
+    background-image: url('../../../images/fundo-capa.png');
+    background-repeat: repeat;
+    background-size: contain;
+    user-select: none;
+}
+
+.container {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    gap: 80px;
 }
 
 .login-container {
     background-color: #fff;
-    padding: 30px 40px;
+    padding: 10px 40px 30px 40px; /* cima, direita, baixo, esquerda */
     border-radius: 12px;
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-    width: 100%;
-    max-width: 400px;
+    width: 400px;
 }
 
 .login-container h1 {
@@ -27,9 +38,10 @@ body {
 
 .login-container label {
     display: block;
-    margin-bottom: 5px;
+    margin-bottom: 6px;
+    margin-left: 2px;
     font-weight: bold;
-    color: #333;
+    color: #8b0000;
 }
 
 .login-container input[type="email"],
@@ -40,11 +52,13 @@ body {
     border: 1px solid #ccc;
     border-radius: 8px;
     font-size: 14px;
+    box-sizing: border-box;
 }
 
-.login-container button {
+.buttonEmail {
+    font-size: 0.9em;
     width: 100%;
-    padding: 12px;
+    padding: 10px;
     background-color: #8b0000;
     color: white;
     font-weight: bold;
@@ -54,8 +68,46 @@ body {
     transition: background-color 0.3s ease;
 }
 
-.login-container button:hover {
+.buttonEmail:hover {
     background-color: #a52a2a;
+}
+
+.buttonGoogle {
+    font-size: 0.9em;
+    width: 100%;
+    padding: 10px;
+    border: 1.2px solid #000000;
+    background-color: transparent;
+    font-weight: bold;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    color: #464646;
+}
+
+.buttonGoogle:hover {
+    background-color: #f0f0f0;
+}
+
+.divider {
+  display: flex;
+  align-items: center;
+  text-align: center;
+  color: #ccc;
+  font-weight: bold;
+  font-size: 14px;
+}
+
+.divider::before,
+.divider::after {
+  content: "";
+  flex: 1;
+  border-top: 1px solid #ccc;
+  margin: 0 26px;
 }
 
 .login-container .register-link {

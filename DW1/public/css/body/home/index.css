@@ -86,19 +86,19 @@
 /* section 2 */
 
 .layout-2 {
-    position: relative;
-    width: 100%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-direction: column;
-    position: relative;
-    color: white;
-    background-image: url('../../../images/home/cachorros-wallpaper.png');
-    background-size: cover;
-    background-position: left center;
-    background-repeat: no-repeat;
-    background-attachment: fixed;
+  position: relative;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  position: relative;
+  color: white;
+  background-image: url('../../../images/home/cachorros-wallpaper.png');
+  background-size: cover;
+  background-position: left center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
 }
 
 .layout-2 h1 {
@@ -137,6 +137,14 @@
   position: relative;
   z-index: 2;
   max-width: 500px;
+}
+
+.container-link-layout-2{
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  gap: 10px;
+  margin-bottom: 40px;
 }
 
 .saiba-mais-layout-2 {

@@ -87,10 +87,7 @@
         <main>
             <!-- Introdução -->
             <div style="width: 100%;">
-                <div class="titulo">
-                    <h1>Peludos em Busca de um Lar</h1>
-                    <button id="toggleForm" class="bnt-adicionar-card-animal">Adicionar Cachorro</button>
-                </div>
+                <h1>Peludos em Busca de um Lar</h1>
                 <div class="intro">
                     <p>
                         Aqui você encontra animais para adoção e acolhimento temporário.  
@@ -102,55 +99,57 @@
             
             <!-- Filtrar Cachorros -->
             <section class="all-filters">
-                <div class="container-filters">
-                    <h4>Filtros</h4>
-                    <div class="filter">
-                        <label for="sexo">Sexo</label>
-                        <select id="sexo">
-                            <option value="todos">--</option>
-                            <option value="macho">Macho</option>
-                            <option value="femea">Fêmea</option>
-                        </select>
-                    </div>
+                <h4>Filtros</h4>
+                <div class="filter">
+                    <label for="sexo">Sexo</label>
+                    <select id="sexo">
+                        <option value="todos">--</option>
+                        <option value="macho">Macho</option>
+                        <option value="femea">Fêmea</option>
+                    </select>
+                </div>
 
-                    <div class="filter">
-                        <label for="idadeFiltro">Idade</label>
-                        <select id="idadeFiltro" name="idadeFiltro">
-                            <option value="todos">--</option>
-                            <option value="abaixo2meses">Abaixo de 2 meses</option>
-                            <option value="2-4meses">2 a 4 meses</option>
-                            <option value="4-6meses">4 a 6 meses</option>
-                            <option value="6-8meses">6 a 8 meses</option>
-                            <option value="8-10meses">8 a 10 meses</option>
-                            <option value="10-12meses">10 a 12 meses</option>
-                            <option value="1ano">1 ano</option>
-                            <option value="2anos">2 anos</option>
-                            <option value="3anos">3 anos</option>
-                            <option value="4anos">4 anos</option>
-                            <option value="5anos">5 anos</option>
-                            <option value="6anos">6 anos</option>
-                            <option value="7anos">7 anos</option>
-                            <option value="8anos">8 anos</option>
-                            <option value="9anos">9 anos</option>
-                            <option value="10+">10+</option>
-                        </select>
-                    </div>
+                <div class="filter">
+                    <label for="idadeFiltro">Idade</label>
+                    <select id="idadeFiltro" name="idadeFiltro">
+                        <option value="todos">--</option>
+                        <option value="abaixo2meses">Abaixo de 2 meses</option>
+                        <option value="2-4meses">2 a 4 meses</option>
+                        <option value="4-6meses">4 a 6 meses</option>
+                        <option value="6-8meses">6 a 8 meses</option>
+                        <option value="8-10meses">8 a 10 meses</option>
+                        <option value="10-12meses">10 a 12 meses</option>
+                        <option value="1ano">1 ano</option>
+                        <option value="2anos">2 anos</option>
+                        <option value="3anos">3 anos</option>
+                        <option value="4anos">4 anos</option>
+                        <option value="5anos">5 anos</option>
+                        <option value="6anos">6 anos</option>
+                        <option value="7anos">7 anos</option>
+                        <option value="8anos">8 anos</option>
+                        <option value="9anos">9 anos</option>
+                        <option value="10+">10+</option>
+                    </select>
+                </div>
 
-                    <div class="filter">
-                        <label for="tamanho">Tamanho/Porte</label>
-                        <select id="tamanho">
-                            <option value="todos">--</option>
-                            <option value="pequeno">Pequeno</option>
-                            <option value="medio">Médio</option>
-                            <option value="grande">Grande</option>
-                        </select>
-                    </div>
+                <div class="filter">
+                    <label for="tamanho">Tamanho/Porte</label>
+                    <select id="tamanho">
+                        <option value="todos">--</option>
+                        <option value="pequeno">Pequeno</option>
+                        <option value="médio">Médio</option>
+                        <option value="grande">Grande</option>
+                    </select>
+                </div>
 
-                    <div>
-                        <button class="button-reset-filters">Limpar Filtros</button>
-                    </div>
+                <div>
+                    <button class="button-reset-filters">Limpar Filtros</button>
                 </div>
             </section>
+
+            <div style="text-align: right; width: 90%;">
+                <button id="toggleForm" class="bnt-adicionar-card-animal">Adicionar Cachorro</button>
+            </div>
 
             <!-- Caso não tenha animais, mostra a mensagem -->
             <div id="placeholder" class="placeholder">
@@ -214,7 +213,7 @@
                                 <select name="tipo-porte" id="tipo-porte" required>
                                     <option value="">Selecione...</option>
                                     <option value="pequeno">Pequeno</option>
-                                    <option value="medio">Médio</option>
+                                    <option value="médio">Médio</option>
                                     <option value="grande">Grande</option>
                                 </select>
                             </div>
