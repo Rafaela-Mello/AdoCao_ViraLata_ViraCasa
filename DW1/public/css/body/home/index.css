@@ -201,7 +201,7 @@
 
 .layout-3-divs {
   width: 280px;
-  height: 400px;
+  min-height: 400px;
   background-color: transparent;
   padding: 20px;
   border: 2px solid #8b0000;

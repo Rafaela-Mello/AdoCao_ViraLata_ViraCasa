@@ -193,7 +193,7 @@ body.modal-open {
 /* cards das notícias */
 
 .noticia {
-  width: 800px;
+  max-width: 800px;
   font-family: 'Segoe UI', sans-serif;
   line-height: 1.6;
   background-color: #d8cfae25;
@@ -301,7 +301,7 @@ body.modal-open {
 
   /* Notícias - cards */
   .noticia {
-    width: 100%;
+    max-width: 600px;
     padding: 15px;
   }
 

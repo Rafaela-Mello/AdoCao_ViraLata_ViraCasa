@@ -228,7 +228,7 @@ body.modal-open {
 
 .card-animal {
   width: 200px;
-  height: 280px;
+  min-height: 280px;
   font-family: 'Segoe UI', sans-serif;
   background-color: #d8cfae25;
   border: 2px solid #d8cfae;
