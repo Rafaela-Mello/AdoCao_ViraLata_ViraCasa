@@ -28,7 +28,7 @@
 .conteudo {
   display: flex;
   flex-direction: row;
-  justify-content: flex-end;
+  justify-content: center;
 }
 
 .layout-1 {
@@ -36,8 +36,8 @@
   width: 100%;
   display: flex;
   flex-direction: row;
-  align-items: flex-start;
-  justify-content: space-between;
+  align-items: center;
+  justify-content: center;
 }
 
 .layout-1 ol {
@@ -54,13 +54,10 @@
   margin-bottom: 40px;
 }
 
-.layout-1-box-img {
+.layout-1-img {
   display: flex;
-  flex-direction: column;
   align-items: center;
-  margin-left: 30px;
-  flex: 1 1 35%; /* Cresce, encolhe e largura base 35% */
-
+  margin-left: 50px;
 }
 
 .saiba-mais-layout-1 {

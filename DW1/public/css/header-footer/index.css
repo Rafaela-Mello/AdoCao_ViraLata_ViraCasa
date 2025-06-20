@@ -119,7 +119,7 @@ header {
 
 /* acessibilidade */
 
-.acessibilidade-wrapper {
+.acessibilidade-container {
   position: fixed;
   top: 228px;
   right: 20px;
@@ -376,7 +376,7 @@ body.texto-negrito h6 {
     font-size: 1em;
   }
 
-  .acessibilidade-wrapper {
+  .acessibilidade-container {
     top: auto;
     bottom: 400px;
     right: 10px;

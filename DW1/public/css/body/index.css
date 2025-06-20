@@ -1,7 +1,10 @@
 /* Body de todas as Páginas */
 
 
-body {
+html, body {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
   font-family: 'Segoe UI', sans-serif;
   font-size: 14px;
   margin: 0;
@@ -9,6 +12,7 @@ body {
 }
 
 main {
+  flex: 1;
   display: flex;
   flex-direction: column;
   align-items: center;

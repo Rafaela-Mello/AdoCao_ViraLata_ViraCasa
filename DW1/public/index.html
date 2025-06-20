@@ -16,14 +16,10 @@
 
   <body>
 
-    <!-- scroll para o topo -->
-    <button id="scrollTopBtn" title="Voltar ao Topo">⇧</button>
-
     <!-- ***************************************************************************************** -->
 
     <header>
       <div class="header">
-
         <!-- Imagem Logo ViraLata-ViraCasa -->
         <img src="images/logo.png" alt="Logo ViraLata ViraCasa" class="logo-central">
 
@@ -53,30 +49,34 @@
         <a href="html/noticias.html">Notícias</a>
         <a href="html/fale-conosco.html">Fale Conosco</a>
       </nav>
-
     </header>
 
     <!-- ***************************************************************************************** -->
-    
-    <!-- Acessibilidade: pessoas com Deficiência Visual (PCDs) -->
-    <div class="acessibilidade-wrapper">
-      <button id="acessibilidadeBtn" aria-haspopup="true" aria-expanded="false" aria-label="Abrir menu de acessibilidade" style="background: none; border: none; padding: 0; cursor: pointer;">
-        <img src="images/acessibilidade.png" alt="Acessibilidade" width="34" height="34">
-      </button>
-      <div id="acessibilidadeMenu" class="menu oculto" role="menu">
-        <div class="dropdown">
-          <button class="dropdown-btn">◂ Tamanho da Fonte</button>
-          <div class="dropdown-content">
-            <button onclick="alterarFonte(12)">12px</button>
-            <button onclick="alterarFonte(14)">14px</button>
-            <button onclick="alterarFonte(16)">16px</button>
-            <button onclick="alterarFonte(18)">18px</button>
-            <button onclick="alterarFonte(20)">20px</button>
+
+    <aside>
+      <!-- scroll para o topo -->
+      <button id="scrollTopBtn" title="Voltar ao Topo">⇧</button>
+
+      <!-- Acessibilidade: pessoas com Deficiência Visual (PCDs) -->
+      <div class="acessibilidade-container">
+        <button id="acessibilidadeBtn" aria-haspopup="true" aria-expanded="false" aria-label="Abrir menu de acessibilidade" style="background: none; border: none; padding: 0; cursor: pointer;">
+          <img src="images/acessibilidade.png" alt="Acessibilidade" width="34" height="34">
+        </button>
+        <div id="acessibilidadeMenu" class="menu oculto" role="menu">
+          <div class="dropdown">
+            <button class="dropdown-btn">◂ Tamanho da Fonte</button>
+            <div class="dropdown-content">
+              <button onclick="alterarFonte(12)">12px</button>
+              <button onclick="alterarFonte(14)">14px</button>
+              <button onclick="alterarFonte(16)">16px</button>
+              <button onclick="alterarFonte(18)">18px</button>
+              <button onclick="alterarFonte(20)">20px</button>
+            </div>
           </div>
+          <button onclick="alternarNegrito()">ㅤ­­­ ­Textos em Negrito</button>
         </div>
-        <button onclick="alternarNegrito()">ㅤ­­­ ­Textos em Negrito</button>
       </div>
-    </div>
+    </aside>
 
     <!-- Informações Gerais -->
     <main>
@@ -107,10 +107,8 @@
             </div>
           </div>
 
-          <div>
-            <div class="layout-1-box-img">
-              <img src="images/home/guarda-respons-img.png" alt="Guarda Responsável Imagem Figurativa" width="365">
-            </div>
+          <div class="layout-1-img">
+            <img src="images/home/dog-home.png" alt="Cachorro Ilustrativo" width="250">
           </div>
         </div>
       </section>
@@ -159,7 +157,7 @@
 
         <div class="layout-3-div">
           <div class="layout-3-divs">
-            <img src="images/home/dog1-section3.png" alt="Imagem Ilustrativa" class="layout-3-img" width="190">
+            <img src="images/home/dog1-section3.png" alt="Imagem Ilustrativa de Cachorro" class="layout-3-img" width="190">
             <h4>Doe</h4>
             <p>
               Você pode contribuir com qualquer quantia pelo site PagSeguro. Toda a verba arrecadada é destinada aos
@@ -171,7 +169,7 @@
           </div>
 
           <div class="layout-3-divs">
-            <img src="images/home/dog2-section3.png" alt="Imagem Ilustrativa" class="layout-3-img" width="190">
+            <img src="images/home/dog2-section3.png" alt="Imagem Ilustrativa de Cachorro" class="layout-3-img" width="190">
             <h4>Apadrinhe um Animal</h4>
             <p>
               Se adotar não é uma opção no momento, apadrinhar é uma excelente forma de ajudar! Muitos animais precisam
@@ -183,7 +181,7 @@
           </div>
 
           <div class="layout-3-divs">
-            <img src="images/home/dog3-section3.png" alt="Imagem Ilustrativa" class="layout-3-img" width="190">
+            <img src="images/home/dog3-section3.png" alt="Imagem Ilustrativa de Cachorro" class="layout-3-img" width="190">
             <h4>Seja um Lar Temporário</h4>
             <p>
               Não pode adotar definitivamente?
