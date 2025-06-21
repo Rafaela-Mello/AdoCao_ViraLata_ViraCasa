@@ -40,5 +40,5 @@ O sistema foi desenvolvido para facilitar o processo de adoção de cães e otim
 
 ## Site Hospedado:
 
-Acesse o projeto online no link abaixo:
+Acesse o projeto online no link:
 🔗 [AdoCão: ViraLata-ViraCasa](https://viralata-viracasa-11b4d.web.app/)
