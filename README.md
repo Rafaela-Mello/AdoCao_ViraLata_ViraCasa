@@ -13,7 +13,7 @@ Integrantes:
 
 O sistema foi desenvolvido para facilitar o processo de adoção de cães e otimizar a gestão dos animais sob cuidado da ONG. A plataforma oferece recursos voltados a dois perfis diferentes de usuários:
 - Adotantes: podem visualizar os cães disponíveis e enviar pedidos de adoção.
-- Voluntários e equipe da ONG: podem cadastrar e excluir cães, além de gerenciar notícias, com uma interface administrativa organizada e eficiente.
+- Voluntários da ONG: podem cadastrar e excluir cães, além de gerenciar notícias, com uma interface administrativa organizada e eficiente.
 
 
 ## Objetivos
