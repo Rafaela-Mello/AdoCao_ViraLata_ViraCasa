@@ -30,16 +30,12 @@ O sistema foi desenvolvido para facilitar o processo de adoção de cães e otim
   - Hospedagem, Banco de Dados e Autenticação: Firebase (BaaS)
   - Ambiente de Desenvolvimento: Visual Studio Code
 
-Banco de Dados:
+- Banco de Dados:
   - MySQL
 
-Interação Humano-Computador:
+- Interação Humano-Computador:
   - Diagramas: Draw.io
   - Protótipos: Figma
-
-
-## Status do Projeto
-Em desenvolvimento...
 
 
 ## Site Hospedado:
