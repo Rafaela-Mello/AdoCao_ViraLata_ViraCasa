@@ -2,6 +2,12 @@
 
 ViraLata-ViraCasa é um site desenvolvido especialmente para a ONG ViraLata ViraCasa, como parte de um projeto de extensão do curso de Tecnologia em Análise e Desenvolvimento de Sistemas (TADS). A iniciativa tem como objetivo principal apoiar a causa da adoção responsável de cães, oferecendo uma plataforma acessível e funcional para facilitar a conexão entre adotantes, voluntários e a ONG.
 
+Integrantes:
+- Ashmide JN Baptise
+- Melissa Batista Junqueira
+- Rafaela Laryssa Mello Neto
+- Sophia Ferreira Boonen
+
 
 ## Descrição do Projeto
 
@@ -19,28 +25,21 @@ O sistema foi desenvolvido para facilitar o processo de adoção de cães e otim
 
 ## Tecnologias Utilizadas
 
-Desenvolvimento Web:
-- Frontend: HTML, CSS, JavaScript
-- Hospedagem, Banco de Dados e Autenticação: Firebase (BaaS)
-- Ambiente de Desenvolvimento: Visual Studio Code
+- Desenvolvimento Web:
+  - Frontend: HTML, CSS, JavaScript
+  - Hospedagem, Banco de Dados e Autenticação: Firebase (BaaS)
+  - Ambiente de Desenvolvimento: Visual Studio Code
 
-Para a Matéria Banco de Dados:
-- MySQL
+Banco de Dados:
+  - MySQL
 
-Para a Matéria Interação Humano-Computador:
-- Diagramas: Draw.io
-- Protótipos: Figma
+Interação Humano-Computador:
+  - Diagramas: Draw.io
+  - Protótipos: Figma
 
 
 ## Status do Projeto
 Em desenvolvimento...
-
-
-## Integrantes:
-- Ashmide JN Baptise - CP3025501
-- Melissa Batista Junqueira - CP3029832
-- Rafaela Laryssa Mello Neto - CP303061X
-- Sophia Ferreira Boonen - CP3031756
 
 
 ## Site Hospedado:
