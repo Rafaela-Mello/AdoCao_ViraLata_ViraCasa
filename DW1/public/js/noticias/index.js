@@ -45,7 +45,7 @@ form.addEventListener('submit', async function (e) {
 
   const novaNoticia = { titulo, data, descricao };
 
-  await noticiasRef.push(novaNoticia); // compat usa assim
+  await noticiasRef.push(novaNoticia);
 
   form.reset();
   modal.style.display = 'none';
@@ -146,22 +146,21 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 
 // função separada para carregar do Firebase e juntar ao array
-function carregarNoticiasDoFirebase() {
-  noticiasRef.once('value')
-    .then(snapshot => {
-      snapshot.forEach(childSnapshot => {
-        const noticia = childSnapshot.val();
-        noticia.id = childSnapshot.key;
-        if (!noticias.some(n => n.id === noticia.id)) {
-          noticias.push(noticia);
-        }
-      });
-      renderizarCards(noticias);
-    })
-    .catch(error => {
-      console.error('Erro ao carregar notícias:', error);
-      renderizarCards(noticias);
+async function carregarNoticiasDoFirebase() {
+  try {
+    const snapshot = await noticiasRef.once('value');
+    snapshot.forEach(childSnapshot => {
+      const noticia = childSnapshot.val();
+      noticia.id = childSnapshot.key;
+      if (!noticias.some(n => n.id === noticia.id)) {
+        noticias.push(noticia);
+      }
     });
+    renderizarCards(noticias);
+  } catch (error) {
+    console.error('Erro ao carregar notícias:', error);
+    renderizarCards(noticias);
+  }
 }
 
 

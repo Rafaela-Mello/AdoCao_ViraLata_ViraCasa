@@ -26,7 +26,6 @@ if (createUserButton) {
     firebase.auth()
       .createUserWithEmailAndPassword(emailInput.value, passwordInput.value)
       .then(() => {
-        alert('Cadastro realizado com sucesso!');
         window.location.href = "../../../html/sign-in/login/index.html";
       })
       .catch((error) => {

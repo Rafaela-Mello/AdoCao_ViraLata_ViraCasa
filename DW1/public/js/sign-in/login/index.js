@@ -22,7 +22,6 @@ if (authEmailPassButton) {
     firebase.auth()
       .signInWithEmailAndPassword(emailInput.value, passwordInput.value)
       .then(() => {
-        alert('Autenticado ' + emailInput.value);
         window.location.href = "../../../index.html";
       })
       .catch((error) => {
