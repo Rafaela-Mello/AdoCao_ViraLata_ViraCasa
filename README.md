@@ -1,6 +1,6 @@
 # 🐶 AdoCão: ViraLata-ViraCasa 
 
-ViraLata-ViraCasa é um site desenvolvido especialmente para a ONG ViraLata ViraCasa, como parte de um projeto de extensão do curso de Tecnologia em Análise e Desenvolvimento de Sistemas (TADS). A iniciativa tem como objetivo principal apoiar a causa da adoção responsável de cães, oferecendo uma plataforma acessível e funcional para facilitar a conexão entre adotantes, voluntários e a ONG.
+ViraLata-ViraCasa é um site desenvolvido especialmente para a ONG ViraLata ViraCasa, como parte de um projeto de extensão do curso de Tecnologia em Análise e Desenvolvimento de Sistemas (TADS) no IFSP. A iniciativa tem como objetivo principal apoiar a causa da adoção responsável de cães, oferecendo uma plataforma acessível e funcional para facilitar a conexão entre adotantes, voluntários e a ONG.
 
 Integrantes:
 - Ashmide JN Baptise
