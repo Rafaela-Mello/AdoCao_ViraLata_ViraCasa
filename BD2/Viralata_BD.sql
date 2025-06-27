@@ -1,5 +1,11 @@
 #DROP DATABASE IF EXISTS viralataViracasa;
 
+# Participantes:
+# - Ashmide JN Baptise, CP3025501
+# - Melissa Batista Junqueira, CP3029832
+# - Rafaela Laryssa Mello Neto, CP303061X
+# - Sophia Ferreira Boonen, CP3031756
+
 CREATE DATABASE viralataViracasa;
 USE viralataViracasa;
 
